@@ -1,0 +1,18 @@
+# Render Blueprint —— 一键部署（也可在 Dashboard 里点 New Web Service 连接本仓库）
+# 参考：https://github.com/nextjs/deploy-render
+services:
+  - type: web
+    name: opc-policy-map
+    runtime: node
+    repo: https://github.com/TLEON111/opc-policy-map
+    plan: starter # 办公室内小范围使用；Render 免费实例会休眠，需常驻可升级 starter
+    region: singapore # 近国内、免备案；或按需换 ohio/frankfurt
+    autoDeploy: true # push 到 main 自动部署（GitHub Actions 每日数据更新也会触发）
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production

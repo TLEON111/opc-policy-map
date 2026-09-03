@@ -17,6 +17,21 @@ npm run check:data
 
 打开 `http://localhost:3000`（政策地图）与 `http://localhost:3000/monitor`（情报监测面板）。
 
+## 部署（单服务 Node 托管）
+
+本项目是**一套 Next.js 全栈应用**：页面（前端）与 `/api/policies`、`/api/intel`（后端）运行在同一个 Node 服务里，无独立数据库，推荐整体单服务部署。
+
+- **境外 Node PaaS（省运维，推荐给内网小范围用）**：Render/Railway/Fly.io 连接 GitHub 仓库 `TLEON111/opc-policy-map` 自动部署。
+  - Render 蓝本见 `render.yaml`（可用 "New Blueprint" 一键创建）；
+  - push 到 `main` 即自动部署；GitHub Actions 每日 10:00 更新的待核验池数据会随仓库变化触发重新部署。
+- **Docker 自托管**：见根目录 `Dockerfile`（Next `output: "standalone"` + 运行时 `data/` 打包）。
+
+要点：
+- `/monitor` 与 API 动态读取 `data/pool/*.json`（相对运行目录），部署产物已随镜像/仓库带上该目录；
+- 端口由平台注入：`npm start` 已支持 `${PORT:-3000}`；
+- 生产环境请配 HTTPS（PaaS 默认提供 / Docker 用 nginx 反代）。
+
+
 ## 信息监控与收纳
 
 站点不只展示已核验政策，还内置一条「监控 → 收纳 → 核验」管线：

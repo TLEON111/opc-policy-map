@@ -1,0 +1,13 @@
+node_modules
+.next
+.git
+.gitignore
+*.tsbuildinfo
+npm-debug.log*
+.DS_Store
+.env*
+out
+build
+docs/superpowers
+data/research
+docker-compose.yml
