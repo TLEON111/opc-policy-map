@@ -22,8 +22,8 @@ function sqlValue(value: unknown): string {
   if (Array.isArray(value)) {
     const items = value.map((item) => {
       if (item === null || item === undefined) return "NULL";
-      const str = String(item).replace(/(["\\])/g, "\\$1");
-      return `"${str}"`;
+      // 注意：PG 数组元素必须用单引号（双引号会被解析为标识符/列名）
+      return `'${String(item).replace(/'/g, "''")}'`;
     });
     return `ARRAY[${items.join(",")}]::text[]`;
   }
