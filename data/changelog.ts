@@ -68,6 +68,12 @@ export const CHANGELOG: ChangeEntry[] = [
   },
   {
     date: "2026-09-03",
+    summary: "启用全自动同步闭环（GitHub Secrets 已配置）",
+    detail:
+      "SUPABASE_URL / SUPABASE_SERVICE_KEY 已设为仓库 Secrets；push 数据变更或每日巡检后自动 upsert 到 Supabase，前端 Netlify 自动部署——改仓库即三方自动一致。",
+  },
+  {
+    date: "2026-09-03",
     summary: "Netlify 前端已接线 Supabase 并上线",
     detail:
       "线上站点 https://opcmap.netlify.app：已配置 NEXT_PUBLIC_SUPABASE_URL/ANON_KEY，/api/policies、/api/intel 从 Supabase 读取（与本地数据等价：37 政策/27 情报/8 池）；真库灌数 + 端到端验收通过。",
