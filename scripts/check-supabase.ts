@@ -13,6 +13,9 @@ if (!url || !anon) {
   process.exit(1);
 }
 
+const baseUrl = url;
+const anonKey = anon;
+
 const TABLES = [
   ["policies", "id"],
   ["intel_items", "id"],
@@ -21,14 +24,17 @@ const TABLES = [
 ] as const;
 
 async function checkTable(table: string): Promise<string> {
-  const response = await fetch(`${url}/rest/v1/${table}?select=${table === "intel_pool" ? "url" : "id"}`, {
-    headers: {
-      apikey: anon,
-      Authorization: `Bearer ${anon}`,
-      Prefer: "count=exact",
-      Range: "0-0",
+  const response = await fetch(
+    `${baseUrl}/rest/v1/${table}?select=${table === "intel_pool" ? "url" : "id"}`,
+    {
+      headers: {
+        apikey: anonKey,
+        Authorization: `Bearer ${anonKey}`,
+        Prefer: "count=exact",
+        Range: "0-0",
+      },
     },
-  });
+  );
   if (!response.ok) {
     const text = await response.text();
     return `✗ 不可读（HTTP ${response.status}）：${text.slice(0, 120)}`;
