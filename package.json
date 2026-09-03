@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "collect": "node scripts/collect-intel.ts",
-    "check:data": "node scripts/check-data.ts"
+    "check:data": "node scripts/check-data.ts",
+    "sync:supabase": "node scripts/sync-supabase.ts"
   },
   "dependencies": {
     "class-variance-authority": "0.7.1",
