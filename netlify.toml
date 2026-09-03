@@ -1,0 +1,18 @@
+# Netlify 配置（部署整套 Next.js：页面 + /api 路由）
+# 用法：Netlify Dashboard → Add new site → Import GitHub 仓库即可自动读取本文件。
+[build]
+  command = "npm ci && npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Next.js SSR / API 支持（Netlify Functions 承载 /api/*）
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# ── Supabase 前端读取凭证（建议在 Netlify 站点 → Environment variables 配置）──
+# NEXT_PUBLIC_SUPABASE_URL=https://ltbyqcteqfatvzkdzccq.supabase.co
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_****（用你项目 API 里的 anon key）
+# 说明：这两个值被 /api 路由在运行时读取（服务端 env），配置后无需重新部署也会生效；
+#       未配置时站点自动使用仓库内置的本地数据，功能等价。
