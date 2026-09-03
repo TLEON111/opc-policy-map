@@ -56,6 +56,37 @@ export function mapPolicyRow(row: PolicyRow): Policy {
   };
 }
 
+/**
+ * 政策行 → IntelItem（kind=policy），用于把 policies 并入远程情报流，
+ * 与本地 getVerifiedIntel 的「政策投影」保持一致。
+ */
+export function mapPolicyRowToIntel(row: PolicyRow): IntelItem {
+  const policy = mapPolicyRow(row);
+  return {
+    id: `policy:${policy.id}`,
+    kind: "policy",
+    title: policy.title,
+    province: policy.province,
+    city: policy.city,
+    publishDate: policy.publishDate,
+    documentNumber: policy.documentNumber,
+    issuedBy: policy.issuedBy,
+    sourceName: policy.sourceName,
+    sourceType: policy.sourceType,
+    sourceUrl: policy.sourceUrl,
+    summary: policy.summary,
+    keyFacts: [...policy.benefits],
+    eligibility: [...policy.eligibility],
+    applicationNotes: policy.applicationNotes,
+    tags: [...policy.tags],
+    discoveredAt: policy.verifiedAt,
+    verified: true,
+    verifiedAt: "2026-09-03",
+    confidence: "high",
+    origin: "manual",
+  };
+}
+
 /** PostgREST 返回的 intel_items 行 → IntelItem。 */
 export interface IntelRow {
   id: string;

@@ -95,4 +95,57 @@ describe("GET /api/intel（Supabase 远程路径）", () => {
     ).json();
     expect(empty.data).toHaveLength(0);
   });
+
+  it("把 policies 并入远程情报流（kind=policy 投影）", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", BASE_URL);
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY", "anon-test");
+    const policyRow = {
+      id: "p-bj",
+      title: "北京市测试政策",
+      province: "北京",
+      city: "北京市",
+      category: "OPC创业",
+      tags: ["OPC"],
+      publish_date: "2026-05-01",
+      effective_date: null,
+      expiry_date: null,
+      document_number: null,
+      issued_by: "测试部门",
+      policy_level: "市级",
+      relevance: "direct",
+      status: "现行有效",
+      summary: "测试",
+      benefits: ["支持"],
+      eligibility: ["对象"],
+      application_notes: "提示",
+      application_url: null,
+      source_name: "测试",
+      source_type: "政策原文",
+      source_url: "https://example.com/p",
+      verified_at: "2026-09-03",
+    };
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL) => {
+        const url = new URL(String(input));
+        const rows = url.pathname.includes("/policies")
+          ? [policyRow]
+          : [];
+        return new Response(JSON.stringify(rows), {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        });
+      }),
+    );
+
+    const response = await GET(
+      new Request(`http://localhost/api/intel?kind=${encodeURIComponent("policy")}`),
+    );
+    const body = await response.json();
+
+    expect(body.data).toHaveLength(1);
+    expect(body.data[0].id).toBe("policy:p-bj");
+    expect(body.data[0].kind).toBe("policy");
+    expect(body.data[0].sourceUrl).toBe("https://example.com/p");
+  });
 });
