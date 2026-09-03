@@ -40,8 +40,12 @@ jobs:
           commit_user_email: "actions@users.noreply.github.com"
 
       - name: Sync daily pool updates to Supabase
-        if: ${{ secrets.SUPABASE_URL != '' && secrets.SUPABASE_SERVICE_KEY != '' }}
-        run: npm run sync:supabase
+        run: |
+          if [ -n "$SUPABASE_URL" ] && [ -n "$SUPABASE_SERVICE_KEY" ]; then
+            npm run sync:supabase
+          else
+            echo "跳过 Supabase 同步（未配置 SUPABASE_URL / SUPABASE_SERVICE_KEY）"
+          fi
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
