@@ -1,0 +1,39 @@
+# 数据变更 → Supabase 同步（已核验数据/pool 变化时自动 upsert）
+# 前置：仓库 Secrets 设置 SUPABASE_URL 与 SUPABASE_SERVICE_KEY（service role）。
+name: supabase-sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "scripts/collect-intel.ts"
+      - "supabase/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Sync verified data + pool to Supabase
+        if: ${{ secrets.SUPABASE_URL != '' && secrets.SUPABASE_SERVICE_KEY != '' }}
+        run: npm run sync:supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

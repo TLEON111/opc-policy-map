@@ -60,4 +60,10 @@ export const CHANGELOG: ChangeEntry[] = [
     detail:
       "离线校验政策/情报/待核验池：id 与 URL 唯一、可回溯、必填字段、省份与日期格式、池状态；已接入 GitHub Actions 巡检工作流与 README。",
   },
+  {
+    date: "2026-09-03",
+    summary: "Supabase 双端迁移推进（Netlify 前端 + Supabase 后端）",
+    detail:
+      "schema+种子脚本（37/27/8）、API 远程优先读取层（配置 URL+anon key 后走 PostgREST，失败回退本地）已入库；新增 push/每日 collect 自动 upsert 到 Supabase 的 CI 流水线（无密钥自动跳过）。",
+  },
 ];

@@ -38,6 +38,8 @@ npm run check:data
 - 读取层：为 API 配置 `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` 后，
   `/api/policies`、`/api/intel` 自动改走 Supabase PostgREST（失败自动回退本地数据）；
   未配置时保持本地数据模式。见 `.env.example`。
+- 自动同步：push 数据变更或每日巡检后自动 upsert 到 Supabase
+  （`.github/workflows/sync-supabase.yml` 与 `collect.yml` 内置步骤；需仓库 Secrets `SUPABASE_URL` + `SUPABASE_SERVICE_KEY`，未配置时自动跳过）。
 
 
 ## 信息监控与收纳

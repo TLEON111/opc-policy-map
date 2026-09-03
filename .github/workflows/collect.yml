@@ -39,6 +39,13 @@ jobs:
           commit_user_name: "opc-collector[bot]"
           commit_user_email: "actions@users.noreply.github.com"
 
+      - name: Sync daily pool updates to Supabase
+        if: ${{ secrets.SUPABASE_URL != '' && secrets.SUPABASE_SERVICE_KEY != '' }}
+        run: npm run sync:supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+
       - name: Verify data integrity and quality
         run: |
           npm test
