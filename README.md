@@ -31,6 +31,14 @@ npm run check:data
 - 端口由平台注入：`npm start` 已支持 `${PORT:-3000}`；
 - 生产环境请配 HTTPS（PaaS 默认提供 / Docker 用 nginx 反代）。
 
+### Supabase（后端数据，可选启用）
+
+- Schema：`supabase/schema.sql`（policies / intel_items / intel_pool / changelog，RLS：anon 可读）。
+- 种子/同步：`npm run sync:supabase`（需 `SUPABASE_URL` + `SUPABASE_SERVICE_KEY` 环境变量；`--dry-run` 可本地核对）。
+- 读取层：为 API 配置 `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` 后，
+  `/api/policies`、`/api/intel` 自动改走 Supabase PostgREST（失败自动回退本地数据）；
+  未配置时保持本地数据模式。见 `.env.example`。
+
 
 ## 信息监控与收纳
 
