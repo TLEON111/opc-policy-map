@@ -13,6 +13,7 @@
     "collect": "node scripts/collect-intel.ts",
     "check:data": "node scripts/check-data.ts",
     "sync:supabase": "node scripts/sync-supabase.ts",
+    "check:supabase": "node scripts/check-supabase.ts",
     "gen:bootstrap": "node scripts/gen-bootstrap.ts"
   },
   "dependencies": {
