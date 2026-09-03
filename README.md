@@ -34,6 +34,8 @@ npm run check:data
 ### Supabase（后端数据，可选启用）
 
 - Schema：`supabase/schema.sql`（policies / intel_items / intel_pool / changelog，RLS：anon 可读）。
+- **一键灌数（无需密钥）**：Supabase → SQL Editor → 粘贴运行 `supabase/bootstrap.sql`
+  （已含 schema + 当前全部已核验数据，幂等；数据变更后执行 `npm run gen:bootstrap` 重新生成）。
 - 种子/同步：`npm run sync:supabase`（需 `SUPABASE_URL` + `SUPABASE_SERVICE_KEY` 环境变量；`--dry-run` 可本地核对）。
 - 读取层：为 API 配置 `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY` 后，
   `/api/policies`、`/api/intel` 自动改走 Supabase PostgREST（失败自动回退本地数据）；
