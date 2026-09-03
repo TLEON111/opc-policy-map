@@ -5,6 +5,7 @@
  * 用法：
  *   NEXT_PUBLIC_SUPABASE_URL=... NEXT_PUBLIC_SUPABASE_ANON_KEY=... npm run check:supabase
  */
+export {}; // 让 tsc 按模块处理（保留顶层 await）
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, "");
 const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
