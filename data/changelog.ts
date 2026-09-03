@@ -66,4 +66,10 @@ export const CHANGELOG: ChangeEntry[] = [
     detail:
       "schema+种子脚本（37/27/8）、API 远程优先读取层（配置 URL+anon key 后走 PostgREST，失败回退本地）已入库；新增 push/每日 collect 自动 upsert 到 Supabase 的 CI 流水线（无密钥自动跳过）。",
   },
+  {
+    date: "2026-09-03",
+    summary: "Netlify 前端已接线 Supabase 并上线",
+    detail:
+      "线上站点 https://opcmap.netlify.app：已配置 NEXT_PUBLIC_SUPABASE_URL/ANON_KEY，/api/policies、/api/intel 从 Supabase 读取（与本地数据等价：37 政策/27 情报/8 池）；真库灌数 + 端到端验收通过。",
+  },
 ];

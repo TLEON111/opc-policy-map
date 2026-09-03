@@ -21,6 +21,7 @@ npm run check:data
 
 本项目是**一套 Next.js 全栈应用**：页面（前端）与 `/api/policies`、`/api/intel`（后端）运行在同一个 Node 服务里，无独立数据库，推荐整体单服务部署。
 
+- **线上站点**：<https://opcmap.netlify.app>（Netlify，已配置 `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY`，`/api` 走 Supabase PostgREST）。
 - **境外 Node PaaS（省运维，推荐给内网小范围用）**：Render/Railway/Fly.io 连接 GitHub 仓库 `TLEON111/opc-policy-map` 自动部署。
   - Render 蓝本见 `render.yaml`（可用 "New Blueprint" 一键创建）；
   - push 到 `main` 即自动部署；GitHub Actions 每日 10:00 更新的待核验池数据会随仓库变化触发重新部署。
