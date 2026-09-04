@@ -1,5 +1,5 @@
 import type { Policy } from "@/types/policy";
-import type { IntelItem } from "@/types/intel";
+import type { IntelItem, IntelKind, IntelPoolEntry } from "@/types/intel";
 
 /** PostgREST 返回的 policies 行（snake_case）→ Policy。 */
 export interface PolicyRow {
@@ -143,6 +143,44 @@ export function mapIntelRow(row: IntelRow): IntelItem {
     verifiedAt: row.verified_at ?? undefined,
     confidence: row.confidence,
     origin: row.origin,
+  };
+}
+
+export interface IntelPoolRow {
+  url: string;
+  title: string;
+  snippet: string | null;
+  source_id: string;
+  keyword: string;
+  province: string | null;
+  kind_guess: string | null;
+  found_at: string;
+  status: string;
+}
+
+const INTEL_KINDS = new Set<IntelKind>([
+  "policy",
+  "application",
+  "interpretation",
+  "news",
+  "resource",
+]);
+
+function isIntelKind(value: string | null): value is IntelKind {
+  return Boolean(value && INTEL_KINDS.has(value as IntelKind));
+}
+
+export function mapIntelPoolRow(row: IntelPoolRow): IntelPoolEntry {
+  return {
+    url: row.url,
+    title: row.title,
+    snippet: row.snippet ?? undefined,
+    sourceId: row.source_id,
+    keyword: row.keyword,
+    province: row.province ?? undefined,
+    kindGuess: isIntelKind(row.kind_guess) ? row.kind_guess : undefined,
+    foundAt: row.found_at,
+    status: "pending",
   };
 }
 

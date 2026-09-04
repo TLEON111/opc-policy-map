@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { VERIFIED_POLICIES } from "@/data/verified-policies";
 import { VERIFIED_INTEL } from "@/data/verified-intel";
@@ -7,6 +7,7 @@ import {
   getChangelog,
   getIntelFeed,
   getIntelPoolEntries,
+  getMonitorOverviewForRuntime,
   getMonitorOverview,
   getProvinceCoverageMatrix,
   getVerifiedIntel,
@@ -106,6 +107,11 @@ describe("province coverage matrix", () => {
 });
 
 describe("pool and overview", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    vi.unstubAllGlobals();
+  });
+
   it("reads pool entries produced by the collector", () => {
     const entries = getIntelPoolEntries();
 
@@ -134,6 +140,56 @@ describe("pool and overview", () => {
     expect(
       overview.sourceStats.enabled + overview.sourceHealth.filter((row) => !row.enabled).length,
     ).toBe(MONITOR_SOURCES.length);
+  });
+
+  it("builds runtime overview from Supabase intel_pool when remote env is configured", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://demo.supabase.co");
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY", "anon-test");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () =>
+        new Response(
+          JSON.stringify([
+            {
+              url: "https://example.com/remote-pool-a",
+              title: "远程池线索 A",
+              snippet: null,
+              source_id: "cq-scjgj",
+              keyword: "OPC",
+              province: "重庆",
+              kind_guess: null,
+              found_at: "2026-09-04T01:00:00.000Z",
+              status: "pending",
+            },
+            {
+              url: "https://example.com/remote-pool-b",
+              title: "远程池线索 B",
+              snippet: null,
+              source_id: "cq-scjgj",
+              keyword: "超级个体",
+              province: "重庆",
+              kind_guess: "news",
+              found_at: "2026-09-04T02:00:00.000Z",
+              status: "pending",
+            },
+          ]),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      ),
+    );
+
+    const overview = await getMonitorOverviewForRuntime();
+
+    expect(overview.pool).toEqual({
+      total: 2,
+      updatedAt: "2026-09-04T02:00:00.000Z",
+    });
+    expect(overview.sourceReportCheckedAt).toBe("2026-09-04T02:00:00.000Z");
+    expect(overview.sourceHealth.find((row) => row.id === "cq-scjgj")).toMatchObject({
+      state: "reachable",
+      hitCount: 2,
+      lastCheckedAt: "2026-09-04T02:00:00.000Z",
+    });
   });
 
   it("exposes a dated changelog sorted newest first", () => {

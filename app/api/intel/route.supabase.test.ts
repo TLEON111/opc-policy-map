@@ -148,4 +148,50 @@ describe("GET /api/intel（Supabase 远程路径）", () => {
     expect(body.data[0].kind).toBe("policy");
     expect(body.data[0].sourceUrl).toBe("https://example.com/p");
   });
+
+  it("远程模式下用 Supabase intel_pool 计算待核验池数量", async () => {
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", BASE_URL);
+    vi.stubEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY", "anon-test");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: RequestInfo | URL) => {
+        const url = new URL(String(input));
+        const rows = url.pathname.includes("/intel_pool")
+          ? [
+              {
+                url: "https://example.com/pool-a",
+                title: "池内线索 A",
+                snippet: null,
+                source_id: "cq-scjgj",
+                keyword: "OPC",
+                province: "重庆",
+                kind_guess: null,
+                found_at: "2026-09-04T01:00:00.000Z",
+                status: "pending",
+              },
+              {
+                url: "https://example.com/pool-b",
+                title: "池内线索 B",
+                snippet: null,
+                source_id: "sh-sheitc",
+                keyword: "超级个体",
+                province: "上海",
+                kind_guess: "resource",
+                found_at: "2026-09-04T02:00:00.000Z",
+                status: "pending",
+              },
+            ]
+          : [];
+        return new Response(JSON.stringify(rows), {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        });
+      }),
+    );
+
+    const response = await GET(new Request("http://localhost/api/intel"));
+    const body = await response.json();
+
+    expect(body.meta.poolTotal).toBe(2);
+  });
 });

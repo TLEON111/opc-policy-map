@@ -6,6 +6,8 @@ import { MONITOR_SOURCES } from "@/data/monitor-sources";
 import { VERIFIED_INTEL } from "@/data/verified-intel";
 import { VERIFIED_POLICIES } from "@/data/verified-policies";
 import { PROVINCE_NAMES } from "@/lib/policies";
+import { isSupabaseConfigured, supabaseSelect } from "@/lib/supabase";
+import { mapIntelPoolRow, type IntelPoolRow } from "@/lib/supabase-mappers";
 import type { Policy } from "@/types/policy";
 import {
   INTEL_KIND_LABELS,
@@ -146,6 +148,13 @@ export function getProvinceCoverageMatrix(): ProvinceCoverageRow[] {
 const POOL_PATH = join(process.cwd(), "data", "pool", "pool.json");
 const LAST_REPORT_PATH = join(process.cwd(), "data", "pool", "last-report.json");
 
+function latestFoundAt(entries: IntelPoolEntry[]): string | null {
+  return entries.reduce<string | null>((latest, entry) => {
+    if (!latest || entry.foundAt > latest) return entry.foundAt;
+    return latest;
+  }, null);
+}
+
 /** 读取待核验池（巡检器产出）；文件不存在/损坏时返回空池。 */
 export function getIntelPoolEntries(): IntelPoolEntry[] {
   try {
@@ -165,6 +174,25 @@ export function getPoolUpdatedAt(): string | null {
   } catch {
     return null;
   }
+}
+
+async function fetchRemoteIntelPoolEntries(): Promise<IntelPoolEntry[]> {
+  const rows = await supabaseSelect<IntelPoolRow>("intel_pool", {
+    order: "found_at.desc",
+  });
+  return rows.map(mapIntelPoolRow);
+}
+
+/** 运行时读取待核验池：生产优先 Supabase，失败回退本地文件。 */
+export async function getIntelPoolEntriesForRuntime(): Promise<IntelPoolEntry[]> {
+  if (isSupabaseConfigured()) {
+    try {
+      return await fetchRemoteIntelPoolEntries();
+    } catch (error) {
+      console.error("Supabase intel_pool 读取失败，回退本地待核验池", error);
+    }
+  }
+  return getIntelPoolEntries();
 }
 
 interface LastReportSource {
@@ -202,7 +230,7 @@ export interface SourceHealthRow {
   level: IntelSource["level"];
   note?: string;
   enabled: boolean;
-  state: "reachable" | "failed" | "pending";
+  state: "reachable" | "failed" | "pending" | "quiet";
   hitCount?: number;
   lastCheckedAt?: string;
 }
@@ -247,8 +275,19 @@ const EMPTY_KIND_COUNTS: Record<IntelKind, number> = {
   resource: 0,
 };
 
-/** 监测页/概览所需的一次性聚合。 */
-export function getMonitorOverview(recentCount = 6): MonitorOverview {
+function buildMonitorOverview({
+  recentCount,
+  poolEntries,
+  poolUpdatedAt,
+  lastReport,
+  healthMode,
+}: {
+  recentCount: number;
+  poolEntries: IntelPoolEntry[];
+  poolUpdatedAt: string | null;
+  lastReport: ReturnType<typeof getLastCollectReport>;
+  healthMode: "collect-report" | "pool-snapshot";
+}): MonitorOverview {
   const feed = getVerifiedIntel();
   const byKind: Record<IntelKind, number> = { ...EMPTY_KIND_COUNTS };
   for (const item of feed) byKind[item.kind] += 1;
@@ -259,21 +298,35 @@ export function getMonitorOverview(recentCount = 6): MonitorOverview {
 
   const sources = getIntelSources();
   const enabled = sources.filter((source) => source.enabled);
-  const lastReport = getLastCollectReport();
   const liveById = new Map(
     (lastReport?.sources ?? []).map((item) => [item.id, item]),
   );
+  const poolHitCountBySource = new Map<string, number>();
+  for (const entry of poolEntries) {
+    poolHitCountBySource.set(
+      entry.sourceId,
+      (poolHitCountBySource.get(entry.sourceId) ?? 0) + 1,
+    );
+  }
   const sourceHealth: SourceHealthRow[] = sources.map((source) => {
     const live = liveById.get(source.id);
-    const state: SourceHealthRow["state"] = !source.enabled
-      ? "pending"
-      : live
-        ? live.reachable
-          ? "reachable"
-          : "failed"
-        : source.reachable
-          ? "reachable"
-          : "failed";
+    const poolHitCount = poolHitCountBySource.get(source.id) ?? 0;
+    const state: SourceHealthRow["state"] =
+      healthMode === "pool-snapshot"
+        ? !source.enabled
+          ? "pending"
+          : poolHitCount > 0
+            ? "reachable"
+            : "quiet"
+        : !source.enabled
+          ? "pending"
+          : live
+            ? live.reachable
+              ? "reachable"
+              : "failed"
+            : source.reachable
+              ? "reachable"
+              : "failed";
     return {
       id: source.id,
       name: source.name,
@@ -283,8 +336,13 @@ export function getMonitorOverview(recentCount = 6): MonitorOverview {
       note: source.note,
       enabled: source.enabled,
       state,
-      hitCount: live?.hitCount ?? 0,
-      lastCheckedAt: live ? lastReport?.checkedAt : undefined,
+      hitCount: healthMode === "pool-snapshot" ? poolHitCount : live?.hitCount ?? 0,
+      lastCheckedAt:
+        healthMode === "pool-snapshot"
+          ? poolUpdatedAt ?? undefined
+          : live
+            ? lastReport?.checkedAt
+            : undefined,
     };
   });
   const reachable = sourceHealth.filter(
@@ -301,17 +359,63 @@ export function getMonitorOverview(recentCount = 6): MonitorOverview {
       pending: enabled.length - reachable,
     },
     sourceHealth,
-    sourceReportCheckedAt: lastReport?.checkedAt ?? null,
+    sourceReportCheckedAt: lastReport?.checkedAt ?? poolUpdatedAt,
     verifiedStats: {
       total: feed.length,
       byKind,
       provincesCovered: [...provinces].sort(),
     },
     pool: {
-      total: getIntelPoolEntries().length,
-      updatedAt: getPoolUpdatedAt(),
+      total: poolEntries.length,
+      updatedAt: poolUpdatedAt,
     },
     recent: feed.slice(0, recentCount),
+  };
+}
+
+/** 监测页/概览所需的一次性本地聚合。 */
+export function getMonitorOverview(recentCount = 6): MonitorOverview {
+  return buildMonitorOverview({
+    recentCount,
+    poolEntries: getIntelPoolEntries(),
+    poolUpdatedAt: getPoolUpdatedAt(),
+    lastReport: getLastCollectReport(),
+    healthMode: "collect-report",
+  });
+}
+
+/** 运行时概览：生产优先用 Supabase intel_pool 填充待核验池与来源命中状态。 */
+export async function getMonitorOverviewForRuntime(
+  recentCount = 6,
+): Promise<MonitorOverview> {
+  const { overview } = await getMonitorRuntimeData(recentCount);
+  return overview;
+}
+
+export async function getMonitorRuntimeData(
+  recentCount = 6,
+): Promise<{ overview: MonitorOverview; poolEntries: IntelPoolEntry[] }> {
+  if (isSupabaseConfigured()) {
+    try {
+      const poolEntries = await fetchRemoteIntelPoolEntries();
+      const poolUpdatedAt = latestFoundAt(poolEntries);
+      return {
+        overview: buildMonitorOverview({
+          recentCount,
+          poolEntries,
+          poolUpdatedAt,
+          lastReport: null,
+          healthMode: "pool-snapshot",
+        }),
+        poolEntries,
+      };
+    } catch (error) {
+      console.error("Supabase intel_pool 读取失败，回退本地监控概览", error);
+    }
+  }
+  return {
+    overview: getMonitorOverview(recentCount),
+    poolEntries: getIntelPoolEntries(),
   };
 }
 

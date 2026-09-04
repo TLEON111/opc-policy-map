@@ -15,8 +15,7 @@ import { ProvinceCoverageMatrix } from "@/components/intel/ProvinceCoverageMatri
 import { getApplicationLeads } from "@/lib/applications";
 import {
   getChangelog,
-  getIntelPoolEntries,
-  getMonitorOverview,
+  getMonitorRuntimeData,
   getProvinceCoverageMatrix,
 } from "@/lib/intel";
 
@@ -58,8 +57,7 @@ export default async function MonitorPage({
   searchParams: Promise<{ province?: string }>;
 }) {
   const { province: provinceParam } = await searchParams;
-  const overview = getMonitorOverview(8);
-  const poolEntries = getIntelPoolEntries();
+  const { overview, poolEntries } = await getMonitorRuntimeData(8);
   const changelog = getChangelog();
   const matrixRows = getProvinceCoverageMatrix();
   const applicationLeads = getApplicationLeads();
@@ -113,9 +111,11 @@ export default async function MonitorPage({
             <small>自动巡检 {overview.sourceStats.enabled}</small>
           </div>
           <div>
-            <span>巡检可达</span>
+            <span>来源状态</span>
             <strong>{overview.sourceStats.reachable}</strong>
-            <small>待接入 {overview.sourceStats.pending}</small>
+            <small>
+              {overview.sourceReportCheckedAt ? "池内命中来源" : "待接入"} {overview.sourceStats.pending}
+            </small>
           </div>
           <div>
             <span>已核验情报</span>
@@ -230,7 +230,7 @@ export default async function MonitorPage({
           >
             <span className="mon-updated">
               {overview.sourceReportCheckedAt
-                ? `最近巡检：${overview.sourceReportCheckedAt.replace("T", " ").slice(0, 16)} UTC · 可达 ${overview.sourceStats.reachable}/${overview.sourceStats.enabled}`
+                ? `远程池最新线索：${overview.sourceReportCheckedAt.replace("T", " ").slice(0, 16)} UTC · 命中来源 ${overview.sourceStats.reachable}/${overview.sourceStats.enabled}`
                 : "尚未运行巡检；下方为 2026-09-03 可达性探测快照"}
             </span>
           </SectionHeading>
@@ -273,6 +273,8 @@ export default async function MonitorPage({
                         </span>
                       ) : source.state === "failed" ? (
                         <span className="mon-state is-fail">巡检失败</span>
+                      ) : source.state === "quiet" ? (
+                        <span className="mon-state is-wait">暂无待核验命中</span>
                       ) : (
                         <span className="mon-state is-wait">待接入</span>
                       )}

@@ -1,4 +1,4 @@
-import { getIntelFeed, getIntelPoolEntries } from "@/lib/intel";
+import { getIntelFeed, getIntelPoolEntries, getIntelPoolEntriesForRuntime } from "@/lib/intel";
 import { isSupabaseConfigured, supabaseSelect } from "@/lib/supabase";
 import {
   intelMatchesKeyword,
@@ -72,6 +72,7 @@ export async function GET(request: Request): Promise<Response> {
   if (isSupabaseConfigured()) {
     try {
       const items = await fetchRemoteIntel(kind, province, q);
+      const poolEntries = await getIntelPoolEntriesForRuntime();
       return Response.json({
         data: items,
         meta: {
@@ -79,7 +80,7 @@ export async function GET(request: Request): Promise<Response> {
           province: province ?? null,
           q: q ?? null,
           total: items.length,
-          poolTotal: getIntelPoolEntries().length,
+          poolTotal: poolEntries.length,
         },
       });
     } catch (error) {
