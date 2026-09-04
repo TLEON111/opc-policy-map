@@ -1,5 +1,6 @@
-# OPC 官方来源每日巡检（示例）
-# 前置：目录已 git init 并推送 GitHub；需 commit 权限（默认 GITHUB_TOKEN 可用）。
+# OPC 官方来源每日巡检（正式定时任务）
+# 注意：GitHub Actions 的 schedule 为“尽量准时”，可能延迟数分钟（极端时更长），
+# 不保证严格整点；如需精确 10:00 触发，请用外部 cron 调用 workflow_dispatch。
 name: opc-collect
 
 on:
