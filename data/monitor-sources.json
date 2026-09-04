@@ -1,0 +1,652 @@
+[
+  {
+    "id": "govcn-zuixin",
+    "owner": "全国",
+    "name": "中国政府网 · 最新政策",
+    "level": "national",
+    "url": "https://www.gov.cn/zhengce/zuixin/",
+    "note": "国务院政策文件库最新发布，覆盖各部位涉 OPC 政策的首发地。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "govcn-zhengce",
+    "owner": "全国",
+    "name": "中国政府网 · 政策文件库",
+    "level": "national",
+    "url": "https://www.gov.cn/zhengce/",
+    "note": "国务院及部门政策文件检索入口。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "miit-zcwj",
+    "owner": "全国",
+    "name": "工业和信息化部 · 政策文件",
+    "level": "national",
+    "url": "https://www.miit.gov.cn/zwgk/zcwj/index.html",
+    "note": "工信部政策文件列表，AI/算力相关部委文件首发站。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "miit-wjfb",
+    "owner": "全国",
+    "name": "工业和信息化部 · 文件发布",
+    "level": "national",
+    "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/index.html",
+    "note": "工信部文件发布列表。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "samr-home",
+    "owner": "全国",
+    "name": "国家市场监督管理总局",
+    "level": "national",
+    "url": "https://www.samr.gov.cn/",
+    "note": "总局首页，商事登记、注册监管类 OPC 政策来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "samr-fdzdgknr",
+    "owner": "全国",
+    "name": "市场监管总局 · 法定主动公开",
+    "level": "national",
+    "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/",
+    "note": "总局政府信息公开栏目。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "mohrss-home",
+    "owner": "全国",
+    "name": "人力资源和社会保障部",
+    "level": "national",
+    "url": "https://www.mohrss.gov.cn/",
+    "note": "创业补贴、担保贷款等就业创业政策来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "most-gfxwj",
+    "owner": "全国",
+    "name": "科学技术部 · 规范性文件",
+    "level": "national",
+    "url": "https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/fgzc/gfxwj/",
+    "note": "科技口规范性文件，含人工智能创新相关政策。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "bj-scjgj",
+    "owner": "北京",
+    "name": "北京市市场监督管理局",
+    "level": "province",
+    "url": "https://scjgj.beijing.gov.cn/",
+    "note": "北京 OPC 登记注册与「一址多照」等举措来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "bj-jxj",
+    "owner": "北京",
+    "name": "北京市经济和信息化局",
+    "level": "province",
+    "url": "https://jxj.beijing.gov.cn/",
+    "note": "《支持人工智能OPC创新发展行动方案》发文机关。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "bj-sjs-news",
+    "owner": "北京",
+    "name": "北京市石景山区人民政府 · 动态",
+    "level": "district",
+    "url": "https://www.bjsjs.gov.cn/ywdt/sjsdt/",
+    "note": "石景山 OPC 创业生态措施已在该站发布，适合跟踪区级政策与动态。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "bj-hd-opc",
+    "owner": "北京",
+    "name": "北京市海淀区人民政府 · OPC专题",
+    "level": "district",
+    "url": "https://www.bjhd.gov.cn/ztzx/2026/opc/",
+    "note": "海淀 OPC 创业生态专题页，聚合区级政策与服务信息。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "bj-chy-files",
+    "owner": "北京",
+    "name": "北京市朝阳区人民政府 · 政策文件",
+    "level": "district",
+    "url": "http://www.bjchy.gov.cn/affair/file/otherfile/",
+    "note": "朝阳区 OPC 若干措施发文来源，跟踪区级规范性文件。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sh-scjgj",
+    "owner": "上海",
+    "name": "上海市市场监督管理局",
+    "level": "province",
+    "url": "https://scjgj.sh.gov.cn/",
+    "note": "上海 OPC 登记服务信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sh-sheitc",
+    "owner": "上海",
+    "name": "上海市经济和信息化委员会",
+    "level": "province",
+    "url": "https://www.sheitc.sh.gov.cn/",
+    "note": "上海经信委官网（此前海南省政策经其转载）。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sh-gov-news",
+    "owner": "上海",
+    "name": "上海市人民政府 · 要闻动态",
+    "level": "province",
+    "url": "https://www.shanghai.gov.cn/nw4411/index.html",
+    "note": "上海市级 OPC/超级个体政策动态与官方转载来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "cq-gov",
+    "owner": "重庆",
+    "name": "重庆市人民政府网",
+    "level": "province",
+    "url": "https://www.cq.gov.cn/",
+    "note": "「未来星」OPC 创业生态专班文件首发站。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "cq-scjgj",
+    "owner": "重庆",
+    "name": "重庆市市场监督管理局",
+    "level": "province",
+    "url": "https://scjgj.cq.gov.cn/",
+    "note": "「未来星」OPC 十条措施解读来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "cq-hrss-policy",
+    "owner": "重庆",
+    "name": "重庆市人力资源和社会保障局 · 政策文件",
+    "level": "province",
+    "url": "https://rlsbj.cq.gov.cn/zwgk_182/zfxxgkml/zcwj_145360/",
+    "note": "重庆 OPC 创业人社支持政策来源，跟踪补贴、人才与创业服务。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "tj-scjg",
+    "owner": "天津",
+    "name": "天津市市场监督管理委员会",
+    "level": "province",
+    "url": "https://scjg.tj.gov.cn/",
+    "note": "天津 OPC/登记注册相关信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "js-scjgj",
+    "owner": "江苏",
+    "name": "江苏省市场监督管理局",
+    "level": "province",
+    "url": "https://scjgj.jiangsu.gov.cn/",
+    "note": "江苏 OPC 登记与市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "zj-zjamr",
+    "owner": "浙江",
+    "name": "浙江省市场监督管理局",
+    "level": "province",
+    "url": "https://zjamr.zj.gov.cn/",
+    "note": "浙江「一人公司」登记注册信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "nb-gov-policy",
+    "owner": "浙江",
+    "name": "宁波市人民政府 · 政策文件",
+    "level": "city",
+    "url": "https://www.ningbo.gov.cn/col/col1229533176/",
+    "note": "宁波人工智能 OPC 创新创业若干意见发布来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "hz-gazette",
+    "owner": "浙江",
+    "name": "杭州市人民政府公报",
+    "level": "city",
+    "url": "https://zfgb.hangzhou.gov.cn/",
+    "note": "杭州 OPC 创新生态支持政策公报来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "ah-amr",
+    "owner": "安徽",
+    "name": "安徽省市场监督管理局",
+    "level": "province",
+    "url": "https://amr.ah.gov.cn/",
+    "note": "安徽市场监管与 OPC 政策信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "wx-amr",
+    "owner": "江苏",
+    "name": "无锡市市场监督管理局",
+    "level": "city",
+    "url": "https://scjgj.wuxi.gov.cn/",
+    "note": "无锡 OPC 登记便利化与创业服务信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "fj-scjgj",
+    "owner": "福建",
+    "name": "福建省市场监督管理局",
+    "level": "province",
+    "url": "https://scjgj.fujian.gov.cn/",
+    "note": "福建市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "jx-amr",
+    "owner": "江西",
+    "name": "江西省市场监督管理局",
+    "level": "province",
+    "url": "https://amr.jiangxi.gov.cn/",
+    "note": "江西市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sd-amr",
+    "owner": "山东",
+    "name": "山东省市场监督管理局",
+    "level": "province",
+    "url": "http://amr.shandong.gov.cn/",
+    "note": "2026-09-04：https 不可达，http 入口 Node fetch 200，已启用（http 版省局站）。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "qd-qydj-opc",
+    "owner": "山东",
+    "name": "青岛市企业登记智能一体化平台",
+    "level": "city",
+    "url": "https://qydjfw.qingdao.gov.cn/",
+    "note": "青岛 OPC 服务专区与登记指引来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "qd-gxj-policy",
+    "owner": "山东",
+    "name": "青岛市工业和信息化局 · 政策文件",
+    "level": "city",
+    "url": "http://gxj.qingdao.gov.cn/zcwj/",
+    "note": "山东省人工智能 OPC 行动方案全文转载来源，跟踪工信口政策。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "xm-scjg",
+    "owner": "福建",
+    "name": "厦门市市场监督管理局",
+    "level": "city",
+    "url": "https://scjg.xm.gov.cn/",
+    "note": "厦门市级登记注册信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "gd-amr",
+    "owner": "广东",
+    "name": "广东省市场监督管理局",
+    "level": "province",
+    "url": "https://amr.gd.gov.cn/",
+    "note": "广东 OPC 专题（此前省级方案经深圳转载）相关。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sz-amr",
+    "owner": "广东",
+    "name": "深圳市市场监督管理局（OPC 服务专区）",
+    "level": "city",
+    "url": "https://amr.sz.gov.cn/",
+    "note": "深圳 OPC 服务专区 amr.sz.gov.cn/xxgk/qt/ztlm/opcfwzq/ 的来源站。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sz-gov-tzgg",
+    "owner": "广东",
+    "name": "深圳市人民政府 · 通知公告",
+    "level": "city",
+    "url": "http://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/",
+    "note": "2026-09-04：https 版 Node fetch 失败，http 版 200，已启用自动巡检。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sz-gxj-tzgg",
+    "owner": "广东",
+    "name": "深圳市工业和信息化局 · 通知公告",
+    "level": "city",
+    "url": "http://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/",
+    "note": "2026-09-04：https 版 Node fetch 失败，http 版 200，已启用自动巡检。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "gz-haizhu-gfxwj",
+    "owner": "广东",
+    "name": "广州市海珠区 · 行政规范性文件",
+    "level": "district",
+    "url": "https://www.gz.gov.cn/gfxwj/qjgfxwj/hzq/qbm/",
+    "note": "海珠区人工智能 OPC 创新发展措施发布栏目。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "hi-amr",
+    "owner": "海南",
+    "name": "海南省市场监督管理局",
+    "level": "province",
+    "url": "https://amr.hainan.gov.cn/",
+    "note": "海南自贸港 OPC 相关信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "gx-gov",
+    "owner": "广西",
+    "name": "广西壮族自治区人民政府门户",
+    "level": "province",
+    "url": "http://www.gxzf.gov.cn/",
+    "note": "原广西市监 scjgj.gxzf.gov.cn 不可达；2026-09-04 改接自治区政府门户 http 入口并启用。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "nn-gov-bmdt",
+    "owner": "广西",
+    "name": "南宁市人民政府 · 部门动态",
+    "level": "city",
+    "url": "https://www.nanning.gov.cn/ywzx/bmdt/",
+    "note": "南宁 AI OPC 创业社区、服务支持措施等官方动态来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "ha-scjg",
+    "owner": "河南",
+    "name": "河南省市场监督管理局",
+    "level": "province",
+    "url": "https://scjg.henan.gov.cn/",
+    "note": "河南 OPC 登记监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "hb-scjg",
+    "owner": "湖北",
+    "name": "湖北省市场监督管理局",
+    "level": "province",
+    "url": "https://scjg.hubei.gov.cn/",
+    "note": "2026-09-04：Node fetch 仍 412（省级站反爬，浏览器可访问）；湖北省级暂由武汉市级源覆盖，待人工/浏览器接入。",
+    "enabled": false,
+    "reachable": false
+  },
+  {
+    "id": "wh-kjj-tzgg",
+    "owner": "湖北",
+    "name": "武汉市科技创新局 · 通知公告",
+    "level": "city",
+    "url": "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/",
+    "note": "武汉人工智能 OPC 创新专项与生态社区申报通知来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "wh-jgswgl-zcwj",
+    "owner": "湖北",
+    "name": "武汉市机关事务管理局 · 政策文件",
+    "level": "city",
+    "url": "https://jgswgl.wuhan.gov.cn/xxgk_59/zc/zcwj/",
+    "note": "武汉市支持人工智能 OPC 创新发展若干措施转载来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "hn-amr",
+    "owner": "湖南",
+    "name": "湖南省市场监督管理局",
+    "level": "province",
+    "url": "https://amr.hunan.gov.cn/",
+    "note": "湖南市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "cs-cetz-policy",
+    "owner": "湖南",
+    "name": "长沙经济技术开发区 · 招商政策",
+    "level": "district",
+    "url": "http://cetz.changsha.gov.cn/zsyz_43810/zszc/",
+    "note": "长沙经开区智能体和一人公司开源社区十条措施来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sx-scjgj",
+    "owner": "山西",
+    "name": "山西省市场监督管理局",
+    "level": "province",
+    "url": "https://scjgj.shanxi.gov.cn/",
+    "note": "山西市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "he-gov",
+    "owner": "河北",
+    "name": "河北省人民政府门户",
+    "level": "province",
+    "url": "https://www.hebei.gov.cn/",
+    "note": "原河北市监 scjgj.hebei.gov.cn 不可达；2026-09-04 改接省政府门户（政策/动态栏目）并启用。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "nm-amr",
+    "owner": "内蒙古",
+    "name": "内蒙古自治区市场监督管理局",
+    "level": "province",
+    "url": "https://amr.nmg.gov.cn/",
+    "note": "内蒙古市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "ln-scjg",
+    "owner": "辽宁",
+    "name": "辽宁省市场监督管理局",
+    "level": "province",
+    "url": "https://scjg.ln.gov.cn/",
+    "note": "辽宁市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "dl-hitech-policy",
+    "owner": "辽宁",
+    "name": "大连高新区 · 政策服务",
+    "level": "district",
+    "url": "https://www.dlhitech.gov.cn/",
+    "note": "大连高新区支持 OPC 发展若干措施来源；栏目页不可稳定抓取，先巡检站点首页。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "jl-scjg",
+    "owner": "吉林",
+    "name": "吉林省市场监督管理厅",
+    "level": "province",
+    "url": "https://scjg.jl.gov.cn/",
+    "note": "吉林市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "hlj-gov",
+    "owner": "黑龙江",
+    "name": "黑龙江省人民政府门户",
+    "level": "province",
+    "url": "https://www.hlj.gov.cn/",
+    "note": "原黑龙江市监 amr.hlj.gov.cn 不可达；2026-09-04 改接省政府门户（政策/动态栏目）并启用。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sc-scjgj",
+    "owner": "四川",
+    "name": "四川省市场监督管理局",
+    "level": "province",
+    "url": "https://scjgj.sc.gov.cn/",
+    "note": "四川 OPC 登记监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sc-kjt-opc",
+    "owner": "四川",
+    "name": "四川省科学技术厅 · OPC政策原文",
+    "level": "province",
+    "url": "https://kjt.sc.gov.cn/kjt/gstz/2026/4/17/454bbd76e963409a8193f9bcfc5af121.shtml",
+    "note": "四川省人工智能 OPC 创新发展行动方案原文页；栏目页探测异常，先登记原文页。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "gz-amr",
+    "owner": "贵州",
+    "name": "贵州省市场监督管理局",
+    "level": "province",
+    "url": "https://amr.guizhou.gov.cn/",
+    "note": "贵州市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "yn-amr",
+    "owner": "云南",
+    "name": "云南省市场监督管理局",
+    "level": "province",
+    "url": "https://amr.yn.gov.cn/",
+    "note": "云南 OPC 创业信息来源（人社厅措施已收录）。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "xz-gov",
+    "owner": "西藏",
+    "name": "西藏自治区人民政府门户",
+    "level": "province",
+    "url": "https://www.xizang.gov.cn/",
+    "note": "原西藏市监 scjg.xizang.gov.cn 不可达；2026-09-04 改接自治区政府门户并启用（政策/动态栏目）。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "sx-snamr",
+    "owner": "陕西",
+    "name": "陕西省市场监督管理局",
+    "level": "province",
+    "url": "https://snamr.shaanxi.gov.cn/",
+    "note": "《支持OPC业态创业发展指导意见》发文机关。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "xa-amr-home",
+    "owner": "陕西",
+    "name": "西安市市场监督管理局",
+    "level": "city",
+    "url": "https://scjg.xa.gov.cn/",
+    "note": "西安市支持一人公司（OPC）创业发展措施来源；新闻栏目 403，先巡检站点首页。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "gs-scjg",
+    "owner": "甘肃",
+    "name": "甘肃省市场监督管理局",
+    "level": "province",
+    "url": "https://scjg.gansu.gov.cn/",
+    "note": "2026-09-04：Node fetch 仍 412（省级站反爬，浏览器可访问）；甘肃省级待人工/浏览器接入，先用兰州市级源覆盖。",
+    "enabled": false,
+    "reachable": false
+  },
+  {
+    "id": "gs-lz-gov",
+    "owner": "甘肃",
+    "name": "兰州市人民政府门户",
+    "level": "city",
+    "url": "https://www.lanzhou.gov.cn/",
+    "note": "兰州市政府门户（政策/动态栏目）；2026-09-04 实测 Node fetch 200，已启用。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "qh-scjgj",
+    "owner": "青海",
+    "name": "青海省市场监督管理局",
+    "level": "province",
+    "url": "https://scjgj.qinghai.gov.cn/",
+    "note": "青海市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "nx-gov",
+    "owner": "宁夏",
+    "name": "宁夏回族自治区人民政府门户",
+    "level": "province",
+    "url": "https://www.nx.gov.cn/",
+    "note": "原宁夏市场厅 scjgj.nx.gov.cn 不可达；2026-09-04 改接自治区政府门户并启用（政策/动态栏目）。",
+    "enabled": true,
+    "reachable": true
+  },
+  {
+    "id": "xj-scjgj",
+    "owner": "新疆",
+    "name": "新疆维吾尔自治区市场监督管理局",
+    "level": "province",
+    "url": "https://scjgj.xinjiang.gov.cn/",
+    "note": "新疆市场监管信息来源。",
+    "enabled": true,
+    "reachable": true
+  }
+]

@@ -1,0 +1,999 @@
+[
+  {
+    "id": "sh-opc-community-forum-2026",
+    "kind": "resource",
+    "title": "从“超级个体”到“城市合伙人”——2026年第三期“投资促进大讲堂”聚焦OPC社区运营",
+    "province": "上海",
+    "city": "上海市",
+    "scopeLabel": "上海市",
+    "publishDate": "2026-08-06",
+    "sourceName": "上海市经济和信息化委员会",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://www.sheitc.sh.gov.cn/zxxx/20260806/0de420c97376448699a01c0025bf33ea.html",
+    "summary": "上海市经信委组织的“投资促进大讲堂”（2026 年第三期）以 OPC 社区运营为主题，探讨从“超级个体”到“城市合伙人”的产业培育路径。",
+    "keyFacts": [
+      "官方培训/宣讲类活动，主题为 OPC 社区运营"
+    ],
+    "tags": [
+      "OPC社区",
+      "活动",
+      "上海"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "registry-scan"
+  },
+  {
+    "id": "ah-opc-ip-station-2026",
+    "kind": "news",
+    "title": "全省首个OPC知识产权保护工作站在蚌埠设立",
+    "province": "安徽",
+    "city": "蚌埠市",
+    "scopeLabel": "蚌埠市",
+    "issuedBy": "安徽省市场监督管理局",
+    "sourceName": "安徽省市场监督管理局",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://amr.ah.gov.cn/xwdt/dszc/150658951.html",
+    "summary": "安徽省首个 OPC 知识产权保护工作站在蚌埠设立，为 OPC 提供知识产权相关保护与服务。",
+    "keyFacts": [
+      "安徽全省首个 OPC 知识产权保护工作站落地蚌埠"
+    ],
+    "tags": [
+      "OPC",
+      "知识产权",
+      "工作站",
+      "安徽"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "registry-scan"
+  },
+  {
+    "id": "ah-opc-registration-media-2026",
+    "kind": "interpretation",
+    "title": "中国质量报：创新商事登记改革 助力AI产业生态建设 安徽推行“工位注册”“一址多照” 实现OPC设立一日办结",
+    "province": "安徽",
+    "city": "安徽省",
+    "scopeLabel": "安徽省",
+    "sourceName": "安徽省市场监督管理局（转载中国质量报）",
+    "sourceType": "官方转载",
+    "sourceUrl": "https://amr.ah.gov.cn/xwdt/mtjjx/twbd/150652081.html",
+    "summary": "安徽省市场监管部门创新商事登记改革，推行“工位注册”“一址多照”，实现 OPC 设立一日办结，支撑 AI 产业生态建设。",
+    "keyFacts": [
+      "推行“工位注册”“一址多照”",
+      "OPC 设立一日办结"
+    ],
+    "tags": [
+      "工位注册",
+      "一址多照",
+      "商事登记",
+      "安徽"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "registry-scan"
+  },
+  {
+    "id": "sz-opc-service-hub-2026",
+    "kind": "resource",
+    "title": "深圳市市场监督管理局 · OPC 服务专区",
+    "province": "广东",
+    "city": "深圳市",
+    "scopeLabel": "深圳市",
+    "sourceName": "深圳市市场监督管理局",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://amr.sz.gov.cn/xxgk/qt/ztlm/opcfwzq/index.html",
+    "summary": "深圳市市场监管局的 OPC 服务专区：聚合深圳 OPC 政策、申报与服务入口，是深圳 OPC 相关动态的第一手来源页。",
+    "keyFacts": [
+      "深圳 OPC 政策与申报入口聚合页"
+    ],
+    "tags": [
+      "OPC",
+      "服务专区",
+      "申报入口",
+      "广东"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "registry-scan"
+  },
+  {
+    "id": "sx-opc-guidance-news-2026",
+    "kind": "news",
+    "title": "省市场监管局出台指导意见 支持OPC业态创业发展",
+    "province": "陕西",
+    "city": "陕西省",
+    "scopeLabel": "陕西省",
+    "publishDate": "2026-08-18",
+    "issuedBy": "陕西省市场监督管理局",
+    "sourceName": "陕西省市场监督管理局",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://snamr.shaanxi.gov.cn/sy/gzdt/csdt/202608/t20260818_3667686.html",
+    "summary": "陕西省市场监管局就支持 OPC 业态创业发展出台指导意见（陕市监发〔2026〕116 号）的新闻稿，说明政策要点与落地安排。",
+    "keyFacts": [
+      "对应政策：陕市监发〔2026〕116 号《支持OPC业态创业发展的指导意见》"
+    ],
+    "tags": [
+      "OPC",
+      "指导意见",
+      "陕西",
+      "新闻稿"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "registry-scan"
+  },
+  {
+    "id": "wh-opc-program-apply-2026",
+    "kind": "application",
+    "title": "市科技创新局关于组织申报2026年度武汉市重点研发计划人工智能OPC创新专项的通知",
+    "province": "湖北",
+    "city": "武汉市",
+    "scopeLabel": "武汉市",
+    "publishDate": "2026-03-24",
+    "issuedBy": "武汉市科技创新局",
+    "sourceName": "武汉市科技创新局",
+    "sourceType": "政策原文",
+    "sourceUrl": "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202603/t20260324_2744096.shtml",
+    "summary": "武汉设立2026年度重点研发计划“人工智能OPC创新专项”公开征集，项目分“人工智能OPC模型工具项目”与“人工智能OPC创新产品项目”两类。",
+    "keyFacts": [
+      "项目类别：OPC模型工具项目（轻量化垂直模型、AI编程、智能体平台、多智能体协作等）与OPC创新产品项目",
+      "依据文件：武政规〔2026〕4号《武汉市支持人工智能OPC创新发展若干措施》、武科〔2026〕16号专项实施方案（试行）"
+    ],
+    "applicationNotes": "申报单位、窗口期与材料要求以通知正文为准（来源：武汉市科技创新局·高新技术二处）。",
+    "tags": [
+      "申报通知",
+      "重点研发计划",
+      "武汉",
+      "模型工具"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "wh-opc-community-apply-2026",
+    "kind": "application",
+    "title": "市科技创新局关于组织开展人工智能OPC生态社区申报的通知",
+    "province": "湖北",
+    "city": "武汉市",
+    "scopeLabel": "武汉市",
+    "publishDate": "2026-03-10",
+    "issuedBy": "武汉市科技创新局",
+    "sourceName": "武汉市科技创新局",
+    "sourceType": "政策原文",
+    "sourceUrl": "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202603/t20260311_2737982.shtml",
+    "summary": "武汉市科创局组织开展市级“人工智能OPC生态社区”申报认定，申报主体为具备产业生态构建能力的市场化专业机构。",
+    "keyFacts": [
+      "OPC社区定位：由各区主导建设，具备创业空间、算力调度、数据开放、模型工具、投融资对接、综合服务等功能的创新创业集聚区",
+      "OPC定义：由20人以内的AI人才/微型团队创办、以大模型为基础并以AI编程、智能体为核心工具的“AI+超级个体”新型创业实体",
+      "申报主体：具有独立法人资格、可开展社区品牌与运营服务的市场化专业机构"
+    ],
+    "applicationNotes": "申报要求与认定流程以通知正文为准（依据武政规〔2026〕4号组织）。",
+    "tags": [
+      "申报通知",
+      "OPC社区",
+      "武汉",
+      "认定"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "hn-mls-opc-0731-2026",
+    "kind": "interpretation",
+    "title": "马栏山发布打造AIGC内容工厂和孵化OPC生态“0731马力全开”支持政策（官方解读）",
+    "province": "湖南",
+    "city": "长沙市",
+    "scopeLabel": "长沙马栏山视频文创产业园",
+    "publishDate": "2026-04-27",
+    "issuedBy": "湖南马栏山集团有限公司",
+    "sourceName": "马栏山视频文创产业园（政策解读）",
+    "sourceType": "政策解读",
+    "sourceUrl": "http://csmls.changsha.gov.cn/jdhy/zcjd/202604/t20260427_12369080.html",
+    "summary": "马栏山园区发布打造AIGC内容工厂、孵化OPC生态的“0731马力全开”支持政策官方解读：以“0成本起步、0风险创业、0到100加速成长”为设计主线，并从极速注册、创业支持等方面服务超级个体（OPC）。",
+    "keyFacts": [
+      "目标：实现OPC入驻和运营成本降低30%",
+      "OPC注册提供专属绿色通道与全程帮代办，全流程1日办结",
+      "园区依托AIGC内容工厂，推动头部企业孵化OPC、形成集聚"
+    ],
+    "tags": [
+      "马栏山",
+      "AIGC",
+      "OPC",
+      "政策解读"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "gd-province-opc-tujie-2026",
+    "kind": "interpretation",
+    "title": "【部门图解】一图读懂《广东省支持人工智能OPC创新发展行动方案（2026—2028年）》",
+    "province": "广东",
+    "city": "广东省",
+    "scopeLabel": "广东省",
+    "publishDate": "2026-03-16",
+    "issuedBy": "广东省发展和改革委员会",
+    "sourceName": "广东省发展和改革委员会",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://drc.gd.gov.cn/gkmlpt/content/4/4870/mpost_4870317.html",
+    "summary": "广东省发改委发布的省级行动方案（粤发改高技〔2026〕78号）官方一图读懂/图解，作为政策速览与申报指引入口。",
+    "keyFacts": [
+      "对应已收录政策：粤发改高技〔2026〕78号（2026—2028年行动方案）"
+    ],
+    "tags": [
+      "一图读懂",
+      "广东",
+      "行动方案",
+      "政策图解"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "nn-10-opc-communities-2026",
+    "kind": "news",
+    "title": "培育AI“超级个体”激活发展新动能：南宁首批10个人工智能OPC创业社区集中开放",
+    "province": "广西",
+    "city": "南宁市",
+    "scopeLabel": "南宁市",
+    "publishDate": "2026-05-16",
+    "issuedBy": "南宁市人民政府",
+    "sourceName": "南宁市人民政府门户",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://www.nanning.gov.cn/ywzx/nnyw/2026nzwdt/t6622766.html",
+    "summary": "南宁首批10个人工智能OPC创业社区集中开放，以“单人+AI”即可创业的社区供给模式培育超级个体，配套政策、空间与算力等服务。",
+    "keyFacts": [
+      "南宁首批10个人工智能OPC创业社区集中开放"
+    ],
+    "tags": [
+      "OPC社区",
+      "南宁",
+      "超级个体"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "lz-first-opc-communities-2026",
+    "kind": "news",
+    "title": "“一人+AI”就能开公司？柳州首批OPC社区揭牌启用",
+    "province": "广西",
+    "city": "柳州市",
+    "scopeLabel": "柳州市",
+    "publishDate": "2026-08-11",
+    "sourceName": "广西壮族自治区园区发展和投资促进服务中心（转载广西云·广西日报）",
+    "sourceType": "官方转载",
+    "sourceUrl": "http://tzcjj.gxzf.gov.cn/gzdt/t28019544.shtml",
+    "summary": "柳州市灏谷OPC社区与高博达OPC数字社区作为全市首批OPC社区正式揭牌启用，落地于市级创业孵化基地，融合AI数字化技术与OPC产业生态。",
+    "keyFacts": [
+      "全市首批OPC社区：灏谷OPC社区（2026-08-06揭牌）与高博达OPC数字社区",
+      "入孵项目可享一次性创业补贴、场地水电物业补贴、一次性带动就业补贴、创业担保贷款贴息等政策红利",
+      "配套数百个标准化创业工位，联动科技企业提供AI算力支撑与订单、资源对接"
+    ],
+    "tags": [
+      "OPC社区",
+      "柳州",
+      "孵化平台"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "hi-opc-measures-cnr-2026",
+    "kind": "interpretation",
+    "title": "最高奖励800万元！海南出台措施支持人工智能OPC创新发展（解读报道）",
+    "province": "海南",
+    "city": "海南省",
+    "scopeLabel": "海南省",
+    "publishDate": "2026-05-20",
+    "sourceName": "央广网海南（来源：海南日报）",
+    "sourceType": "媒体解读",
+    "sourceUrl": "https://www.cnr.cn/hn/jrhn/20260520/t20260520_527627399.shtml",
+    "summary": "央广网海南对已收录的省级措施（琼工信规〔2026〕3号《海南省支持人工智能OPC创新发展的若干措施》）进行解读报道。",
+    "keyFacts": [
+      "解读报道标题口径：最高奖励800万元（分级奖励细则以政策原文为准）"
+    ],
+    "tags": [
+      "海南",
+      "解读报道",
+      "最高奖励"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "hb-sjz-highzone-community-2026",
+    "kind": "news",
+    "title": "河北首家OPC创新社区落地石家庄高新区——“四维赋能”打造京津冀创新生态协同发展新引擎",
+    "province": "河北",
+    "city": "石家庄市",
+    "scopeLabel": "石家庄高新技术产业开发区",
+    "publishDate": "2026-02-26",
+    "sourceName": "石家庄市人民政府门户",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://www.sjz.gov.cn/columns/39566659-053c-4991-9a27-cfef35bb30da/202602/26/a2ae8de3-2aa6-4c06-9d2f-6320841a8e61.html",
+    "summary": "河北首家OPC创新社区在石家庄高新区落地，由高新区行政审批局协同河北清华发展研究院多模态人工智能成果转化中心共建，推出政务、成长陪伴、金融生态、政研协同“四维赋能”服务体系。",
+    "keyFacts": [
+      "经营主体住所“一次备案、社区通用”，开办“零等待、马上办”绿色通道",
+      "探索“产业金融政策服务包”，针对OPC轻资产、重研发特点提供融资支持"
+    ],
+    "tags": [
+      "OPC社区",
+      "石家庄",
+      "河北首家"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "sx-datong-community-2026",
+    "kind": "news",
+    "title": "我省首家OPC社区落户大同（大同OPC未来空间揭牌）",
+    "province": "山西",
+    "city": "大同市",
+    "scopeLabel": "大同市",
+    "publishDate": "2026-03-11",
+    "sourceName": "山西省人民政府门户（山西经济日报）",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://www.shanxi.gov.cn/ywdt/sxyw/202603/t20260311_10077489.shtml",
+    "summary": "山西首家OPC社区“大同OPC未来空间”在大同数据科技职业学院揭牌（2026-03-10），大同市就业创业服务中心与学院签署战略合作，政校协同共建OPC创业生态。",
+    "keyFacts": [
+      "大同将推进OPC试点认证，深化与传智教育集团等企业合作，探索可复制经验",
+      "社区定位：支持个人依托AI等工具创业的载体形态"
+    ],
+    "tags": [
+      "OPC社区",
+      "大同",
+      "山西首家",
+      "政校合作"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "nmg-yungu-community-2026",
+    "kind": "news",
+    "title": "内蒙古首家OPC社区投入运营，就在呼和浩特（云谷OPC社区）",
+    "province": "内蒙古",
+    "city": "呼和浩特市",
+    "scopeLabel": "中国（内蒙古）自由贸易试验区呼和浩特片区·和林格尔区块",
+    "publishDate": "2026-06-05",
+    "sourceName": "内蒙古自治区政务服务与数据管理局",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://zsj.nmg.gov.cn/xwzx/jrgz/202606/t20260605_2912860.html",
+    "summary": "内蒙古首家OPC社区“云谷OPC社区”在呼和浩特投入运营，已有20家企业入驻，目标到2026年底集聚100家一人公司；依托自贸区跨境通道与绿色算力，打造数字内容出海基地。",
+    "keyFacts": [
+      "已有20家企业入驻，目标2026年底集聚100家一人公司",
+      "规划开通国际互联网专用通道，辐射俄罗斯、蒙古和中亚市场的数字内容出海",
+      "社区内企业开发智能体服务平台，为一人公司提供全流程自动化营销服务"
+    ],
+    "tags": [
+      "OPC社区",
+      "呼和浩特",
+      "自贸区",
+      "算力"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "tj-wuqing-opc-policy-2026",
+    "kind": "interpretation",
+    "title": "武清区出台OPC专项扶持政策：激活AI时代个体创新新势能（官方解读）",
+    "province": "天津",
+    "city": "天津市武清区",
+    "scopeLabel": "天津市武清区",
+    "publishDate": "2026-06-25",
+    "issuedBy": "天津市武清区人民政府办公室",
+    "sourceName": "天津市武清区人民政府门户（武清区政务服务办公室）",
+    "sourceType": "政策解读",
+    "sourceUrl": "https://www.tjwq.gov.cn/ztzl/ztzl1/jwjdygk/202606/t20260625_7324127.html",
+    "summary": "武清区推出OPC（一人公司）专项扶持政策解读：为创业者提供免费办公工位、AI原生基础支撑平台与“算力券+模型(Token)券+数据券”三券机制，并开放场景、组建“双师天团”提供全程服务。",
+    "keyFacts": [
+      "符合条件的OPC创业者可零租金入驻武清区OPC生态社区",
+      "联合智谱AI等搭建专属AI原生平台，集成代码、文案、设计、数据分析工具",
+      "创新推出算力券、模型（Token）券、数据券“三券”扶持机制",
+      "开放场景并将OPC纳入首购首用目录；提供“OPC信用贷”“智能体开发贷”等专属信贷",
+      "入驻咨询热线：022-22977259"
+    ],
+    "tags": [
+      "武清区",
+      "三券",
+      "免费工位",
+      "OPC信用贷"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "hb-baoding-measures-2026",
+    "kind": "news",
+    "title": "保定发布支持人工智能OPC创新发展若干措施",
+    "province": "河北",
+    "city": "保定市",
+    "scopeLabel": "保定市",
+    "publishDate": "2026-03-27",
+    "sourceName": "河北省人民政府门户（转载）",
+    "sourceType": "官方转载",
+    "sourceUrl": "http://www.hebei.gov.cn/columns/62725381-642a-4327-9196-e1e0923e22bd/202603/27/ff8725f1-9aed-4529-960b-95487919e15a.html",
+    "summary": "河北省政府门户转载保定市发布支持人工智能OPC创新发展若干措施的动态，保定将依托国家数据标注基地核心优势打造OPC创业友好生态。",
+    "keyFacts": [
+      "保定以清单为抓手持续挖掘场景需求，完善政策配套与服务体系，吸引OPC参与产业数智化转型"
+    ],
+    "tags": [
+      "保定",
+      "若干措施",
+      "数据标注基地"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "bj-opc-growth-communities-2026",
+    "kind": "news",
+    "title": "北京推出一揽子措施支持“一人成军”（市级OPC成长社区等落地细则）",
+    "province": "北京",
+    "city": "北京市",
+    "scopeLabel": "北京市",
+    "publishDate": "2026-07-21",
+    "issuedBy": "北京市经济和信息化局（相关口径）",
+    "sourceName": "人民网北京频道",
+    "sourceType": "官方发布",
+    "sourceUrl": "http://bj.people.com.cn/n2/2026/0721/c14540-41644894.html",
+    "summary": "人民网北京报道北京市经信局相关方案落地进展：将出台市级OPC成长社区建设指引，配套全栈资源包、OPC金融服务专区与“OPC贷”、路演与赛事专项赛道等一揽子措施。",
+    "keyFacts": [
+      "服务成效突出的OPC社区最高给予200万元资金支持；成长社区每季度可兑付、每个社区每年最高1000万元",
+      "入驻企业免费享受3个月模型/智能算力/数据代采服务，单个企业合计最高10万元",
+      "“创赢未来”OPC专场路演通过的优质项目最高1000万元资金支持；“创客北京”“京彩大创”设OPC专项赛道最高50万元",
+      "市级企业融资综合信用服务平台设“OPC金融服务专区”，联合开发“OPC贷”专属信贷"
+    ],
+    "tags": [
+      "OPC成长社区",
+      "OPC贷",
+      "全栈资源包",
+      "路演"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "gz-gy-18min-2026",
+    "kind": "news",
+    "title": "贵阳高新区“极速审批”：OPC创业者18分钟拿证",
+    "province": "贵州",
+    "city": "贵阳市",
+    "scopeLabel": "贵阳国家高新区",
+    "publishDate": "2026-08-04",
+    "issuedBy": "贵阳国家高新区行政审批局",
+    "sourceName": "贵阳国家高新区管委会",
+    "sourceType": "官方发布",
+    "sourceUrl": "http://gxq.guiyang.gov.cn/gxqdt/gxqdtmtkgx/202608/t20260804_90691305.html",
+    "summary": "贵阳高新区设立OPC社区企业专属服务窗口，以“一企一策、极速审批”并联推进审批环节，实现创业者18分钟拿到营业执照。",
+    "keyFacts": [
+      "OPC社区企业专属服务窗口实现“18分钟急速拿证”（从名称查重到审核发证并联推进）"
+    ],
+    "tags": [
+      "贵阳",
+      "OPC社区",
+      "极速审批",
+      "企业开办"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "qh-first-opc-park-2026",
+    "kind": "news",
+    "title": "全省首个OPC园区正式揭牌启用（西宁北川）",
+    "province": "青海",
+    "city": "西宁市",
+    "scopeLabel": "西宁市城北区（青海大学国家大学科技园）",
+    "publishDate": "2026-06-01",
+    "sourceName": "青海省人民政府门户（西宁晚报）",
+    "sourceType": "官方发布",
+    "sourceUrl": "http://www.qinghai.gov.cn/zwgk/system/2026/06/01/030100716.shtml",
+    "summary": "西宁市城北区委区政府、市科技局主办的“智聚北川·创启未来”双创活力区·OPC园区于2026-05-29在青海大学国家大学科技园揭牌启用，现场为首批入驻企业颁发营业执照并签约，为青海省首个OPC园区。",
+    "keyFacts": [
+      "青海省首个OPC园区，落地西宁市城北区北川（青海大学国家大学科技园）",
+      "首批入驻企业现场颁发营业执照"
+    ],
+    "tags": [
+      "OPC园区",
+      "青海",
+      "西宁北川",
+      "首个"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "gs-lz-opc-convention-2026",
+    "kind": "resource",
+    "title": "首届OPC技能交流大会在兰州举办（“智启兰州”）",
+    "province": "甘肃",
+    "city": "兰州市",
+    "scopeLabel": "兰州市",
+    "publishDate": "2026-07-30",
+    "sourceName": "中新网甘肃",
+    "sourceType": "媒体解读",
+    "sourceUrl": "http://www.gs.chinanews.com.cn/news/2026/07-30/394976.shtml",
+    "summary": "“智启兰州·首届OPC技能交流大会”（2026-07-30）举行，聚焦人工智能赋能实体经济与大众创新创业，通过揭牌落地、政策发布、趋势解读、实战教学等环节开启兰州AI创新创业生态建设，由兰州领新网络信息科技有限公司牵头推进。",
+    "keyFacts": [
+      "聚焦普及OPC新型创业模式，帮助中小微企业依托AI降本增效",
+      "设置揭牌落地、政策发布、趋势解读、实战教学等环节"
+    ],
+    "tags": [
+      "兰州",
+      "技能交流大会",
+      "活动"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "jl-jingyue-opc-community-2026",
+    "kind": "resource",
+    "title": "净月AI文创柔性制造OPC社区揭牌，首届净月AI文创设计大赛同步启动",
+    "province": "吉林",
+    "city": "长春市",
+    "scopeLabel": "长春净月高新区",
+    "publishDate": "2026-08-28",
+    "issuedBy": "净月高新区管委会",
+    "sourceName": "长春市文化广播电视和旅游局（净月高新区文化旅游和体育局）",
+    "sourceType": "官方发布",
+    "sourceUrl": "http://wglj.changchun.gov.cn/sy_44789/xsqdt/202608/t20260828_3508480.html",
+    "summary": "净月AI文创柔性制造OPC社区于2026-08-27揭幕并同步启动首届净月AI文创设计大赛：社区构建创意设计、三维建模、产能匹配、柔性生产、订单落地全数字化服务体系，并落地创新券（模型券）专项扶持。",
+    "keyFacts": [
+      "净月AI文创柔性制造OPC社区：联合上海黑湖科技等构建“AI技术赋能+线下生态运营+政策精准扶持”文创产业生态",
+      "落地创新券（模型券）专项扶持政策，降低创作者、小微团队运营成本",
+      "首届净月AI文创设计大赛设金银铜奖及最佳创意奖"
+    ],
+    "tags": [
+      "净月",
+      "OPC社区",
+      "AI文创",
+      "创新券",
+      "大赛"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "jx-nc-opc-conference-2026",
+    "kind": "news",
+    "title": "AI赋能“一人成军”：2026南昌人工智能OPC创业者生态大会举行",
+    "province": "江西",
+    "city": "南昌市",
+    "scopeLabel": "南昌市西湖区百力佳数字经济产业园",
+    "publishDate": "2026-05-31",
+    "sourceName": "南昌新闻网（南昌日报）",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://www.ncnews.com.cn/xwzx/ncxw/jrnc/202605/t20260531_2221867.html",
+    "summary": "2026南昌人工智能OPC创业者生态大会（2026-05-30）在南昌西湖区百力佳数字经济产业园启幕，聚焦OpenClaw智能体与OPC一人公司，现场举办AI创意市集与生态共建签约，百余位行业专家、创业者与高校师生参与。",
+    "keyFacts": [
+      "大会聚焦OpenClaw开源自主智能体框架与OPC一人公司结合落地",
+      "百度飞桨（江西）人工智能产业赋能中心分享OpenClaw落地案例（工业质检60米/分钟、漏检率降至1%以下等）"
+    ],
+    "tags": [
+      "南昌",
+      "生态大会",
+      "OpenClaw"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "sh-lingang-opc-package-2026",
+    "kind": "resource",
+    "title": "临港为OPC送上“大礼包”：“零界魔方”品牌体系发布、“上海超级个体100+”征集启动",
+    "province": "上海",
+    "city": "上海市",
+    "scopeLabel": "临港新片区",
+    "publishDate": "2026-06-03",
+    "sourceName": "上海市人民政府门户（解放日报）",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://www.shanghai.gov.cn/nw4411/20260603/9165d92a3164474aa84a3138592acdd9.html",
+    "summary": "2026上海超级个体（OPC）经济大会暨零界魔方焕新生态发布会（2026-06-02）在临港举行：临港集团发布新载体、新服务、新政策三大升级，同步启动“上海超级个体100+”征集。",
+    "keyFacts": [
+      "“零界魔方”二期载体约3万平方米（含国际数据经济港、跨境金融服务空间、大学生创业园），投用200套人才公寓",
+      "联合上海电信推出“零界魔方×AI STORE”，将企业算力使用成本降低80%；联合上海农商银行提供最高1000万元定制化融资方案",
+      "同步启动“上海超级个体100+”征集活动"
+    ],
+    "tags": [
+      "临港",
+      "零界魔方",
+      "超级个体100+",
+      "资源包"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "js-nj-jianye-opc-window-2026",
+    "kind": "news",
+    "title": "1天拿证！南京建邺OPC专窗上线",
+    "province": "江苏",
+    "city": "南京市",
+    "scopeLabel": "南京市建邺区",
+    "publishDate": "2026-03-31",
+    "sourceName": "南京市数据局（南京市政务服务管理办公室）",
+    "sourceType": "官方发布",
+    "sourceUrl": "http://njsj.nanjing.gov.cn/xwdt/202604/t20260401_5817143.html",
+    "summary": "南京市建邺区政务服务中心上线OPC开办服务专窗，以专人对接、流程协同优化、材料容缺受理实现“进一扇窗、办所有事”，个体创业者最快1天开业。",
+    "keyFacts": [
+      "建邺区集聚OPC项目已突破百个（含阿里巴巴首个亲橙OPC社区等），覆盖AI+交通/健康/电商等领域",
+      "模法学院OPC社区规划超3万平方米专属空间，入驻项目超30个"
+    ],
+    "tags": [
+      "南京",
+      "OPC专窗",
+      "1天拿证",
+      "亲橙社区"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "fj-xm-siming-opc-otc-2026",
+    "kind": "news",
+    "title": "全省率先！厦门思明区推出OPC企业开办“一类事”集成服务",
+    "province": "福建",
+    "city": "厦门市",
+    "scopeLabel": "厦门市思明区",
+    "publishDate": "2026-05-13",
+    "sourceName": "厦门市思明区人民政府",
+    "sourceType": "官方发布",
+    "sourceUrl": "http://siming.gov.cn/xxgk/xwgg/gzdt/202605/t20260513_1147842.htm",
+    "summary": "思明区在全省率先推出OPC企业开办“一类事”集成服务，面向“AI+个体”轻量化创业形态提供全链条、一站式开办服务，助力OPC在思明落地成长。",
+    "keyFacts": [
+      "福建省内率先推出OPC企业开办“一类事”集成服务"
+    ],
+    "tags": [
+      "厦门思明",
+      "一类事",
+      "集成服务",
+      "轻创业"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "hlj-longjiang-opc-community-2026",
+    "kind": "news",
+    "title": "黑龙江工程学院共建“龙江工程OPC创业社区”，打造AI创业孵化新载体",
+    "province": "黑龙江",
+    "city": "哈尔滨市",
+    "scopeLabel": "哈尔滨市道外区（黑龙江工程学院）",
+    "publishDate": "2026-05-06",
+    "issuedBy": "哈尔滨市道外区人民政府、中国联通哈尔滨市分公司、黑龙江工程学院",
+    "sourceName": "黑龙江省工业和信息化厅（来源：黑龙江日报）",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://gxt.hlj.gov.cn/gxt/c107055/202605/c00_31937667.shtml",
+    "summary": "省内首个政校企共建的AI时代单人轻资产创业孵化载体“龙江工程OPC创业社区”于2026-04-27启动建设，由道外区政府、中国联通哈尔滨市分公司与黑龙江工程学院共同发起，依托国产算力底座与学校国家级创业孵化平台资源。",
+    "keyFacts": [
+      "共建国产大模型测试平台、低空经济管控算力场景，推动工业设计、数字孪生等成果落地",
+      "依托道外区智算中心国产算力底座与哈尔滨联通技术优势，OPC可一站式完成工商、税务、财务等全流程"
+    ],
+    "tags": [
+      "黑龙江",
+      "OPC创业社区",
+      "政校企共建",
+      "哈尔滨"
+    ],
+    "discoveredAt": "2026-09-03",
+    "verified": true,
+    "verifiedAt": "2026-09-03",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "ah-opc-action-news-2026-0904",
+    "kind": "interpretation",
+    "title": "安徽日报：省科技厅、省人社厅印发《安徽省推进人工智能OPC创新创业发展行动方案（2026—2028年）》",
+    "province": "安徽",
+    "city": "安徽省",
+    "scopeLabel": "安徽省",
+    "publishDate": "2026-09-04",
+    "issuedBy": "安徽省科学技术厅、安徽省人力资源和社会保障厅",
+    "sourceName": "安徽日报 / 中安在线",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://szb.ahnews.com.cn/ahrb/content/202609/04/c1152943.html",
+    "summary": "安徽日报（2026-09-04）官方刊发解读：省科技厅、省人社厅印发《安徽省推进人工智能OPC创新创业发展行动方案（2026—2028年）》，明确到2028年把OPC打造成安徽人工智能产业新名片，构建“空间有载体、技术有底座、创业有支撑、市场有机会、风险有保障”的全周期生态。",
+    "keyFacts": [
+      "目标：建成省级OPC社区不少于30个、集聚OPC团队不少于3000个、带动就业创业超1万人",
+      "新增智能算力不少于1.7万P，培育高质量数据集不少于50个，开发“小巧灵”AI解决方案不少于100个，打造全国影响力典型案例不少于3个",
+      "依托“科大硅谷”、鸠兹科创湾等建设省级OPC社区，符合条件的纳入省级通用人工智能产业创新园区，按绩效评价最高给予500万元支持",
+      "OPC社区采用“内部推荐+公开遴选”双渠道精准招募"
+    ],
+    "tags": [
+      "安徽",
+      "行动方案",
+      "官方解读",
+      "OPC社区",
+      "算力"
+    ],
+    "discoveredAt": "2026-09-04",
+    "verified": true,
+    "verifiedAt": "2026-09-04",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "xiongan-opc-community-2026-0904",
+    "kind": "news",
+    "title": "“一人公司”，何以被摆上“千年大计”的棋盘？（雄安 OPC 社区观察）",
+    "province": "河北",
+    "city": "雄安新区",
+    "scopeLabel": "雄安新区",
+    "publishDate": "2026-09-04",
+    "sourceName": "新京报（转载雄安发布）",
+    "sourceType": "官方转载",
+    "sourceUrl": "https://www.bjnews.com.cn/detail/1788481833019091.html",
+    "summary": "雄安发布（2026-09-04）深度观察：从“招大引强”到“育小孵微”，雄安以“总部经济+OPC”两条腿走路布局人工智能一人公司生态，报道“创想家”OPC社区内“超级个体”创业者从“想法”到“生意”的落地案例。",
+    "keyFacts": [
+      "2026年5月雄安授牌4家人工智能OPC创业者社区，开放超6万平方米产业空间",
+      "案例：创业者以约5000元/年工位租金、半年免费算力开启一人公司业务",
+      "定位：服务以个人为核心、依托AI工具开展业务的“超级个体”创业者，形成小而活的创新生态"
+    ],
+    "tags": [
+      "雄安",
+      "OPC社区",
+      "超级个体",
+      "总部经济"
+    ],
+    "discoveredAt": "2026-09-04",
+    "verified": true,
+    "verifiedAt": "2026-09-04",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "wlmq-opc-window-2026",
+    "kind": "news",
+    "title": "“零成本”不是口号！乌鲁木齐高新区（新市区）OPC专窗助“一人公司”拎包入驻",
+    "province": "新疆",
+    "city": "乌鲁木齐市",
+    "scopeLabel": "乌鲁木齐高新区（新市区）",
+    "publishDate": "2026-06-11",
+    "issuedBy": "乌鲁木齐高新区（新市区）政务服务中心",
+    "sourceName": "乌鲁木齐国家高新区（新市区）政府信息公开（来源：天山火炬）",
+    "sourceType": "官方发布",
+    "sourceUrl": "http://www.uhdz.gov.cn/zfxxgk/fdzdgknr/6rmrzenm3y/zqsk/content_18731",
+    "summary": "乌鲁木齐高新区（新市区）在全疆率先布局OPC（一人公司）创业专属服务：设立OPC服务专窗、配套扶持政策并集成一站式开办服务，报道市民“零成本、当天拿照”办理一人公司及依托智能体OpenClaw开展7×24小时课业辅导的落地案例。",
+    "keyFacts": [
+      "2026年3月发布《支持OPC与OpenClaw发展的十条措施（征求意见稿）》，确立“零成本启动、全要素赋能、全周期服务”理念",
+      "OPC服务专窗整合企业开办咨询、材料指导、帮办代办，虚拟地址注册等全链条事项一站式办理",
+      "2025年该区新增经营主体2.1万户、总数达10.26万户，增量和总量均居乌鲁木齐市首位"
+    ],
+    "tags": [
+      "乌鲁木齐",
+      "OPC专窗",
+      "零成本开办",
+      "OpenClaw"
+    ],
+    "discoveredAt": "2026-09-04",
+    "verified": true,
+    "verifiedAt": "2026-09-04",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "nb-opc-community-standard-2026",
+    "kind": "interpretation",
+    "title": "宁波发布《人工智能OPC社区建设与评价规范》团体标准（全省首发）",
+    "province": "浙江",
+    "city": "宁波市",
+    "scopeLabel": "宁波市",
+    "publishDate": "2026-06-12",
+    "issuedBy": "宁波市软件行业协会（归口）、宁波甬江软件产业园开发投资有限公司（牵头）、宁波市标准化研究院（参与起草）",
+    "sourceName": "宁波市人民政府门户 / 宁波市经济和信息化局（甬派）",
+    "sourceType": "官方发布",
+    "sourceUrl": "http://www.ningbo.gov.cn/col/col1229099769/art/2026/art_75e57b994bb941e3ac135f640e64e8ce.html",
+    "summary": "宁波正式发布《人工智能OPC社区建设与评价规范》团体标准，填补浙江省在人工智能OPC社区建设与评价领域的标准空白，为“一人公司”社区提供“宁波方案”。",
+    "keyFacts": [
+      "标准围绕产业培育、要素保障、资源导入、生态建设、社区服务五个维度构建分级评价体系",
+      "明确基本建设条件、社区类型划分及认定评价流程，帮助创业者识别高质量社区",
+      "由宁波市软件行业协会归口、甬江软件产业园开发投资有限公司牵头，历时三个月调研宁波数十个OPC社区后编制"
+    ],
+    "tags": [
+      "宁波",
+      "团体标准",
+      "OPC社区",
+      "评价规范"
+    ],
+    "discoveredAt": "2026-09-04",
+    "verified": true,
+    "verifiedAt": "2026-09-04",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "jn-opc-community-guide-2026",
+    "kind": "interpretation",
+    "title": "《数智生态OPC社区建设指南》团体标准发布（T/JNBDA 0005-2026）",
+    "province": "山东",
+    "city": "济南市",
+    "scopeLabel": "济南市",
+    "publishDate": "2026-07-29",
+    "issuedBy": "济南市数字经济协会（标准号 JNBDA）",
+    "sourceName": "中国标准在线服务网",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://www.spc.org.cn/online/ec6ce56b675a8d07d14170bf9cd4149f.html",
+    "summary": "《数智生态OPC社区建设指南》（T/JNBDA 0005-2026）团体标准发布并实施，为AI“一人公司”数智生态社区的规划建设与运营管理提供指引。",
+    "keyFacts": [
+      "标准号 T/JNBDA 0005-2026，2026-07-29 发布并实施，状态：现行",
+      "给出规划建设、软硬件配套、运营主体管理、入驻服务、产业孵化、日常运营、合规管理等方面的指引"
+    ],
+    "tags": [
+      "济南",
+      "团体标准",
+      "数智生态",
+      "OPC社区"
+    ],
+    "discoveredAt": "2026-09-04",
+    "verified": true,
+    "verifiedAt": "2026-09-04",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "xiongan-opc-policy-image-2026",
+    "kind": "interpretation",
+    "title": "一图读懂丨支持雄安新区OPC创新孵化社区高质量发展",
+    "province": "河北",
+    "city": "雄安新区",
+    "scopeLabel": "雄安新区",
+    "publishDate": "2026-08-06",
+    "issuedBy": "雄安新区工信科技数据局",
+    "sourceName": "中国雄安官网",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://www.xiongan.gov.cn:10443/20260806/da510d81687d43ffa734c713c7072a7c/c.html",
+    "summary": "雄安新区官方发布“一图读懂：支持雄安新区OPC创新孵化社区高质量发展”，对雄安 OPC 创新孵化社区的支持政策作官方图解（图文内容以页面为准）。",
+    "keyFacts": [
+      "官方一图读懂，来源：雄安新区工信科技数据局（2026-08-06）"
+    ],
+    "tags": [
+      "雄安",
+      "OPC创新孵化社区",
+      "一图读懂"
+    ],
+    "discoveredAt": "2026-09-04",
+    "verified": true,
+    "verifiedAt": "2026-09-04",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "zj-opc-terminology-standard-2026",
+    "kind": "interpretation",
+    "title": "浙江发布《人工智能OPC术语》团体标准：怎样才算“一人公司”有据可依",
+    "province": "浙江",
+    "city": "浙江省",
+    "scopeLabel": "浙江省",
+    "publishDate": "2026-07-31",
+    "issuedBy": "浙江省数字经济发展中心、浙江省智能经济与智慧城市促进会、阿里云等14家单位（共同编制）",
+    "sourceName": "浙江省经济信息中心（转载浙江日报）",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://zjic.zj.gov.cn/ywdh/qyfz/202607/t20260728_24169782.shtml",
+    "summary": "浙江正式发布《人工智能OPC术语》团体标准（2026-08-01 起实施），为国内首个聚焦人工智能OPC（一人公司）的术语类标准，打通政府、平台、创业者、孵化机构与投资机构之间的沟通语言。",
+    "keyFacts": [
+      "标准定义：人工智能OPC 为由 1 名核心自然人主导控制、员工数量一般不超过10人、以人工智能技术研究/开发/应用或服务为主营业务的公司",
+      "搭建五大术语板块、27 项术语，覆盖 OPC 从创业起步到全球化发展的全流程",
+      "编制单位含浙江省数字经济发展中心、省智能经济与智慧城市促进会、阿里云等 14 家"
+    ],
+    "tags": [
+      "浙江",
+      "术语标准",
+      "AI OPC",
+      "定义"
+    ],
+    "discoveredAt": "2026-09-04",
+    "verified": true,
+    "verifiedAt": "2026-09-04",
+    "confidence": "high",
+    "origin": "web-research"
+  },
+  {
+    "id": "xiongan-opc-community-apply-2026",
+    "kind": "application",
+    "title": "关于组织开展雄安新区2026年第一批OPC孵化社区集中认定工作的通知",
+    "province": "河北",
+    "city": "雄安新区",
+    "scopeLabel": "雄安新区",
+    "publishDate": "2026-08-22",
+    "issuedBy": "雄安新区（雄县、容城县、安新县工信科技数据局）",
+    "sourceName": "中国雄安官网",
+    "sourceType": "官方发布",
+    "sourceUrl": "https://www.xiongan.gov.cn:10443/20260822/7027a041b1d04571b16a23c617ff583c/c.html",
+    "summary": "雄安新区组织开展 2026 年第一批 OPC 孵化社区集中认定工作（受理截至 2026-08-31），依据《关于支持雄安新区OPC创新孵化社区高质量发展的若干措施（试行）实施细则》开展。",
+    "keyFacts": [
+      "申报主体：雄安新区范围内依法注册、具独立法人资格的运营主体",
+      "条件要点：核心办公面积不少于2000㎡，入孵OPC不少于20家；具备普惠算力/大模型调用/AI工具栈等专业服务能力",
+      "认定方式：常态化申报、分批认定（线上申报走“雄安新区…”平台）"
+    ],
+    "tags": [
+      "雄安",
+      "OPC孵化社区",
+      "认定申报"
+    ],
+    "discoveredAt": "2026-09-04",
+    "verified": true,
+    "verifiedAt": "2026-09-04",
+    "confidence": "high",
+    "origin": "web-research"
+  }
+]

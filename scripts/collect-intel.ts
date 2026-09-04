@@ -10,19 +10,39 @@
  * 运行：npm run collect
  * 注意：本脚本只写「待核验池」，绝不写入已核验数据文件。
  */
+import { readFileSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { MONITOR_SOURCES } from "../data/monitor-sources.ts";
-import { VERIFIED_INTEL } from "../data/verified-intel.ts";
-import { VERIFIED_POLICIES } from "../data/verified-policies.ts";
 import { getIntelKeywordHits } from "../lib/intel-keyword-match.ts";
 import {
   normalizeIntelCandidateUrl,
   shouldQueueIntelCandidateUrl,
 } from "../lib/intel-source-url.ts";
-import type { IntelPoolEntry } from "../types/intel.ts";
+import type { IntelItem, IntelPoolEntry, IntelSource } from "../types/intel.ts";
+import type { Policy } from "../types/policy.ts";
+
+const MONITOR_SOURCES = JSON.parse(
+  readFileSync(
+    fileURLToPath(new URL("../data/monitor-sources.json", import.meta.url)),
+    "utf8",
+  ),
+) as IntelSource[];
+
+const VERIFIED_INTEL = JSON.parse(
+  readFileSync(
+    fileURLToPath(new URL("../data/verified-intel.json", import.meta.url)),
+    "utf8",
+  ),
+) as IntelItem[];
+
+const VERIFIED_POLICIES = JSON.parse(
+  readFileSync(
+    fileURLToPath(new URL("../data/verified-policies.json", import.meta.url)),
+    "utf8",
+  ),
+) as Policy[];
 
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";

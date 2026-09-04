@@ -7,8 +7,16 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { VERIFIED_INTEL } from "../data/verified-intel.ts";
-import { VERIFIED_POLICIES } from "../data/verified-policies.ts";
+import type { IntelItem } from "../types/intel.ts";
+import type { Policy } from "../types/policy.ts";
+
+const VERIFIED_POLICIES = JSON.parse(
+  readFileSync(join(process.cwd(), "data", "verified-policies.json"), "utf8"),
+) as Policy[];
+
+const VERIFIED_INTEL = JSON.parse(
+  readFileSync(join(process.cwd(), "data", "verified-intel.json"), "utf8"),
+) as IntelItem[];
 
 function escString(value: string): string {
   return `'${value.replace(/'/g, "''")}'`;

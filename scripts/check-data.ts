@@ -13,9 +13,17 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { VERIFIED_INTEL } from "../data/verified-intel.ts";
-import { VERIFIED_POLICIES } from "../data/verified-policies.ts";
 import { isTraceableSourceUrl } from "../lib/url-policy.ts";
+import type { IntelItem } from "../types/intel.ts";
+import type { Policy } from "../types/policy.ts";
+
+const VERIFIED_POLICIES = JSON.parse(
+  readFileSync(join(process.cwd(), "data", "verified-policies.json"), "utf8"),
+) as Policy[];
+
+const VERIFIED_INTEL = JSON.parse(
+  readFileSync(join(process.cwd(), "data", "verified-intel.json"), "utf8"),
+) as IntelItem[];
 
 /** 31 个大陆省级地区（与 lib/policies.ts 的 PROVINCE_NAMES 保持同步）。 */
 const PROVINCE_SET = new Set([
