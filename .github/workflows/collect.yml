@@ -5,7 +5,7 @@ name: opc-collect
 
 on:
   schedule:
-    - cron: "0 2 * * *" # 每天北京时间 10:00（UTC 02:00）
+    - cron: "50 1 * * *" # 每天北京时间 09:50 启动，巡检约在 10:00 前完成数据更新
   workflow_dispatch: {}
 
 permissions:

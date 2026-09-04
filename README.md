@@ -24,7 +24,7 @@ npm run check:data
 - **线上站点**：<https://opcmap.netlify.app>（Netlify，已配置 `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY`，`/api` 走 Supabase PostgREST）。
 - **境外 Node PaaS（省运维，推荐给内网小范围用）**：Render/Railway/Fly.io 连接 GitHub 仓库 `TLEON111/opc-policy-map` 自动部署。
   - Render 蓝本见 `render.yaml`（可用 "New Blueprint" 一键创建）；
-  - push 到 `main` 即自动部署；GitHub Actions 每日 10:00 更新的待核验池数据会随仓库变化触发重新部署。
+  - push 到 `main` 即自动部署；GitHub Actions 每日 09:50 启动巡检、约 10:00 前完成数据更新，随后自动提交并触发重新部署。
 - **Docker 自托管**：见根目录 `Dockerfile`（Next `output: "standalone"` + 运行时 `data/` 打包）。
 
 要点：

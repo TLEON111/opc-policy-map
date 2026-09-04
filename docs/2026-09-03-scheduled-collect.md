@@ -10,8 +10,8 @@
 ## 1. 本地定时（crontab，macOS/Linux）
 
 ```cron
-# 每天 UTC 02:00（北京时间 10:00）巡检一次；日志写入 ~/logs/opc-collect.log
-0 2 * * * cd /Users/sky/Desktop/全国opc地图 && npm run collect >> ~/logs/opc-collect.log 2>&1
+# 每天 UTC 01:50（北京时间 09:50）启动巡检，约 10:00 前完成；日志写入 ~/logs/opc-collect.log
+50 1 * * * cd /Users/sky/Desktop/全国opc地图 && npm run collect >> ~/logs/opc-collect.log 2>&1
 ```
 
 要点：
