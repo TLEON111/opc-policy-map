@@ -31,6 +31,8 @@ jobs:
         run: npm run collect
 
       - name: Commit changes (pool / last-report)
+        # 失败不阻断后续（可能与外部 push 撞车产生竞态；数据仍会随下次 push 提交）
+        continue-on-error: true
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
