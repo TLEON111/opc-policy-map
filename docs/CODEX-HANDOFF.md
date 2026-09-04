@@ -7,7 +7,7 @@
 ---
 
 ## 1. 一句话
-「全国 OPC（AI 一人公司）政策地图与情报监控台」：31 省政策地图 + `/monitor` 情报台 + 每天自动巡检 44 个官方政策源。
+「全国 OPC（AI 一人公司）政策地图与情报监控台」：31 省政策地图 + `/monitor` 情报台 + 每天自动巡检 64 个官方政策源（54 个自动巡检、10 个待接入）。
 **线上**：前端 https://opcmap.netlify.app（Netlify）；**后端数据**：Supabase；**代码**：GitHub `TLEON111/opc-policy-map`（main）。
 站点名注意：**真实站点是 opcmap（不是 opcma）**。
 
@@ -26,7 +26,7 @@
 ## 4. 常用命令
 ```bash
 npm run dev            # 本地开发 localhost:3000
-npm test               # vitest（当前 35 项，11 文件）
+npm test               # vitest（当前 48 项，17 文件）
 npm run typecheck      # tsc --noEmit
 npm run lint           # eslint
 npm run build          # next build（output: standalone）
@@ -64,13 +64,13 @@ PORT=3000 node .next/standalone/server.js
 
 ## 8. 给接手 Agent 的建议第一步
 1. `git log --oneline -30` + 读 README 与本文件；
-2. `npm test` 确认基线（35 项）全绿；
+2. `npm test` 确认基线（48 项）全绿；
 3. 从第 6 节待办 1 或 2 开始；**小步提交**，每步保持 test/typecheck/lint/build 全绿；
 4. 需要平台操作（Supabase/Netlify/DeepSeek key）时**先询问用户**，不要自行在平台上做危险变更。
 
 ## 9. 本期已完成大事记（压缩版）
 - 政策 22→37、情报 5→29（核验制、原文可回溯、31 省检索全覆盖记录）；
-- 采集器（44 源、栏目页发现、已收录去重）、数据质量校验、35 项测试；
+- 采集器（64 源、栏目页发现、已收录去重）、数据质量校验、48 项测试；
 - Supabase 迁移（schema/bootstrap/seed/远程读取层/自动同步）、Netlify 上线 opcmap 并接 Supabase env；
 - 全自动闭环（GitHub Secrets 配置后 push/每日自动同步+自动部署）；
 - 9/4 新收录：安徽行动方案官方解读、雄安 OPC 社区观察。

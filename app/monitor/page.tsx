@@ -100,7 +100,7 @@ export default async function MonitorPage({
             <h1>OPC 情报监控与收纳</h1>
           </div>
           <p>
-            系统巡检 44 个官方来源（2026-09-03 实测可达性），自动收纳五类
+            系统巡检 {overview.sourceStats.total} 个官方来源，自动收纳五类
             OPC 信息；巡检命中的线索先进入待核验池，人工核对原文后才计入已核验库。
           </p>
         </section>

@@ -1,4 +1,4 @@
-/** 站点收录/功能更新日志（/monitor 页面底部展示）。 */
+/** OPC 政策/新闻/情报收录日志（/monitor 页面底部展示）。 */
 export interface ChangeEntry {
   date: string;
   summary: string;
@@ -6,12 +6,6 @@ export interface ChangeEntry {
 }
 
 export const CHANGELOG: ChangeEntry[] = [
-  {
-    date: "2026-09-03",
-    summary: "建立监控与收纳系统",
-    detail:
-      "新增官方来源注册表（44 个）、巡检采集器（npm run collect）、待核验池与 /monitor 情报监测面板；数据模型扩展为五类情报。",
-  },
   {
     date: "2026-09-03",
     summary: "已核验库首批扩库",
@@ -32,56 +26,14 @@ export const CHANGELOG: ChangeEntry[] = [
   },
   {
     date: "2026-09-03",
-    summary: "/monitor 升级为全量可筛选情报台",
-    detail:
-      "新增 31 省覆盖矩阵（直接政策/相关政策/情报动态/待跟踪）与按类别/地区/关键词的全量情报浏览筛选；/api/intel 支持 q 关键词搜索。",
-  },
-  {
-    date: "2026-09-03",
-    summary: "新增「申报与受理提醒」",
-    detail:
-      "自动提取申报/受理类线索并按状态排序展示（进行中/即将开始/已截止/窗口以原文为准）；仅采用原文明确给出的窗口，绝不推断截止日期。",
-  },
-  {
-    date: "2026-09-03",
     summary: "内蒙古词元经济 18 条入库（含建设 OPC 生态社区）",
     detail:
       "阶段 C 补充检索轮：核验内蒙古自治区政府门户官方发布，正文明确「建设 OPC 生态社区、开放人工智能+场景」，作为 direct 政策收录；OpenClaw/词元经济词族跟踪进 PENDING。",
-  },
-  {
-    date: "2026-09-03",
-    summary: "采集器升级：栏目页自动发现 + 已收录去重 + 定时方案",
-    detail:
-      "npm run collect 现可自动发现各站政策/公告栏目页（仅报告不登记）、对已核验或在池的命中自动去重；新增 cron 与 GitHub Actions 定时巡检文档/工作流模板。",
-  },
-  {
-    date: "2026-09-03",
-    summary: "数据质量校验接入（npm run check:data）",
-    detail:
-      "离线校验政策/情报/待核验池：id 与 URL 唯一、可回溯、必填字段、省份与日期格式、池状态；已接入 GitHub Actions 巡检工作流与 README。",
-  },
-  {
-    date: "2026-09-03",
-    summary: "Supabase 双端迁移推进（Netlify 前端 + Supabase 后端）",
-    detail:
-      "schema+种子脚本（37/27/8）、API 远程优先读取层（配置 URL+anon key 后走 PostgREST，失败回退本地）已入库；新增 push/每日 collect 自动 upsert 到 Supabase 的 CI 流水线（无密钥自动跳过）。",
   },
   {
     date: "2026-09-04",
     summary: "收录 9/4 官方动态两则",
     detail:
       "①安徽日报/中安在线：省科技厅+人社厅印发《安徽省推进AI OPC创新创业发展行动方案》官方解读（30个省级OPC社区/3000团队/1万人就业等量化目标）；②新京报转载雄安发布：雄安'一人公司与千年大计'观察（5月授牌4家OPC社区、超6万㎡空间）。",
-  },
-  {
-    date: "2026-09-03",
-    summary: "启用全自动同步闭环（GitHub Secrets 已配置）",
-    detail:
-      "SUPABASE_URL / SUPABASE_SERVICE_KEY 已设为仓库 Secrets；push 数据变更或每日巡检后自动 upsert 到 Supabase，前端 Netlify 自动部署——改仓库即三方自动一致。",
-  },
-  {
-    date: "2026-09-03",
-    summary: "Netlify 前端已接线 Supabase 并上线",
-    detail:
-      "线上站点 https://opcmap.netlify.app：已配置 NEXT_PUBLIC_SUPABASE_URL/ANON_KEY，/api/policies、/api/intel 从 Supabase 读取（与本地数据等价：37 政策/27 情报/8 池）；真库灌数 + 端到端验收通过。",
   },
 ];

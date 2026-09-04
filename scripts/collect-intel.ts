@@ -17,7 +17,12 @@ import { fileURLToPath } from "node:url";
 import { MONITOR_SOURCES } from "../data/monitor-sources.ts";
 import { VERIFIED_INTEL } from "../data/verified-intel.ts";
 import { VERIFIED_POLICIES } from "../data/verified-policies.ts";
-import { INTEL_KEYWORDS, type IntelPoolEntry } from "../types/intel.ts";
+import { getIntelKeywordHits } from "../lib/intel-keyword-match.ts";
+import {
+  normalizeIntelCandidateUrl,
+  shouldQueueIntelCandidateUrl,
+} from "../lib/intel-source-url.ts";
+import type { IntelPoolEntry } from "../types/intel.ts";
 
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
@@ -76,11 +81,6 @@ function extractAnchors(html: string): RawLink[] {
   return anchors;
 }
 
-function hitKeywords(text: string): string[] {
-  const upper = text.toUpperCase();
-  return INTEL_KEYWORDS.filter((keyword) => upper.includes(keyword.toUpperCase()));
-}
-
 async function fetchWithTimeout(url: string): Promise<Response> {
   return fetch(url, {
     headers: { "user-agent": UA, accept: "text/html,*/*" },
@@ -137,10 +137,24 @@ function discoverCategoryColumns(
 async function runCollect(): Promise<void> {
   const startedAt = new Date();
   const enabledSources = MONITOR_SOURCES.filter((source) => source.enabled);
-  const pool = await loadPool();
+  const sourceById = new Map(MONITOR_SOURCES.map((source) => [source.id, source]));
   const verifiedUrls = new Set<string>();
-  for (const policy of VERIFIED_POLICIES) verifiedUrls.add(policy.sourceUrl);
-  for (const intel of VERIFIED_INTEL) verifiedUrls.add(intel.sourceUrl);
+  for (const policy of VERIFIED_POLICIES) {
+    const url = normalizeIntelCandidateUrl(policy.sourceUrl);
+    if (url) verifiedUrls.add(url);
+  }
+  for (const intel of VERIFIED_INTEL) {
+    const url = normalizeIntelCandidateUrl(intel.sourceUrl);
+    if (url) verifiedUrls.add(url);
+  }
+  const pool = (await loadPool()).flatMap((entry) => {
+    const source = sourceById.get(entry.sourceId);
+    const url = normalizeIntelCandidateUrl(entry.url);
+    if (!url) return [];
+    if (verifiedUrls.has(url)) return [];
+    if (source && !shouldQueueIntelCandidateUrl(source.url, url)) return [];
+    return [{ ...entry, url }];
+  });
   const knownUrls = new Set(pool.map((entry) => entry.url));
   const report = {
     checkedAt: startedAt.toISOString(),
@@ -213,7 +227,7 @@ async function runCollect(): Promise<void> {
         }
         const hits: Array<{ link: RawLink; keywords: string[] }> = [];
         for (const link of anchors) {
-          const keywords = hitKeywords(link.text);
+          const keywords = getIntelKeywordHits(link.text);
           if (keywords.length > 0) hits.push({ link, keywords });
         }
         entry.hitCount = hits.length;
@@ -221,14 +235,17 @@ async function runCollect(): Promise<void> {
           for (const { link, keywords } of hits) {
             const url = absoluteUrl(source.url, link.url);
             if (!url || url.includes("javascript:")) continue;
-            if (knownUrls.has(url) || verifiedUrls.has(url)) {
+            const normalizedUrl = normalizeIntelCandidateUrl(url);
+            if (!normalizedUrl) continue;
+            if (!shouldQueueIntelCandidateUrl(source.url, normalizedUrl)) continue;
+            if (knownUrls.has(normalizedUrl) || verifiedUrls.has(normalizedUrl)) {
               entry.knownHitSkip += 1;
               report.totals.knownHitsSkipped += 1;
               continue;
             }
-            knownUrls.add(url);
+            knownUrls.add(normalizedUrl);
             pool.push({
-              url,
+              url: normalizedUrl,
               title: link.text.slice(0, 120),
               snippet: undefined,
               sourceId: source.id,
