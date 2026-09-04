@@ -1016,4 +1016,37 @@ export const VERIFIED_POLICIES: Policy[] = [
       "https://www.nanning.gov.cn/ggfw/bmfw/jyfw/nmgjy/t6609046.html",
     verifiedAt: "2026-09-04",
   },
+  {
+    id: "yz-opc-measures-2026",
+    title: "永州市《支持OpenClaw等开源社区项目与OPC社区融合发展十条措施》",
+    province: "湖南",
+    city: "永州市",
+    category: "资金与融资",
+    tags: ["OpenClaw", "免费算力", "创客空间", "股权投资"],
+    publishDate: "2026-04-17",
+    issuedBy: "永州市（发布会发布）",
+    policyLevel: "市级",
+    relevance: "direct",
+    status: "现行有效",
+    summary:
+      "永州市发布支持 OpenClaw 等开源社区项目与 OPC（一人公司）社区融合发展的十条措施：为经认定 OPC 社区新入驻企业、大学生双创团队提供免费算力、免费开放智能体/AI工具/数据平台，提供创客空间与产业投资支持，向创业者发出邀约。",
+    benefits: [
+      "经认定 OPC 社区新入驻企业、大学生双创团队最长 2 个月免费边缘/云端/本地算力",
+      "免费开放智能体、AI 工具、公域营销数据、数据要素服务四大平台，可一键部署 OpenClaw",
+      "永州经开区提供线下创客空间，给予不低于 12 个月免费使用",
+      "依托产业投资基金，对成长性好的种子期 OPC 项目给予单个最高 500 万元股权投资",
+      "优秀人才按规定给予综合资助、安家补贴、专项经费等",
+    ],
+    eligibility: [
+      "依托 AI 工具的 OPC（一人公司）创业者、大学生双创团队及 OPC 社区项目",
+      "经认定的 OPC 社区新入驻主体",
+    ],
+    applicationNotes:
+      "依据湖南省人民政府门户转载湖南日报口径（2026-04-19 发布报道）；正式文件细节与申报以永州市政府及相关部门发布为准。",
+    sourceName: "湖南省人民政府门户（转载湖南日报）",
+    sourceType: "官方发布",
+    sourceUrl:
+      "http://hunan.gov.cn/hnszf/hnyw/szdt/202604/t20260419_33958335.html",
+    verifiedAt: "2026-09-04",
+  },
 ];
