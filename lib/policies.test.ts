@@ -45,7 +45,11 @@ describe("policy queries", () => {
 
     expect(policies.length).toBeGreaterThanOrEqual(20);
     expect(policies.every((policy) => isTraceableSourceUrl(policy.sourceUrl))).toBe(true);
-    expect(policies.every((policy) => policy.verifiedAt === "2026-09-03")).toBe(true);
+    expect(
+      policies.every((policy) =>
+        ["2026-09-03", "2026-09-04"].includes(policy.verifiedAt),
+      ),
+    ).toBe(true);
     expect(policies.some((policy) => policy.title.includes("DEMO"))).toBe(false);
     expect(
       policies.every(

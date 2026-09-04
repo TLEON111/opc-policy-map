@@ -706,4 +706,31 @@ export const VERIFIED_INTEL: IntelItem[] = [
     confidence: "high",
     origin: "web-research",
   },
+  {
+    id: "wlmq-opc-window-2026",
+    kind: "news",
+    title: "“零成本”不是口号！乌鲁木齐高新区（新市区）OPC专窗助“一人公司”拎包入驻",
+    province: "新疆",
+    city: "乌鲁木齐市",
+    scopeLabel: "乌鲁木齐高新区（新市区）",
+    publishDate: "2026-06-11",
+    issuedBy: "乌鲁木齐高新区（新市区）政务服务中心",
+    sourceName: "乌鲁木齐国家高新区（新市区）政府信息公开（来源：天山火炬）",
+    sourceType: "官方发布",
+    sourceUrl:
+      "http://www.uhdz.gov.cn/zfxxgk/fdzdgknr/6rmrzenm3y/zqsk/content_18731",
+    summary:
+      "乌鲁木齐高新区（新市区）在全疆率先布局OPC（一人公司）创业专属服务：设立OPC服务专窗、配套扶持政策并集成一站式开办服务，报道市民“零成本、当天拿照”办理一人公司及依托智能体OpenClaw开展7×24小时课业辅导的落地案例。",
+    keyFacts: [
+      "2026年3月发布《支持OPC与OpenClaw发展的十条措施（征求意见稿）》，确立“零成本启动、全要素赋能、全周期服务”理念",
+      "OPC服务专窗整合企业开办咨询、材料指导、帮办代办，虚拟地址注册等全链条事项一站式办理",
+      "2025年该区新增经营主体2.1万户、总数达10.26万户，增量和总量均居乌鲁木齐市首位",
+    ],
+    tags: ["乌鲁木齐", "OPC专窗", "零成本开办", "OpenClaw"],
+    discoveredAt: "2026-09-04",
+    verified: true,
+    verifiedAt: "2026-09-04",
+    confidence: "high",
+    origin: "web-research",
+  },
 ];

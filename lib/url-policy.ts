@@ -19,6 +19,7 @@ export const HTTP_ONLY_OFFICIAL_HOSTS: readonly string[] = [
   "www.qinghai.gov.cn",
   "www.gs.chinanews.com.cn",
   "wglj.changchun.gov.cn",
+  "www.uhdz.gov.cn",
 ];
 
 export function isTraceableSourceUrl(url: string): boolean {
