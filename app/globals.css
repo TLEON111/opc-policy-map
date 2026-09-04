@@ -3244,6 +3244,73 @@ footer {
   gap: 8px;
 }
 
+/* ── 模块级折叠（整段列表一键收纳/展开） ─────────────── */
+
+.mon-module {
+  list-style: none;
+}
+
+.mon-module summary {
+  cursor: pointer;
+  list-style: none;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+}
+
+.mon-module summary::-webkit-details-marker,
+.mon-module summary::marker {
+  display: none;
+}
+
+.mon-module summary:hover {
+  background: rgba(70, 120, 180, 0.05);
+}
+
+.mon-module summary .mon-section-head {
+  margin-bottom: 0;
+}
+
+.mon-module[open] summary .mon-section-head {
+  margin-bottom: 16px;
+}
+
+/* 折叠指示条：指向右侧，展开后旋转指向下方 */
+.mon-module summary .mon-fold-hint {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.mon-module summary .mon-fold-hint svg {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.15s ease;
+}
+
+/* 展开时箭头朝上，收纳时朝下 */
+.mon-module[open] summary .mon-fold-hint svg {
+  transform: rotate(180deg);
+}
+
+/* 文案随状态切换：展开时显示「折叠本段」，收纳时显示「展开本段」 */
+.mon-module[open] summary .mon-fold-hint .fold-off,
+.mon-module:not([open]) summary .mon-fold-hint .fold-on {
+  display: none;
+}
+
+.mon-module-body {
+  padding-top: 0;
+}
+
 /* ── 手机端（≤640px）覆盖：统计栏竖排、导航显示可换行、最新情报表格自适应 ── */
 @media (max-width: 640px) {
   .site-header {
