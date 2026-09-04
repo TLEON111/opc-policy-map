@@ -86,11 +86,11 @@ export default async function MonitorPage({
         </Link>
         <nav aria-label="主导航">
           <Link href="/">政策地图</Link>
-          <a href="#intel-coverage">覆盖矩阵</a>
-          <a href="#intel-apply">申报提醒</a>
-          <a href="#intel-feed" aria-current="page">
-            情报浏览
+          <a href="#intel-coverage" aria-current="page">
+            覆盖矩阵
           </a>
+          <a href="#intel-feed">情报浏览</a>
+          <a href="#intel-apply">申报提醒</a>
           <a href="#intel-pool">待核验池</a>
           <a href="#intel-sources">监控来源</a>
         </nav>
@@ -141,20 +141,6 @@ export default async function MonitorPage({
           </div>
         </section>
 
-        <section id="intel-apply" className="mon-section" aria-labelledby="apply-title">
-          <SectionHeading
-            icon={<CalendarClock aria-hidden="true" className="size-4" />}
-            eyebrow="APPLICATION TRACKER"
-            title="申报与受理提醒"
-            count={applicationLeads.length}
-          >
-            <span className="mon-updated">
-              仅标注原文明确给出的窗口；否则一律显示「窗口以原文为准」
-            </span>
-          </SectionHeading>
-          <ApplicationLeads leads={applicationLeads} />
-        </section>
-
         <section id="intel-coverage" className="mon-section" aria-labelledby="coverage-title">
           <SectionHeading
             icon={<MapIcon aria-hidden="true" className="size-4" />}
@@ -178,6 +164,20 @@ export default async function MonitorPage({
             provinceOptions={coveredProvinceOptions}
             totalCount={overview.verifiedStats.total}
           />
+        </section>
+
+        <section id="intel-apply" className="mon-section" aria-labelledby="apply-title">
+          <SectionHeading
+            icon={<CalendarClock aria-hidden="true" className="size-4" />}
+            eyebrow="APPLICATION TRACKER"
+            title="申报与受理提醒"
+            count={applicationLeads.length}
+          >
+            <span className="mon-updated">
+              仅标注原文明确给出的窗口；否则一律显示「窗口以原文为准」
+            </span>
+          </SectionHeading>
+          <ApplicationLeads leads={applicationLeads} />
         </section>
 
         <section id="intel-pool" className="mon-section" aria-labelledby="pool-title">
