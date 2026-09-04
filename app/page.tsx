@@ -1,4 +1,4 @@
-import { BadgeCheck, Clock3, FileText, MapPinned } from "lucide-react";
+import { BadgeCheck, FileText, MapPinned } from "lucide-react";
 
 import { BrandLogo } from "@/components/BrandLogo";
 import { GlobalSearch } from "@/components/GlobalSearch";
@@ -7,7 +7,7 @@ import { PolicyExplorer } from "@/components/PolicyExplorer";
 import { getMonitorOverview } from "@/lib/intel";
 import { getPolicies, getProvinceSummaries } from "@/lib/policies";
 
-function SiteHeader({ updatedAt }: { updatedAt: string }) {
+function SiteHeader() {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="OPC Policy Map 首页">
@@ -17,14 +17,8 @@ function SiteHeader({ updatedAt }: { updatedAt: string }) {
         <a href="#policy-map" aria-current="page">
           政策地图
         </a>
-        <a href="#policy-panel">政策库</a>
         <a href="/monitor">机会情报</a>
-        <a href="#about">关于我们</a>
       </nav>
-      <p className="header-update">
-        <Clock3 aria-hidden="true" />
-        数据更新：{updatedAt}
-      </p>
     </header>
   );
 }
@@ -104,16 +98,11 @@ export default function Home() {
   const verifiedProvinceCount = summaries.filter(
     (province) => province.policyCount > 0,
   ).length;
-  const updatedAt = summaries.reduce(
-    (latest, province) =>
-      province.lastVerifiedAt > latest ? province.lastVerifiedAt : latest,
-    "",
-  );
 
   return (
     <div id="top" className="app-shell">
       <a className="skip-link" href="#main-content">跳到主要内容</a>
-      <SiteHeader updatedAt={updatedAt} />
+      <SiteHeader />
       <main id="main-content">
         <section className="intro">
           <div>
