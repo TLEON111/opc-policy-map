@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 
+import { GlobalSearch } from "@/components/GlobalSearch";
 import { IntelKindChip } from "@/components/intel/IntelKindChip";
 import { PolicyExplorer } from "@/components/PolicyExplorer";
 import { getMonitorOverview } from "@/lib/intel";
@@ -136,10 +137,13 @@ export default function Home() {
             <p className="eyebrow">CHINA · POLICY INTELLIGENCE</p>
             <h1>从地区出发，快速读懂创业政策</h1>
           </div>
-          <p>
-            覆盖中国大陆 31 个省级地区，聚合直接面向 OPC 的专项政策与
-            明确纳入 AI 一人公司的相关支持，并保留原文、文号与核验状态。
-          </p>
+          <div className="intro-side">
+            <p>
+              覆盖中国大陆 31 个省级地区，聚合直接面向 OPC 的专项政策与
+              明确纳入 AI 一人公司的相关支持，并保留原文、文号与核验状态。
+            </p>
+            <GlobalSearch />
+          </div>
         </section>
 
         <StatsBar

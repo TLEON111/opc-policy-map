@@ -54,9 +54,9 @@ function SectionHeading({
 export default async function MonitorPage({
   searchParams,
 }: {
-  searchParams: Promise<{ province?: string }>;
+  searchParams: Promise<{ province?: string; q?: string }>;
 }) {
-  const { province: provinceParam } = await searchParams;
+  const { province: provinceParam, q } = await searchParams;
   const { overview, poolEntries } = await getMonitorRuntimeData(8);
   const changelog = getChangelog();
   const matrixRows = getProvinceCoverageMatrix();
@@ -167,6 +167,7 @@ export default async function MonitorPage({
           />
           <IntelFeedExplorer
             initialProvince={provinceParam}
+            initialQ={q}
             kindTotals={overview.verifiedStats.byKind}
             provinceOptions={coveredProvinceOptions}
             totalCount={overview.verifiedStats.total}

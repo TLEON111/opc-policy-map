@@ -18,6 +18,8 @@ const KIND_ORDER: IntelKind[] = [
 interface FeedExplorerProps {
   /** 服务端注入的初始省筛选（用于矩阵/链接联动）。 */
   initialProvince?: string | null;
+  /** 服务端注入的初始关键词（用于首页全局搜索跳转）。 */
+  initialQ?: string | null;
   /** 各省份已核验情报计数（用于类别 Tab）。 */
   kindTotals: Record<IntelKind, number>;
   /** 可选的省份下拉项。 */
@@ -29,6 +31,7 @@ interface FeedExplorerProps {
 /** 已核验情报的全量可筛选浏览面板（客户端，走 /api/intel）。 */
 export function IntelFeedExplorer({
   initialProvince,
+  initialQ,
   kindTotals,
   provinceOptions,
   totalCount,
@@ -39,7 +42,7 @@ export function IntelFeedExplorer({
       ? initialProvince
       : "all",
   );
-  const [q, setQ] = useState("");
+  const [q, setQ] = useState(initialQ?.trim() ?? "");
   const [items, setItems] = useState<IntelItem[]>([]);
   const [status, setStatus] = useState<RequestStatus>("loading");
 
