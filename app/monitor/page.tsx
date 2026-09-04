@@ -202,27 +202,37 @@ export default async function MonitorPage({
             <ul className="mon-pool">
               {poolEntries.map((entry) => (
                 <li key={entry.url}>
-                  <div>
-                    <a
-                      href={entry.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mon-pool-title"
-                    >
-                      {entry.title}
-                      <ExternalLink
-                        aria-hidden="true"
-                        className="size-3 opacity-60"
-                        strokeWidth={1.8}
-                      />
-                    </a>
-                    <p className="mon-meta">
-                      <span>{sourceNameById.get(entry.sourceId) ?? entry.sourceId}</span>
-                      {entry.province && <span>{entry.province}</span>}
-                      <span>{entry.foundAt.replace("T", " ").slice(0, 16)}</span>
-                    </p>
-                  </div>
-                  <span className="mon-keyword">命中词：{entry.keyword}</span>
+                  <details className="mon-details">
+                    <summary>
+                      <span className="mon-pool-title">
+                        <a
+                          href={entry.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {entry.title}
+                          <ExternalLink
+                            aria-hidden="true"
+                            className="size-3 opacity-60"
+                            strokeWidth={1.8}
+                          />
+                        </a>
+                      </span>
+                      <span className="mon-keyword">命中词：{entry.keyword}</span>
+                    </summary>
+                    <div className="mon-details-body">
+                      <p className="mon-meta">
+                        <span>{sourceNameById.get(entry.sourceId) ?? entry.sourceId}</span>
+                        {entry.province && <span>{entry.province}</span>}
+                        <span>发现 {entry.foundAt.replace("T", " ").slice(0, 16)}</span>
+                        <span>来源ID {entry.sourceId}</span>
+                      </p>
+                      <p className="mon-note">
+                        这是自动巡检官方来源时命中的线索，尚未人工核验；点击上方标题可查看官方原文，
+                        人工核对后才会计入已核验库。
+                      </p>
+                    </div>
+                  </details>
                 </li>
               ))}
             </ul>
@@ -242,19 +252,26 @@ export default async function MonitorPage({
                 : "尚未运行巡检；下方为可达性探测快照"}
             </span>
           </SectionHeading>
-          <div className="mon-table-wrap">
-            <table className="mon-table">
-              <thead>
-                <tr>
-                  <th>来源</th>
-                  <th>层级 / 地区</th>
-                  <th>状态</th>
-                </tr>
-              </thead>
-              <tbody>
-                {overview.sourceHealth.map((source) => (
-                  <tr key={source.id}>
-                    <td>
+          <ul className="mon-source-list">
+            {overview.sourceHealth.map((source) => {
+              const stateLabel =
+                source.state === "reachable"
+                  ? "巡检可达"
+                  : source.state === "failed"
+                    ? "巡检失败"
+                    : source.state === "quiet"
+                      ? "暂无待核验命中"
+                      : "待接入";
+              const stateClass =
+                source.state === "reachable"
+                  ? "is-ok"
+                  : source.state === "failed"
+                    ? "is-fail"
+                    : "is-wait";
+              return (
+                <li key={source.id}>
+                  <details className="mon-details">
+                    <summary>
                       <a
                         href={source.url}
                         target="_blank"
@@ -268,30 +285,26 @@ export default async function MonitorPage({
                           strokeWidth={1.8}
                         />
                       </a>
-                      {source.note && <small>{source.note}</small>}
-                    </td>
-                    <td>
                       <span className="mon-level">{source.level === "national" ? "国家级" : source.owner}</span>
-                    </td>
-                    <td>
-                      {source.state === "reachable" ? (
-                        <span className="mon-state is-ok">
-                          巡检可达
-                          {source.hitCount ? ` · 命中 ${source.hitCount}` : ""}
-                        </span>
-                      ) : source.state === "failed" ? (
-                        <span className="mon-state is-fail">巡检失败</span>
-                      ) : source.state === "quiet" ? (
-                        <span className="mon-state is-wait">暂无待核验命中</span>
-                      ) : (
-                        <span className="mon-state is-wait">待接入</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                      <span className={`mon-state ${stateClass}`}>{stateLabel}{source.state === "reachable" && source.hitCount ? ` · ${source.hitCount}` : ""}</span>
+                    </summary>
+                    <div className="mon-details-body">
+                      <p className="mon-meta">
+                        <span>{source.url}</span>
+                        {source.lastCheckedAt && (
+                          <span>检查 {source.lastCheckedAt.replace("T", " ").slice(0, 16)}</span>
+                        )}
+                      </p>
+                      {source.note && <p className="mon-note">{source.note}</p>}
+                      {source.state === "reachable" && source.hitCount ? (
+                        <p className="mon-note">近一次巡检命中 {source.hitCount} 条线索（自动去重后仍待人工核验）。</p>
+                      ) : null}
+                    </div>
+                  </details>
+                </li>
+              );
+            })}
+          </ul>
         </section>
 
         <section className="mon-section" aria-labelledby="changelog-title">

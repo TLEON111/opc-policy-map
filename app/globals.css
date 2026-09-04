@@ -3174,3 +3174,72 @@ footer {
     flex: 0 0 auto;
   }
 }
+
+/* ── 折叠卡片（details：默认收纳，点击展开） ─────────── */
+
+.mon-details {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.mon-details summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+
+.mon-details summary::-webkit-details-marker,
+.mon-details summary::marker {
+  display: none;
+}
+
+.mon-details summary::after {
+  content: "▸";
+  margin-left: auto;
+  color: var(--accent);
+  transition: transform 0.15s ease;
+}
+
+.mon-details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.mon-details-body {
+  padding: 10px 14px 14px;
+  border-top: 1px solid var(--border);
+  background: #fbfcfe;
+}
+
+.mon-note {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #5a6b7c;
+}
+
+.mon-pool li,
+.mon-source-list li {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.mon-source-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mon-pool {
+  gap: 8px;
+}
