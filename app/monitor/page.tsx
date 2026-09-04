@@ -9,6 +9,7 @@ import {
   Layers,
 } from "lucide-react";
 
+import { BrandLogo } from "@/components/BrandLogo";
 import { ApplicationLeads } from "@/components/applications/ApplicationLeads";
 import { IntelFeedExplorer } from "@/components/intel/IntelFeedExplorer";
 import { ProvinceCoverageMatrix } from "@/components/intel/ProvinceCoverageMatrix";
@@ -71,15 +72,10 @@ export default async function MonitorPage({
 
   return (
     <div className="app-shell mon-page">
+      <a className="skip-link" href="#monitor-main">跳到主要内容</a>
       <header className="site-header">
         <Link className="brand" href="/" aria-label="返回 OPC 政策地图首页">
-          <span className="brand-mark" aria-hidden="true">
-            OP
-          </span>
-          <span>
-            <strong>OPC INTEL MONITOR</strong>
-            <small>情报监控与收纳面板</small>
-          </span>
+          <BrandLogo />
         </Link>
         <nav aria-label="主导航">
           <Link href="/">政策地图</Link>
@@ -93,7 +89,7 @@ export default async function MonitorPage({
         </nav>
       </header>
 
-      <main>
+      <main id="monitor-main">
         <section className="intro">
           <div>
             <p className="eyebrow">MONITOR · VERIFY · COLLECT</p>

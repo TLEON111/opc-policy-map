@@ -33,29 +33,28 @@ export function PolicyDrawer({ province, policies, status }: PolicyDrawerProps) 
   );
 
   return (
-    <aside className="policy-panel" aria-labelledby="policy-panel-title">
+    <aside id="policy-panel" className="policy-panel" aria-labelledby="policy-panel-title">
       <div className="policy-panel-header">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <p className="eyebrow">SELECTED REGION</p>
-            <h2 id="policy-panel-title">{displayProvinceName(province.name)}</h2>
-            <p className="region-english">{province.englishName}</p>
-          </div>
-          <div className="count-mark" aria-label={`${province.policyCount} 条本地政策`}>
-            <strong>{province.policyCount}</strong>
-            <span>本地政策</span>
-          </div>
+        <p className="eyebrow">当前选择</p>
+        <div className="region-title-line">
+          <h2 id="policy-panel-title">{displayProvinceName(province.name)}</h2>
+          <p className="region-english">{province.englishName}</p>
         </div>
 
-        <div className="coverage-line">
-          <span className={`coverage-dot is-${province.coverageStatus}`} aria-hidden="true" />
-          {province.coverageStatus === "direct"
-            ? `已核验 ${province.directPolicyCount} 条直接 OPC 政策`
-            : province.coverageStatus === "related"
-              ? `已核验 ${province.relatedPolicyCount} 条相关支撑政策`
-              : "暂未核验到本地直接政策"}
-          <small>截至 {province.lastVerifiedAt}</small>
-        </div>
+        <dl className="region-stats" aria-label={`${province.name}政策概览`}>
+          <div>
+            <dd>{province.policyCount}</dd>
+            <dt>本地政策</dt>
+          </div>
+          <div>
+            <dd>{province.directPolicyCount}</dd>
+            <dt>直接 OPC</dt>
+          </div>
+          <div>
+            <dd>{province.relatedPolicyCount}</dd>
+            <dt>相关支撑</dt>
+          </div>
+        </dl>
 
         <div className="policy-filters" role="group" aria-label="按政策相关性筛选">
           {[
@@ -73,6 +72,16 @@ export function PolicyDrawer({ province, policies, status }: PolicyDrawerProps) 
               {label} {count}
             </button>
           ))}
+        </div>
+
+        <div className="coverage-line">
+          <span className={`coverage-dot is-${province.coverageStatus}`} aria-hidden="true" />
+          {province.coverageStatus === "direct"
+            ? `已核验 ${province.directPolicyCount} 条直接 OPC 政策`
+            : province.coverageStatus === "related"
+              ? `已核验 ${province.relatedPolicyCount} 条相关支撑政策`
+              : "暂未核验到本地直接政策"}
+          <small>截至 {province.lastVerifiedAt}</small>
         </div>
       </div>
 

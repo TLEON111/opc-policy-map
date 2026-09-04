@@ -1,11 +1,11 @@
 import { INTEL_KIND_LABELS, type IntelKind } from "@/types/intel";
 
 const KIND_CHIP: Record<IntelKind, { bg: string; fg: string }> = {
-  policy: { bg: "#173c64", fg: "#ffffff" },
-  application: { bg: "#0f766e", fg: "#ffffff" },
-  interpretation: { bg: "#4338ca", fg: "#ffffff" },
-  news: { bg: "#b45309", fg: "#ffffff" },
-  resource: { bg: "#7c3aed", fg: "#ffffff" },
+  policy: { bg: "#e9f3ff", fg: "#086beb" },
+  application: { bg: "#eaf8f1", fg: "#159a62" },
+  interpretation: { bg: "#fff2e7", fg: "#d97820" },
+  news: { bg: "#f2edff", fg: "#7553c8" },
+  resource: { bg: "#e8f8f5", fg: "#168b7a" },
 };
 
 export function IntelKindChip({ kind }: { kind: IntelKind }) {

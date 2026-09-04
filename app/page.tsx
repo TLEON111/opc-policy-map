@@ -1,116 +1,93 @@
-import { ExternalLink } from "lucide-react";
+import { BadgeCheck, Clock3, FileText, MapPinned } from "lucide-react";
 
+import { BrandLogo } from "@/components/BrandLogo";
 import { GlobalSearch } from "@/components/GlobalSearch";
 import { IntelKindChip } from "@/components/intel/IntelKindChip";
 import { PolicyExplorer } from "@/components/PolicyExplorer";
 import { getMonitorOverview } from "@/lib/intel";
 import { getPolicies, getProvinceSummaries } from "@/lib/policies";
 
-function SiteHeader() {
+function SiteHeader({ updatedAt }: { updatedAt: string }) {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="OPC Policy Map 首页">
-        <span className="brand-mark" aria-hidden="true">
-          OP
-        </span>
-        <span>
-          <strong>OPC POLICY MAP</strong>
-          <small>全国 OPC / AI / 创业政策地图</small>
-        </span>
+        <BrandLogo />
       </a>
       <nav aria-label="主导航">
         <a href="#policy-map" aria-current="page">
           政策地图
         </a>
-        <a href="#policy-panel">政策列表</a>
-        <a href="/monitor">情报监测</a>
-        <a href="#about">关于</a>
+        <a href="#policy-panel">政策库</a>
+        <a href="/monitor">机会情报</a>
+        <a href="#about">关于我们</a>
       </nav>
+      <p className="header-update">
+        <Clock3 aria-hidden="true" />
+        数据更新：{updatedAt}
+      </p>
     </header>
   );
 }
 
 function StatsBar({
+  provinceCount,
   policyCount,
   verifiedProvinceCount,
 }: {
+  provinceCount: number;
   policyCount: number;
   verifiedProvinceCount: number;
 }) {
   return (
     <section className="stats-bar" aria-label="数据概览">
-      <div>
+      <div className="stat-item">
+        <MapPinned aria-hidden="true" />
+        <strong>{provinceCount}</strong>
         <span>省级地区覆盖</span>
-        <strong>31</strong>
       </div>
-      <div>
-        <span>已核验地区</span>
-        <strong>{verifiedProvinceCount}</strong>
-      </div>
-      <div>
-        <span>政策 / 官方发布</span>
+      <div className="stat-item">
+        <FileText aria-hidden="true" />
         <strong>{policyCount}</strong>
+        <span>政策与官方发布</span>
       </div>
-      <div>
-        <span>最近更新</span>
-        <strong className="date-value">2026-09-03</strong>
+      <div className="stat-item">
+        <BadgeCheck aria-hidden="true" />
+        <strong>{verifiedProvinceCount}</strong>
+        <span>已核验地区</span>
       </div>
-      <p>
-        <span className="status-dot" aria-hidden="true" />
-        VERIFIED SOURCES · 官方来源逐条核验
-      </p>
     </section>
   );
 }
 
-function IntelTeaser() {
-  const overview = getMonitorOverview(4);
+function LatestIntel() {
+  const overview = getMonitorOverview(5);
 
   return (
-    <section id="monitor" className="intel-teaser" aria-labelledby="teaser-title">
-      <div className="intel-teaser-head">
-        <div>
-          <p className="eyebrow">OPC INTEL MONITOR</p>
-          <h2 id="teaser-title">情报监控与收纳</h2>
-          <p>
-            巡检官方来源 → 命中线索进待核验池 → 人工核对后计入已核验库，
-            持续收纳申报动态、解读问答、落地案例与资源活动。
-          </p>
-        </div>
-        <a className="teaser-cta" href="/monitor">
-          打开完整监测面板
-          <ExternalLink aria-hidden="true" className="size-4" strokeWidth={1.6} />
+    <section id="monitor" className="latest-intel" aria-labelledby="latest-intel-title">
+      <div className="latest-intel-head">
+        <h2 id="latest-intel-title">最新 OPC 情报</h2>
+        <a href="/monitor">
+          查看全部 <span aria-hidden="true">→</span>
         </a>
       </div>
-
-      <div className="teaser-body">
-        <dl className="teaser-stats" aria-label="监控规模">
-          <div>
-            <dt>监控来源</dt>
-            <dd>{overview.sourceStats.total}</dd>
-          </div>
-          <div>
-            <dt>自动巡检</dt>
-            <dd>{overview.sourceStats.enabled}</dd>
-          </div>
-          <div>
-            <dt>待核验线索</dt>
-            <dd>{overview.pool.total}</dd>
-          </div>
-          <div>
-            <dt>覆盖省份</dt>
-            <dd>{overview.verifiedStats.provincesCovered.length}</dd>
-          </div>
-        </dl>
-
-        <ul className="teaser-list" aria-label="最近已核验收录">
+      <div className="latest-intel-table" role="table" aria-label="最近已核验 OPC 情报">
+        <div className="latest-intel-columns" role="row">
+          <span role="columnheader">地区</span>
+          <span role="columnheader">类型</span>
+          <span role="columnheader">标题</span>
+          <span role="columnheader">摘要</span>
+          <span role="columnheader">日期</span>
+        </div>
+        <ul aria-label="最近已核验收录">
           {overview.recent.map((item) => (
-            <li key={item.id}>
-              <IntelKindChip kind={item.kind} />
-              <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
+            <li key={item.id} role="row">
+              <span className="latest-intel-region" role="cell">{item.province}</span>
+              <span role="cell"><IntelKindChip kind={item.kind} /></span>
+              <a role="cell" href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
                 {item.title}
               </a>
-              <time dateTime={item.publishDate}>
+              <span className="latest-intel-summary" role="cell">{item.summary}</span>
+              <time role="cell" dateTime={item.publishDate}>
                 {item.publishDate ?? item.discoveredAt}
               </time>
             </li>
@@ -127,35 +104,38 @@ export default function Home() {
   const verifiedProvinceCount = summaries.filter(
     (province) => province.policyCount > 0,
   ).length;
+  const updatedAt = summaries.reduce(
+    (latest, province) =>
+      province.lastVerifiedAt > latest ? province.lastVerifiedAt : latest,
+    "",
+  );
 
   return (
     <div id="top" className="app-shell">
-      <SiteHeader />
-      <main id="policy-map">
+      <a className="skip-link" href="#main-content">跳到主要内容</a>
+      <SiteHeader updatedAt={updatedAt} />
+      <main id="main-content">
         <section className="intro">
           <div>
-            <p className="eyebrow">CHINA · POLICY INTELLIGENCE</p>
-            <h1>从地区出发，快速读懂创业政策</h1>
+            <h1>全国 OPC 政策地图</h1>
+            <p>从地区出发，找到真正与你有关的政策与机会。</p>
           </div>
           <div className="intro-side">
-            <p>
-              覆盖中国大陆 31 个省级地区，聚合直接面向 OPC 的专项政策与
-              明确纳入 AI 一人公司的相关支持，并保留原文、文号与核验状态。
-            </p>
             <GlobalSearch />
           </div>
         </section>
 
         <StatsBar
+          provinceCount={summaries.length}
           policyCount={policyCount}
           verifiedProvinceCount={verifiedProvinceCount}
         />
 
-        <div id="policy-panel">
+        <div id="policy-map">
           <PolicyExplorer summaries={summaries} />
         </div>
 
-        <IntelTeaser />
+        <LatestIntel />
       </main>
       <footer id="about">
         <p>政策信息整理于 2026-09-03，不构成申报或法律意见。</p>

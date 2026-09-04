@@ -5,9 +5,9 @@ import type { ProvinceSummary } from "@/types/policy";
 
 describe("ChinaMap helpers", () => {
   it("maps verified coverage status to three visual levels", () => {
-    expect(getMapFill("none")).toBe("#e8edf3");
-    expect(getMapFill("related")).toBe("#a9bdd2");
-    expect(getMapFill("direct")).toBe("#365c8d");
+    expect(getMapFill("none")).toBe("#e8eef6");
+    expect(getMapFill("related")).toBe("#9fc4f3");
+    expect(getMapFill("direct")).toBe("#247be5");
   });
 
   it("formats a useful province tooltip from policy statistics", () => {

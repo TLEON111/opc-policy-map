@@ -9,9 +9,9 @@ const MAP_NAME = "china-provinces";
 let mapRegistration: Promise<void> | null = null;
 
 export function getMapFill(coverageStatus: CoverageStatus) {
-  if (coverageStatus === "direct") return "#365c8d";
-  if (coverageStatus === "related") return "#a9bdd2";
-  return "#e8edf3";
+  if (coverageStatus === "direct") return "#247be5";
+  if (coverageStatus === "related") return "#9fc4f3";
+  return "#e8eef6";
 }
 
 function escapeHtml(value: string) {
@@ -101,20 +101,25 @@ function buildMapOption(
           fontSize: 10,
         },
         emphasis: {
-          label: { show: true, color: "#0f172a", fontWeight: 600 },
+          label: { show: true, color: "#0b1f3a", fontWeight: 600 },
           itemStyle: {
-            areaColor: "#9db3ce",
+            areaColor: "#5e9eeb",
             borderColor: "#ffffff",
             borderWidth: 1.2,
           },
         },
         select: {
           label: { show: true, color: "#ffffff", fontWeight: 600 },
-          itemStyle: { areaColor: "#244f7d", borderColor: "#ffffff" },
+          itemStyle: {
+            areaColor: "#086beb",
+            borderColor: "rgba(255,255,255,.9)",
+            shadowBlur: 8,
+            shadowColor: "rgba(8,107,235,.16)",
+          },
         },
         itemStyle: {
           areaColor: getMapFill("none"),
-          borderColor: "#ffffff",
+          borderColor: "rgba(255,255,255,.85)",
           borderWidth: 1,
         },
         data: summaries.map((summary) => ({
@@ -240,9 +245,9 @@ export function ChinaMap({
       <div className="map-footer">
         <div className="map-legend" aria-label="政策核验状态图例">
           {[
-            ["#e8edf3", "暂未核验"],
-            ["#a9bdd2", "相关支撑"],
-            ["#365c8d", "直接 OPC"],
+            ["#e8eef6", "暂未核验"],
+            ["#9fc4f3", "相关支撑"],
+            ["#247be5", "直接 OPC"],
           ].map(([color, label]) => (
             <span key={label}>
               <i style={{ backgroundColor: color }} />
