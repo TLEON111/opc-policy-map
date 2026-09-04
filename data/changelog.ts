@@ -7,6 +7,12 @@ export interface ChangeEntry {
 
 export const CHANGELOG: ChangeEntry[] = [
   {
+    date: "2026-09-04",
+    summary: "监控源接入修复：待接入 10→6",
+    detail:
+      "逐源实测（curl+Node fetch）：河北/黑龙江/西藏/宁夏市监站不可达，改接省政府门户入口并启用；深圳两栏目 curl 可达但 Node fetch 失败保持待接入；山东/广西不可达、湖北/甘肃 412 反爬如实标注。注册表 64 源：58 启用 / 6 待接入，已用采集器实测验证。",
+  },
+  {
     date: "2026-09-03",
     summary: "已核验库首批扩库",
     detail:
