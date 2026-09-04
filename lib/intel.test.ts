@@ -134,6 +134,7 @@ describe("pool and overview", () => {
     expect(overview.verifiedStats.byKind.policy).toBe(VERIFIED_POLICIES.length);
     expect(overview.verifiedStats.byKind.news).toBeGreaterThanOrEqual(2);
     expect(overview.pool.total).toBe(getIntelPoolEntries().length);
+    expect(overview.sourceHealthMode).toBe("collect-report");
     expect(overview.recent.length).toBeGreaterThan(0);
     expect(overview.sourceStats.pending).toBeGreaterThanOrEqual(0);
     expect(overview.sourceHealth).toHaveLength(MONITOR_SOURCES.length);
@@ -184,6 +185,7 @@ describe("pool and overview", () => {
       total: 2,
       updatedAt: "2026-09-04T02:00:00.000Z",
     });
+    expect(overview.sourceHealthMode).toBe("pool-snapshot");
     expect(overview.sourceReportCheckedAt).toBe("2026-09-04T02:00:00.000Z");
     expect(overview.sourceHealth.find((row) => row.id === "cq-scjgj")).toMatchObject({
       state: "reachable",

@@ -253,6 +253,7 @@ export interface MonitorOverview {
     reachable: number;
     pending: number;
   };
+  sourceHealthMode: "collect-report" | "pool-snapshot";
   sourceHealth: SourceHealthRow[];
   sourceReportCheckedAt: string | null;
   verifiedStats: {
@@ -358,6 +359,7 @@ function buildMonitorOverview({
       reachable,
       pending: enabled.length - reachable,
     },
+    sourceHealthMode: healthMode,
     sourceHealth,
     sourceReportCheckedAt: lastReport?.checkedAt ?? poolUpdatedAt,
     verifiedStats: {

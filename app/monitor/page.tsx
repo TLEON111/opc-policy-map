@@ -64,6 +64,7 @@ export default async function MonitorPage({
   const coveredProvinceOptions = matrixRows
     .filter((row) => row.coverage !== "none")
     .map((row) => row.name);
+  const isPoolSnapshot = overview.sourceHealthMode === "pool-snapshot";
   const sourceNameById = new Map(
     overview.sources.map((source) => [source.id, source.name]),
   );
@@ -114,7 +115,7 @@ export default async function MonitorPage({
             <span>来源状态</span>
             <strong>{overview.sourceStats.reachable}</strong>
             <small>
-              {overview.sourceReportCheckedAt ? "池内命中来源" : "待接入"} {overview.sourceStats.pending}
+              {isPoolSnapshot ? "池内命中来源" : "待接入"} {overview.sourceStats.pending}
             </small>
           </div>
           <div>
@@ -230,7 +231,7 @@ export default async function MonitorPage({
           >
             <span className="mon-updated">
               {overview.sourceReportCheckedAt
-                ? `远程池最新线索：${overview.sourceReportCheckedAt.replace("T", " ").slice(0, 16)} UTC · 命中来源 ${overview.sourceStats.reachable}/${overview.sourceStats.enabled}`
+                ? `${isPoolSnapshot ? "远程池最新线索" : "最近巡检"}：${overview.sourceReportCheckedAt.replace("T", " ").slice(0, 16)} UTC · ${isPoolSnapshot ? "命中来源" : "可达"} ${overview.sourceStats.reachable}/${overview.sourceStats.enabled}`
                 : "尚未运行巡检；下方为 2026-09-03 可达性探测快照"}
             </span>
           </SectionHeading>
