@@ -67,6 +67,12 @@ export const CHANGELOG: ChangeEntry[] = [
       "schema+种子脚本（37/27/8）、API 远程优先读取层（配置 URL+anon key 后走 PostgREST，失败回退本地）已入库；新增 push/每日 collect 自动 upsert 到 Supabase 的 CI 流水线（无密钥自动跳过）。",
   },
   {
+    date: "2026-09-04",
+    summary: "收录 9/4 官方动态两则",
+    detail:
+      "①安徽日报/中安在线：省科技厅+人社厅印发《安徽省推进AI OPC创新创业发展行动方案》官方解读（30个省级OPC社区/3000团队/1万人就业等量化目标）；②新京报转载雄安发布：雄安'一人公司与千年大计'观察（5月授牌4家OPC社区、超6万㎡空间）。",
+  },
+  {
     date: "2026-09-03",
     summary: "启用全自动同步闭环（GitHub Secrets 已配置）",
     detail:

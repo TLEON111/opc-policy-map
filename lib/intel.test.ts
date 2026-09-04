@@ -29,7 +29,9 @@ describe("intel feed", () => {
 
     expect(feed.every((item) => isTraceableSourceUrl(item.sourceUrl))).toBe(true);
     expect(feed.every((item) => item.verified === true)).toBe(true);
-    expect(feed.every((item) => item.verifiedAt === "2026-09-03")).toBe(true);
+    expect(
+      feed.every((item) => ["2026-09-03", "2026-09-04"].includes(item.verifiedAt ?? "")),
+    ).toBe(true);
     expect(feed.every((item) => item.confidence === "high")).toBe(true);
   });
 
@@ -140,7 +142,8 @@ describe("pool and overview", () => {
     expect(changelog.length).toBeGreaterThanOrEqual(1);
     expect(
       changelog.every(
-        (entry) => entry.date === "2026-09-03" && entry.summary.length > 0,
+        (entry) =>
+          ["2026-09-03", "2026-09-04"].includes(entry.date) && entry.summary.length > 0,
       ),
     ).toBe(true);
   });

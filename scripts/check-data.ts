@@ -27,6 +27,7 @@ const PROVINCE_SET = new Set([
 ]);
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+const RECENT_VERIFY_DATES = new Set(["2026-09-03", "2026-09-04"]);
 const KINDS = new Set(["policy", "application", "interpretation", "news", "resource"]);
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -61,7 +62,7 @@ function checkProvince(province: string, label: string) {
     if (!isTraceableSourceUrl(policy.sourceUrl)) {
       error(`verified-policies 不可回溯 URL：${policy.sourceUrl}`);
     }
-    if (policy.verifiedAt !== "2026-09-03") {
+    if (!RECENT_VERIFY_DATES.has(policy.verifiedAt)) {
       error(`verified-policies 核验日期异常：${policy.id} → ${policy.verifiedAt}`);
     }
     if (!policy.title || !policy.sourceName || !policy.summary) {
@@ -97,7 +98,7 @@ function checkProvince(province: string, label: string) {
       error(`verified-intel 不可回溯 URL：${item.sourceUrl}`);
     }
     if (item.verified) {
-      if (item.verifiedAt !== "2026-09-03") {
+      if (!RECENT_VERIFY_DATES.has(item.verifiedAt ?? "")) {
         error(`verified-intel 已核验条目核验日期异常：${item.id}`);
       }
     }
