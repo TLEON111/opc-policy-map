@@ -35,6 +35,108 @@ function loadPool() {
   }
 }
 
+/** 读取最近一次巡检报告（用于来源健康度持久化）。 */
+function loadLastReportChecks(): {
+  checkedAt: string;
+  sources: Array<{
+    id: string;
+    name: string;
+    owner: string;
+    url: string;
+    reachable: boolean;
+    httpStatus?: number | null;
+    error?: string;
+    hitCount?: number;
+  }>;
+} | null {
+  try {
+    const raw = readFileSync(
+      join(process.cwd(), "data", "pool", "last-report.json"),
+      "utf8",
+    );
+    const parsed = JSON.parse(raw) as {
+      checkedAt?: string;
+      sources?: Array<{
+        id: string;
+        name?: string;
+        owner?: string;
+        url?: string;
+        reachable?: boolean;
+        httpStatus?: number | null;
+        error?: string;
+        hitCount?: number;
+      }>;
+    };
+    if (!parsed.checkedAt || !parsed.sources) return null;
+    return {
+      checkedAt: parsed.checkedAt,
+      sources: parsed.sources.filter((s) => s.id).map((s) => ({
+        id: s.id,
+        name: s.name ?? s.id,
+        owner: s.owner ?? "",
+        url: s.url ?? "",
+        reachable: Boolean(s.reachable),
+        httpStatus: s.httpStatus ?? null,
+        error: s.error ?? undefined,
+        hitCount: s.hitCount ?? 0,
+      })),
+    };
+  } catch {
+    return null;
+  }
+}
+
+/** 把一次巡检的逐源结果追加进 source_checks（幂等：同一时间戳+来源不重复写）。 */
+async function appendSourceChecks(
+  report: { checkedAt: string; sources: Array<Record<string, unknown>> },
+): Promise<{ total: number; inserted: number }> {
+  const total = report.sources.length;
+  const existing = await fetch(
+    `${BASE}/rest/v1/source_checks?checked_at=eq.${encodeURIComponent(report.checkedAt)}&select=source_id`,
+    {
+      headers: {
+        apikey: KEY ?? "",
+        Authorization: `Bearer ${KEY ?? ""}`,
+        Prefer: "count=exact",
+      },
+    },
+  );
+  let known = new Set<string>();
+  if (existing.ok) {
+    const rows = (await existing.json()) as Array<{ source_id: string }>;
+    known = new Set(rows.map((row) => row.source_id));
+  }
+  const rows = report.sources
+    .filter((source) => !known.has(String(source.id)))
+    .map((source) => ({
+      checked_at: report.checkedAt,
+      source_id: source.id,
+      name: source.name,
+      owner: source.owner ?? null,
+      url: source.url,
+      reachable: source.reachable,
+      http_status: source.httpStatus ?? null,
+      error: source.error ?? null,
+      hit_count: source.hitCount ?? 0,
+    }));
+  if (rows.length === 0) return { total, inserted: 0 };
+  const response = await fetch(`${BASE}/rest/v1/source_checks`, {
+    method: "POST",
+    headers: {
+      apikey: KEY ?? "",
+      Authorization: `Bearer ${KEY ?? ""}`,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    },
+    body: JSON.stringify(rows),
+  });
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`source_checks 写入失败（HTTP ${response.status}）：${text.slice(0, 200)}`);
+  }
+  return { total, inserted: rows.length };
+}
+
 async function upsert(table: string, conflict: string, rows: unknown[]): Promise<number> {
   if (rows.length === 0) return 0;
   const response = await fetch(
@@ -144,8 +246,10 @@ async function run(): Promise<void> {
     };
   });
 
+  const lastReport = loadLastReportChecks();
+
   process.stdout.write(
-    `Supabase 同步：policies=${policies.length} intel=${intel.length} pool=${pool.length}${DRY_RUN ? "（DRY-RUN）" : ""}\n`,
+    `Supabase 同步：policies=${policies.length} intel=${intel.length} pool=${pool.length} source_checks=${lastReport?.sources.length ?? 0}${DRY_RUN ? "（DRY-RUN）" : ""}\n`,
   );
   if (DRY_RUN) return;
 
@@ -154,7 +258,16 @@ async function run(): Promise<void> {
   if (pool.length > 0) {
     await upsert("intel_pool", "url", pool);
   }
-  process.stdout.write("同步完成：policies / intel_items / intel_pool 已 upsert。\n");
+  if (lastReport) {
+    try {
+      const { total, inserted } = await appendSourceChecks(lastReport);
+      process.stdout.write(`来源健康度：报告 ${total} 条，本次新增 ${inserted} 条（已存在的跳过）\n`);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      process.stdout.write(`来源健康度：跳过（${message.slice(0, 160)}）——若提示找不到 source_checks 表，请先在 Supabase SQL Editor 运行 supabase/migrations/20260904-source-checks.sql\n`);
+    }
+  }
+  process.stdout.write("同步完成：policies / intel_items / intel_pool / source_checks 已处理。\n");
 }
 
 await run();

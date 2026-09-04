@@ -101,6 +101,30 @@ create index if not exists intel_kind_idx         on public.intel_items (kind);
 create index if not exists intel_province_idx     on public.intel_items (province);
 create index if not exists pool_source_idx        on public.intel_pool (source_id);
 
+-- ── 来源健康度持久化：每次巡检的逐源体检记录 ──────────
+create table if not exists public.source_checks (
+  id               bigint generated always as identity primary key,
+  checked_at       timestamptz not null,
+  source_id        text not null,
+  name             text not null,
+  owner            text,
+  url              text not null,
+  reachable        boolean not null default false,
+  http_status      integer,
+  error            text,
+  hit_count        integer not null default 0
+);
+
+alter table public.source_checks enable row level security;
+
+create policy "anon can read source_checks" on public.source_checks
+  for select to anon using (true);
+
+create index if not exists source_checks_checked_idx
+  on public.source_checks (checked_at desc);
+create index if not exists source_checks_source_idx
+  on public.source_checks (source_id, checked_at desc);
+
 
 insert into public.policies (id, title, province, city, category, tags, publish_date, effective_date, expiry_date, document_number, issued_by, policy_level, relevance, status, summary, benefits, eligibility, application_notes, application_url, source_name, source_type, source_url, verified_at)
 values
