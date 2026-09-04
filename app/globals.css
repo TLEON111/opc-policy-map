@@ -3243,3 +3243,76 @@ footer {
 .mon-pool {
   gap: 8px;
 }
+
+/* ── 手机端（≤640px）覆盖：统计栏竖排、导航显示可换行、最新情报表格自适应 ── */
+@media (max-width: 640px) {
+  .site-header {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    min-height: 64px;
+  }
+
+  .site-header nav {
+    width: 100%;
+    gap: 4px;
+  }
+
+  /* 手机恢复显示非当前项（旧样式曾隐藏），避免只剩一个按钮 */
+  .site-header nav a:not([aria-current="page"]) {
+    display: inline-flex;
+  }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .stats-bar > .stat-item {
+    border-right: 0;
+    padding: 0 0 12px;
+    grid-template-columns: 28px auto 1fr;
+  }
+
+  .stats-bar > .stat-item:first-child {
+    padding-left: 0;
+  }
+
+  .stats-bar > .stat-item + .stat-item {
+    padding-left: 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--divider);
+  }
+
+  .stats-bar > .stat-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .latest-intel-table {
+    overflow: hidden;
+  }
+
+  .latest-intel-region,
+  .latest-intel-summary {
+    display: none;
+  }
+
+  .latest-intel-columns span:first-child {
+    display: none; /* “地区”列表头 */
+  }
+
+  .latest-intel-columns,
+  .latest-intel-table li {
+    grid-template-columns: 88px minmax(0, 1fr) 64px;
+    gap: 8px;
+  }
+
+  .latest-intel-table li a {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
