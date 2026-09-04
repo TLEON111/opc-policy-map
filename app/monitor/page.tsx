@@ -331,22 +331,34 @@ export default async function MonitorPage({
         </section>
 
         <section className="mon-section" aria-labelledby="changelog-title">
-          <SectionHeading
-            icon={<ShieldCheck aria-hidden="true" className="size-4" />}
-            eyebrow="CHANGELOG"
-            title="收录与更新日志"
-          />
-          <ul className="mon-changelog">
-            {changelog.map((entry) => (
-              <li key={`${entry.date}-${entry.summary}`}>
-                <time dateTime={entry.date}>{entry.date}</time>
-                <div>
-                  <strong>{entry.summary}</strong>
-                  {entry.detail && <p>{entry.detail}</p>}
-                </div>
-              </li>
-            ))}
-          </ul>
+          <details className="mon-module" open>
+            <summary>
+              <SectionHeading
+                icon={<ShieldCheck aria-hidden="true" className="size-4" />}
+                eyebrow="CHANGELOG"
+                title="收录与更新日志"
+              >
+                <span className="mon-fold-hint">
+                  <ChevronDown aria-hidden="true" className="size-4" strokeWidth={1.8} />
+                  <span className="fold-on">折叠本段</span>
+                  <span className="fold-off">展开本段</span>
+                </span>
+              </SectionHeading>
+            </summary>
+            <div className="mon-module-body">
+              <ul className="mon-changelog">
+                {changelog.map((entry) => (
+                  <li key={`${entry.date}-${entry.summary}`}>
+                    <time dateTime={entry.date}>{entry.date}</time>
+                    <div>
+                      <strong>{entry.summary}</strong>
+                      {entry.detail && <p>{entry.detail}</p>}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </details>
         </section>
       </main>
 
