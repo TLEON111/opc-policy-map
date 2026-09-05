@@ -1,6 +1,16 @@
 {
-  "checkedAt": "2026-09-05T02:43:45.221Z",
+  "checkedAt": "2026-09-05T06:20:54.375Z",
   "sources": [
+    {
+      "id": "govcn-zuixin",
+      "name": "中国政府网 · 最新政策",
+      "owner": "全国",
+      "url": "https://www.gov.cn/zhengce/zuixin/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0
+    },
     {
       "id": "govcn-zhengce",
       "name": "中国政府网 · 政策文件库",
@@ -20,16 +30,6 @@
       ]
     },
     {
-      "id": "miit-wjfb",
-      "name": "工业和信息化部 · 文件发布",
-      "owner": "全国",
-      "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/index.html",
-      "httpStatus": 200,
-      "reachable": true,
-      "hitCount": 0,
-      "knownHitSkip": 0
-    },
-    {
       "id": "miit-zcwj",
       "name": "工业和信息化部 · 政策文件",
       "owner": "全国",
@@ -40,10 +40,10 @@
       "knownHitSkip": 0
     },
     {
-      "id": "govcn-zuixin",
-      "name": "中国政府网 · 最新政策",
+      "id": "miit-wjfb",
+      "name": "工业和信息化部 · 文件发布",
       "owner": "全国",
-      "url": "https://www.gov.cn/zhengce/zuixin/",
+      "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/index.html",
       "httpStatus": 200,
       "reachable": true,
       "hitCount": 0,
@@ -60,19 +60,6 @@
       "knownHitSkip": 0
     },
     {
-      "id": "samr-home",
-      "name": "国家市场监督管理总局",
-      "owner": "全国",
-      "url": "https://www.samr.gov.cn/",
-      "httpStatus": 200,
-      "reachable": true,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "discoveredColumns": [
-        "https://www.samr.gov.cn/zw/zfxxgk/zfxxgkzn/index.html"
-      ]
-    },
-    {
       "id": "most-gfxwj",
       "name": "科学技术部 · 规范性文件",
       "owner": "全国",
@@ -84,6 +71,19 @@
       "discoveredColumns": [
         "https://www.most.gov.cn/xxgk/xinxifenlei/zfxxgkzn/",
         "https://www.most.gov.cn/xxgk/xinxifenlei/zfxxgkzd/"
+      ]
+    },
+    {
+      "id": "samr-home",
+      "name": "国家市场监督管理总局",
+      "owner": "全国",
+      "url": "https://www.samr.gov.cn/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "discoveredColumns": [
+        "https://www.samr.gov.cn/zw/zfxxgk/zfxxgkzn/index.html"
       ]
     },
     {
@@ -105,16 +105,6 @@
       ]
     },
     {
-      "id": "mohrss-home",
-      "name": "人力资源和社会保障部",
-      "owner": "全国",
-      "url": "https://www.mohrss.gov.cn/",
-      "httpStatus": 200,
-      "reachable": true,
-      "hitCount": 0,
-      "knownHitSkip": 0
-    },
-    {
       "id": "bj-jxj",
       "name": "北京市经济和信息化局",
       "owner": "北京",
@@ -133,19 +123,14 @@
       ]
     },
     {
-      "id": "bj-sjs-news",
-      "name": "北京市石景山区人民政府 · 动态",
-      "owner": "北京",
-      "url": "https://www.bjsjs.gov.cn/ywdt/sjsdt/",
+      "id": "mohrss-home",
+      "name": "人力资源和社会保障部",
+      "owner": "全国",
+      "url": "https://www.mohrss.gov.cn/",
       "httpStatus": 200,
       "reachable": true,
       "hitCount": 0,
-      "knownHitSkip": 0,
-      "discoveredColumns": [
-        "https://www.bjsjs.gov.cn/gongkai/zcwjk/",
-        "https://www.bjsjs.gov.cn/gongkai/zcwjk/zcjd25/",
-        "https://www.bjsjs.gov.cn/gongkai/zwgkpd/tzgg_1933/"
-      ]
+      "knownHitSkip": 0
     },
     {
       "id": "bj-hd-opc",
@@ -156,17 +141,6 @@
       "reachable": true,
       "hitCount": 18,
       "knownHitSkip": 7
-    },
-    {
-      "id": "sh-sheitc",
-      "name": "上海市经济和信息化委员会",
-      "owner": "上海",
-      "url": "https://www.sheitc.sh.gov.cn/",
-      "httpStatus": null,
-      "reachable": false,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "error": "fetch failed"
     },
     {
       "id": "sh-scjgj",
@@ -182,6 +156,21 @@
       ]
     },
     {
+      "id": "bj-sjs-news",
+      "name": "北京市石景山区人民政府 · 动态",
+      "owner": "北京",
+      "url": "https://www.bjsjs.gov.cn/ywdt/sjsdt/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "discoveredColumns": [
+        "https://www.bjsjs.gov.cn/gongkai/zcwjk/",
+        "https://www.bjsjs.gov.cn/gongkai/zcwjk/zcjd25/",
+        "https://www.bjsjs.gov.cn/gongkai/zwgkpd/tzgg_1933/"
+      ]
+    },
+    {
       "id": "bj-chy-files",
       "name": "北京市朝阳区人民政府 · 政策文件",
       "owner": "北京",
@@ -190,6 +179,17 @@
       "reachable": true,
       "hitCount": 1,
       "knownHitSkip": 1
+    },
+    {
+      "id": "sh-sheitc",
+      "name": "上海市经济和信息化委员会",
+      "owner": "上海",
+      "url": "https://www.sheitc.sh.gov.cn/",
+      "httpStatus": null,
+      "reachable": false,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "error": "fetch failed"
     },
     {
       "id": "sh-gov-news",
@@ -221,6 +221,16 @@
       ]
     },
     {
+      "id": "cq-hrss-policy",
+      "name": "重庆市人力资源和社会保障局 · 政策文件",
+      "owner": "重庆",
+      "url": "https://rlsbj.cq.gov.cn/zwgk_182/zfxxgkml/zcwj_145360/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0
+    },
+    {
       "id": "cq-scjgj",
       "name": "重庆市市场监督管理局",
       "owner": "重庆",
@@ -239,16 +249,6 @@
       ]
     },
     {
-      "id": "cq-hrss-policy",
-      "name": "重庆市人力资源和社会保障局 · 政策文件",
-      "owner": "重庆",
-      "url": "https://rlsbj.cq.gov.cn/zwgk_182/zfxxgkml/zcwj_145360/",
-      "httpStatus": 200,
-      "reachable": true,
-      "hitCount": 0,
-      "knownHitSkip": 0
-    },
-    {
       "id": "tj-scjg",
       "name": "天津市市场监督管理委员会",
       "owner": "天津",
@@ -260,20 +260,10 @@
       "error": "HTTP 403"
     },
     {
-      "id": "js-scjgj",
-      "name": "江苏省市场监督管理局",
-      "owner": "江苏",
-      "url": "https://scjgj.jiangsu.gov.cn/",
-      "httpStatus": 200,
-      "reachable": true,
-      "hitCount": 0,
-      "knownHitSkip": 0
-    },
-    {
-      "id": "hz-gazette",
-      "name": "杭州市人民政府公报",
-      "owner": "浙江",
-      "url": "https://zfgb.hangzhou.gov.cn/",
+      "id": "ah-amr",
+      "name": "安徽省市场监督管理局",
+      "owner": "安徽",
+      "url": "https://amr.ah.gov.cn/",
       "httpStatus": null,
       "reachable": false,
       "hitCount": 0,
@@ -292,6 +282,16 @@
       "error": "fetch failed"
     },
     {
+      "id": "js-scjgj",
+      "name": "江苏省市场监督管理局",
+      "owner": "江苏",
+      "url": "https://scjgj.jiangsu.gov.cn/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0
+    },
+    {
       "id": "jx-amr",
       "name": "江西省市场监督管理局",
       "owner": "江西",
@@ -303,15 +303,25 @@
       "error": "fetch failed"
     },
     {
-      "id": "ah-amr",
-      "name": "安徽省市场监督管理局",
-      "owner": "安徽",
-      "url": "https://amr.ah.gov.cn/",
-      "httpStatus": 403,
+      "id": "sd-amr",
+      "name": "山东省市场监督管理局",
+      "owner": "山东",
+      "url": "http://amr.shandong.gov.cn/",
+      "httpStatus": null,
       "reachable": false,
       "hitCount": 0,
       "knownHitSkip": 0,
-      "error": "HTTP 403"
+      "error": "fetch failed"
+    },
+    {
+      "id": "hz-gazette",
+      "name": "杭州市人民政府公报",
+      "owner": "浙江",
+      "url": "https://zfgb.hangzhou.gov.cn/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0
     },
     {
       "id": "fj-scjgj",
@@ -332,17 +342,6 @@
       ]
     },
     {
-      "id": "xm-scjg",
-      "name": "厦门市市场监督管理局",
-      "owner": "福建",
-      "url": "https://scjg.xm.gov.cn/",
-      "httpStatus": null,
-      "reachable": false,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "error": "fetch failed"
-    },
-    {
       "id": "qd-gxj-policy",
       "name": "青岛市工业和信息化局 · 政策文件",
       "owner": "山东",
@@ -361,20 +360,10 @@
       ]
     },
     {
-      "id": "qd-qydj-opc",
-      "name": "青岛市企业登记智能一体化平台",
-      "owner": "山东",
-      "url": "https://qydjfw.qingdao.gov.cn/",
-      "httpStatus": 200,
-      "reachable": true,
-      "hitCount": 0,
-      "knownHitSkip": 0
-    },
-    {
-      "id": "sd-amr",
-      "name": "山东省市场监督管理局",
-      "owner": "山东",
-      "url": "http://amr.shandong.gov.cn/",
+      "id": "xm-scjg",
+      "name": "厦门市市场监督管理局",
+      "owner": "福建",
+      "url": "https://scjg.xm.gov.cn/",
       "httpStatus": null,
       "reachable": false,
       "hitCount": 0,
@@ -429,6 +418,63 @@
       ]
     },
     {
+      "id": "qd-qydj-opc",
+      "name": "青岛市企业登记智能一体化平台",
+      "owner": "山东",
+      "url": "https://qydjfw.qingdao.gov.cn/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0
+    },
+    {
+      "id": "sz-gxj-tzgg",
+      "name": "深圳市工业和信息化局 · 通知公告",
+      "owner": "广东",
+      "url": "http://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "discoveredColumns": [
+        "http://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/#",
+        "https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/",
+        "https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/content/post_12968571.html",
+        "https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/content/post_12967622.html",
+        "https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/content/post_12967332.html",
+        "https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/content/post_12965466.html"
+      ]
+    },
+    {
+      "id": "hi-amr",
+      "name": "海南省市场监督管理局",
+      "owner": "海南",
+      "url": "https://amr.hainan.gov.cn/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "discoveredColumns": [
+        "https://amr.hainan.gov.cn/zw/tztg/",
+        "http://amr.hainan.gov.cn/zw/zcwj/",
+        "https://amr.hainan.gov.cn/zw/zcwj/",
+        "https://amr.hainan.gov.cn/zw/tztg/202608/t20260827_4135869.html",
+        "https://amr.hainan.gov.cn/zw/tztg/202608/t20260821_4132832.html",
+        "https://amr.hainan.gov.cn/zw/tztg/202608/t20260821_4132829.html"
+      ]
+    },
+    {
+      "id": "ha-scjg",
+      "name": "河南省市场监督管理局",
+      "owner": "河南",
+      "url": "https://scjg.henan.gov.cn/",
+      "httpStatus": 403,
+      "reachable": false,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "error": "HTTP 403"
+    },
+    {
       "id": "zj-zjamr",
       "name": "浙江省市场监督管理局",
       "owner": "浙江",
@@ -450,46 +496,6 @@
       "knownHitSkip": 1
     },
     {
-      "id": "sz-gxj-tzgg",
-      "name": "深圳市工业和信息化局 · 通知公告",
-      "owner": "广东",
-      "url": "http://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/",
-      "httpStatus": 200,
-      "reachable": true,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "discoveredColumns": [
-        "http://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/#",
-        "https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/",
-        "https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/content/post_12968571.html",
-        "https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/content/post_12967622.html",
-        "https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/content/post_12967332.html",
-        "https://gxj.sz.gov.cn/xxgk/xxgkml/qt/tzgg/content/post_12965466.html"
-      ]
-    },
-    {
-      "id": "nb-gov-policy",
-      "name": "宁波市人民政府 · 政策文件",
-      "owner": "浙江",
-      "url": "https://www.ningbo.gov.cn/col/col1229533176/",
-      "httpStatus": null,
-      "reachable": false,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "error": "fetch failed"
-    },
-    {
-      "id": "ha-scjg",
-      "name": "河南省市场监督管理局",
-      "owner": "河南",
-      "url": "https://scjg.henan.gov.cn/",
-      "httpStatus": 403,
-      "reachable": false,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "error": "HTTP 403"
-    },
-    {
       "id": "wh-kjj-tzgg",
       "name": "武汉市科技创新局 · 通知公告",
       "owner": "湖北",
@@ -506,6 +512,17 @@
         "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260807_2830812.shtml",
         "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260806_2830718.shtml"
       ]
+    },
+    {
+      "id": "nb-gov-policy",
+      "name": "宁波市人民政府 · 政策文件",
+      "owner": "浙江",
+      "url": "https://www.ningbo.gov.cn/col/col1229533176/",
+      "httpStatus": null,
+      "reachable": false,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "error": "fetch failed"
     },
     {
       "id": "wh-jgswgl-zcwj",
@@ -527,24 +544,6 @@
       "hitCount": 0,
       "knownHitSkip": 0,
       "error": "fetch failed"
-    },
-    {
-      "id": "hi-amr",
-      "name": "海南省市场监督管理局",
-      "owner": "海南",
-      "url": "https://amr.hainan.gov.cn/",
-      "httpStatus": 200,
-      "reachable": true,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "discoveredColumns": [
-        "https://amr.hainan.gov.cn/zw/tztg/",
-        "http://amr.hainan.gov.cn/zw/zcwj/",
-        "https://amr.hainan.gov.cn/zw/zcwj/",
-        "https://amr.hainan.gov.cn/zw/tztg/202608/t20260827_4135869.html",
-        "https://amr.hainan.gov.cn/zw/tztg/202608/t20260821_4132832.html",
-        "https://amr.hainan.gov.cn/zw/tztg/202608/t20260821_4132829.html"
-      ]
     },
     {
       "id": "nn-gov-bmdt",
@@ -627,28 +626,21 @@
       ]
     },
     {
-      "id": "ln-scjg",
-      "name": "辽宁省市场监督管理局",
-      "owner": "辽宁",
-      "url": "https://scjg.ln.gov.cn/",
-      "httpStatus": 200,
-      "reachable": true,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "discoveredColumns": [
-        "https://scjg.ln.gov.cn/scjdglj/zfxxgk/zfxxgkzn/index.shtml",
-        "https://scjg.ln.gov.cn/scjdglj/zt/szzljzl/tzgg/index.shtml",
-        "https://scjg.ln.gov.cn/scjdglj/zw/zfxxgk30/zfxxgkgd/index.shtml",
-        "https://scjg.ln.gov.cn/scjdglj/zw/zfxxgk30/zfxxgkml/index.shtml",
-        "https://scjg.ln.gov.cn/scjdglj/zw/zfxxgk30/zfxxgknb/index.shtml",
-        "https://scjg.ln.gov.cn/scjdglj/zw/zfxxgk30/ysqgk/index.shtml"
-      ]
-    },
-    {
       "id": "sc-scjgj",
       "name": "四川省市场监督管理局",
       "owner": "四川",
       "url": "https://scjgj.sc.gov.cn/",
+      "httpStatus": null,
+      "reachable": false,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "error": "fetch failed"
+    },
+    {
+      "id": "gz-amr",
+      "name": "贵州省市场监督管理局",
+      "owner": "贵州",
+      "url": "https://amr.guizhou.gov.cn/",
       "httpStatus": null,
       "reachable": false,
       "hitCount": 0,
@@ -667,21 +659,28 @@
       "error": "fetch failed"
     },
     {
+      "id": "ln-scjg",
+      "name": "辽宁省市场监督管理局",
+      "owner": "辽宁",
+      "url": "https://scjg.ln.gov.cn/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "discoveredColumns": [
+        "https://scjg.ln.gov.cn/scjdglj/zfxxgk/zfxxgkzn/index.shtml",
+        "https://scjg.ln.gov.cn/scjdglj/zt/szzljzl/tzgg/index.shtml",
+        "https://scjg.ln.gov.cn/scjdglj/zw/zfxxgk30/zfxxgkgd/index.shtml",
+        "https://scjg.ln.gov.cn/scjdglj/zw/zfxxgk30/zfxxgkml/index.shtml",
+        "https://scjg.ln.gov.cn/scjdglj/zw/zfxxgk30/zfxxgknb/index.shtml",
+        "https://scjg.ln.gov.cn/scjdglj/zw/zfxxgk30/ysqgk/index.shtml"
+      ]
+    },
+    {
       "id": "yn-amr",
       "name": "云南省市场监督管理局",
       "owner": "云南",
       "url": "https://amr.yn.gov.cn/",
-      "httpStatus": null,
-      "reachable": false,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "error": "fetch failed"
-    },
-    {
-      "id": "gz-amr",
-      "name": "贵州省市场监督管理局",
-      "owner": "贵州",
-      "url": "https://amr.guizhou.gov.cn/",
       "httpStatus": null,
       "reachable": false,
       "hitCount": 0,
@@ -707,10 +706,20 @@
       ]
     },
     {
-      "id": "xz-gov",
-      "name": "西藏自治区人民政府门户",
-      "owner": "西藏",
-      "url": "https://www.xizang.gov.cn/",
+      "id": "jl-scjg",
+      "name": "吉林省市场监督管理厅",
+      "owner": "吉林",
+      "url": "https://scjg.jl.gov.cn/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0
+    },
+    {
+      "id": "gs-lz-gov",
+      "name": "兰州市人民政府门户",
+      "owner": "甘肃",
+      "url": "https://www.lanzhou.gov.cn/",
       "httpStatus": null,
       "reachable": false,
       "hitCount": 0,
@@ -718,10 +727,10 @@
       "error": "fetch failed"
     },
     {
-      "id": "gs-lz-gov",
-      "name": "兰州市人民政府门户",
-      "owner": "甘肃",
-      "url": "https://www.lanzhou.gov.cn/",
+      "id": "qh-scjgj",
+      "name": "青海省市场监督管理局",
+      "owner": "青海",
+      "url": "https://scjgj.qinghai.gov.cn/",
       "httpStatus": null,
       "reachable": false,
       "hitCount": 0,
@@ -747,38 +756,6 @@
       ]
     },
     {
-      "id": "qh-scjgj",
-      "name": "青海省市场监督管理局",
-      "owner": "青海",
-      "url": "https://scjgj.qinghai.gov.cn/",
-      "httpStatus": null,
-      "reachable": false,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "error": "fetch failed"
-    },
-    {
-      "id": "xj-scjgj",
-      "name": "新疆维吾尔自治区市场监督管理局",
-      "owner": "新疆",
-      "url": "https://scjgj.xinjiang.gov.cn/",
-      "httpStatus": null,
-      "reachable": false,
-      "hitCount": 0,
-      "knownHitSkip": 0,
-      "error": "fetch failed"
-    },
-    {
-      "id": "jl-scjg",
-      "name": "吉林省市场监督管理厅",
-      "owner": "吉林",
-      "url": "https://scjg.jl.gov.cn/",
-      "httpStatus": 200,
-      "reachable": true,
-      "hitCount": 0,
-      "knownHitSkip": 0
-    },
-    {
       "id": "xa-amr-home",
       "name": "西安市市场监督管理局",
       "owner": "陕西",
@@ -794,6 +771,24 @@
         "https://scjg.xa.gov.cn/xwzx/tzgg/2083035821975334914.html",
         "https://scjg.xa.gov.cn/xwzx/tzgg/2083119579199004674.html",
         "https://scjg.xa.gov.cn/xwzx/tzgg/2084118018981400577.html"
+      ]
+    },
+    {
+      "id": "xj-scjgj",
+      "name": "新疆维吾尔自治区市场监督管理局",
+      "owner": "新疆",
+      "url": "https://scjgj.xinjiang.gov.cn/",
+      "httpStatus": 200,
+      "reachable": true,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "discoveredColumns": [
+        "https://scjgj.xinjiang.gov.cn/xjaic/myzfxxgkzn/zfxxgk_xxgkzd.shtml",
+        "https://scjgj.xinjiang.gov.cn/xjaic/myzfxxgkzd/zfxxgk_gknrz.shtml",
+        "https://scjgj.xinjiang.gov.cn/xjaic/myysqgk/zfxxgk_xxgkzd.shtml",
+        "https://scjgj.xinjiang.gov.cn/xjaic/myysqgk2020/zfxxgk_xxgkzd.shtml",
+        "https://scjgj.xinjiang.gov.cn/xjaic/myzcwj/zfxxgk_gknrz.shtml",
+        "https://scjgj.xinjiang.gov.cn/xjaic/myzcjd/zfxxgk_gknrz.shtml"
       ]
     },
     {
@@ -813,6 +808,17 @@
         "https://www.nx.gov.cn/zwgk/tzgg/202509/t20250909_5015293.html",
         "https://www.nx.gov.cn/zwgk/tzgg/202508/t20250829_5003195.html"
       ]
+    },
+    {
+      "id": "xz-gov",
+      "name": "西藏自治区人民政府门户",
+      "owner": "西藏",
+      "url": "https://www.xizang.gov.cn/",
+      "httpStatus": null,
+      "reachable": false,
+      "hitCount": 0,
+      "knownHitSkip": 0,
+      "error": "fetch failed"
     }
   ],
   "discoveredColumns": [
@@ -829,18 +835,18 @@
       ]
     },
     {
-      "id": "samr-home",
-      "name": "国家市场监督管理总局",
-      "urls": [
-        "https://www.samr.gov.cn/zw/zfxxgk/zfxxgkzn/index.html"
-      ]
-    },
-    {
       "id": "most-gfxwj",
       "name": "科学技术部 · 规范性文件",
       "urls": [
         "https://www.most.gov.cn/xxgk/xinxifenlei/zfxxgkzn/",
         "https://www.most.gov.cn/xxgk/xinxifenlei/zfxxgkzd/"
+      ]
+    },
+    {
+      "id": "samr-home",
+      "name": "国家市场监督管理总局",
+      "urls": [
+        "https://www.samr.gov.cn/zw/zfxxgk/zfxxgkzn/index.html"
       ]
     },
     {
@@ -868,19 +874,19 @@
       ]
     },
     {
+      "id": "sh-scjgj",
+      "name": "上海市市场监督管理局",
+      "urls": [
+        "https://scjgj.sh.gov.cn/zfxxgkml/?channelId=055"
+      ]
+    },
+    {
       "id": "bj-sjs-news",
       "name": "北京市石景山区人民政府 · 动态",
       "urls": [
         "https://www.bjsjs.gov.cn/gongkai/zcwjk/",
         "https://www.bjsjs.gov.cn/gongkai/zcwjk/zcjd25/",
         "https://www.bjsjs.gov.cn/gongkai/zwgkpd/tzgg_1933/"
-      ]
-    },
-    {
-      "id": "sh-scjgj",
-      "name": "上海市市场监督管理局",
-      "urls": [
-        "https://scjgj.sh.gov.cn/zfxxgkml/?channelId=055"
       ]
     },
     {
@@ -968,18 +974,6 @@
       ]
     },
     {
-      "id": "wh-kjj-tzgg",
-      "name": "武汉市科技创新局 · 通知公告",
-      "urls": [
-        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202609/t20260902_2842337.shtml",
-        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260825_2838731.shtml",
-        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260824_2838086.shtml",
-        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260814_2834131.shtml",
-        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260807_2830812.shtml",
-        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260806_2830718.shtml"
-      ]
-    },
-    {
       "id": "hi-amr",
       "name": "海南省市场监督管理局",
       "urls": [
@@ -989,6 +983,18 @@
         "https://amr.hainan.gov.cn/zw/tztg/202608/t20260827_4135869.html",
         "https://amr.hainan.gov.cn/zw/tztg/202608/t20260821_4132832.html",
         "https://amr.hainan.gov.cn/zw/tztg/202608/t20260821_4132829.html"
+      ]
+    },
+    {
+      "id": "wh-kjj-tzgg",
+      "name": "武汉市科技创新局 · 通知公告",
+      "urls": [
+        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202609/t20260902_2842337.shtml",
+        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260825_2838731.shtml",
+        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260824_2838086.shtml",
+        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260814_2834131.shtml",
+        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260807_2830812.shtml",
+        "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202608/t20260806_2830718.shtml"
       ]
     },
     {
@@ -1048,6 +1054,18 @@
       ]
     },
     {
+      "id": "xj-scjgj",
+      "name": "新疆维吾尔自治区市场监督管理局",
+      "urls": [
+        "https://scjgj.xinjiang.gov.cn/xjaic/myzfxxgkzn/zfxxgk_xxgkzd.shtml",
+        "https://scjgj.xinjiang.gov.cn/xjaic/myzfxxgkzd/zfxxgk_gknrz.shtml",
+        "https://scjgj.xinjiang.gov.cn/xjaic/myysqgk/zfxxgk_xxgkzd.shtml",
+        "https://scjgj.xinjiang.gov.cn/xjaic/myysqgk2020/zfxxgk_xxgkzd.shtml",
+        "https://scjgj.xinjiang.gov.cn/xjaic/myzcwj/zfxxgk_gknrz.shtml",
+        "https://scjgj.xinjiang.gov.cn/xjaic/myzcjd/zfxxgk_gknrz.shtml"
+      ]
+    },
+    {
       "id": "nx-gov",
       "name": "宁夏回族自治区人民政府门户",
       "urls": [
@@ -1063,33 +1081,32 @@
   "totals": {
     "sourcesTotal": 65,
     "enabledTotal": 63,
-    "ok": 35,
-    "failed": 28,
+    "ok": 37,
+    "failed": 26,
     "newPoolEntries": 0,
     "knownHitsSkipped": 19,
-    "discoveredColumns": 111,
+    "discoveredColumns": 117,
     "poolTotal": 11
   },
   "notes": [
     "[bj-hd-opc] 7 条命中已在池/已核验（自动去重）",
-    "[sh-sheitc] 抓取失败：fetch failed",
     "[bj-chy-files] 1 条命中已在池/已核验（自动去重）",
+    "[sh-sheitc] 抓取失败：fetch failed",
     "[sh-gov-news] 抓取失败：fetch failed",
     "[cq-scjgj] 2 条命中已在池/已核验（自动去重）",
     "[tj-scjg] 不可用：HTTP 403",
-    "[hz-gazette] 抓取失败：fetch failed",
+    "[ah-amr] 抓取失败：fetch failed",
     "[wx-amr] 抓取失败：fetch failed",
     "[jx-amr] 抓取失败：fetch failed",
-    "[ah-amr] 不可用：HTTP 403",
-    "[xm-scjg] 抓取失败：fetch failed",
     "[sd-amr] 抓取失败：fetch failed",
+    "[xm-scjg] 抓取失败：fetch failed",
     "[gd-amr] 不可用：HTTP 403",
     "[sz-amr] 1 条命中已在池/已核验（自动去重）",
+    "[ha-scjg] 不可用：HTTP 403",
     "[zj-zjamr] 抓取失败：fetch failed",
     "[gz-haizhu-gfxwj] 1 条命中已在池/已核验（自动去重）",
-    "[nb-gov-policy] 抓取失败：fetch failed",
-    "[ha-scjg] 不可用：HTTP 403",
     "[wh-kjj-tzgg] 1 条命中已在池/已核验（自动去重）",
+    "[nb-gov-policy] 抓取失败：fetch failed",
     "[hn-amr] 抓取失败：fetch failed",
     "[nn-gov-bmdt] 抓取失败：fetch failed",
     "[gx-gov] 抓取失败：The operation was aborted due to timeout",
@@ -1099,13 +1116,12 @@
     "[nm-amr] 抓取失败：fetch failed",
     "[dl-hitech-policy] 4 条命中已在池/已核验（自动去重）",
     "[sc-scjgj] 抓取失败：fetch failed",
+    "[gz-amr] 抓取失败：fetch failed",
     "[sc-kjt-opc] 抓取失败：fetch failed",
     "[yn-amr] 抓取失败：fetch failed",
-    "[gz-amr] 抓取失败：fetch failed",
-    "[xz-gov] 抓取失败：fetch failed",
     "[gs-lz-gov] 抓取失败：fetch failed",
-    "[sx-snamr] 2 条命中已在池/已核验（自动去重）",
     "[qh-scjgj] 抓取失败：fetch failed",
-    "[xj-scjgj] 抓取失败：fetch failed"
+    "[sx-snamr] 2 条命中已在池/已核验（自动去重）",
+    "[xz-gov] 抓取失败：fetch failed"
   ]
 }
