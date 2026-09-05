@@ -14,7 +14,8 @@
 ## 2. 架构与数据流（现状）
 - GitHub 仓库 = **权威源**（代码、已核验数据、待核验池、CI）。
 - push → main：① Netlify 自动构建部署前端；② `supabase-sync`（若改动在 `data/**`）自动 upsert 到 Supabase。
-- 每日 10:00（北京）= cron `0 2 * * *`（UTC）：`collect.yml` 巡检 → 去重写 `data/pool/pool.json` → 自动提交 → 同步 Supabase → `npm test` + `check:data`。
+- 每日 10:00（北京）= cron `50 1 * * *`（UTC，即北京 09:50 启动）：`collect.yml` 巡检 → 去重写 `data/pool/pool.json` → 自动提交 → 同步 Supabase → `npm test` + `check:data`。
+- **巡检兜底**：`collect-guard.yml` 每 2 小时检查今日(UTC) `collect.yml` 是否已运行，未运行则自动 `workflow_dispatch` 补触发（GitHub schedule 不保证准时/可能漏跑，2026-09-05 曾漏跑一次由手动补）。
 - Supabase 表：`policies / intel_items / intel_pool / changelog`，RLS=anon 只读。
 - API（`/api/policies`、`/api/intel`）**远程优先**：配置了 `NEXT_PUBLIC_SUPABASE_URL/ANON_KEY` 就走 Supabase PostgREST，失败自动回退本地数据；未配置则全程本地（开发/测试等价）。
 - 已知过渡点：`/monitor` 的待核验池列表、来源健康度仍读**本地文件**（未走 Supabase），见第 6 节待办 1。
@@ -58,6 +59,7 @@ PORT=3000 node .next/standalone/server.js
 3. PG/SQL：字符串与数组元素一律**单引号**（双引号是标识符，曾致 42703）。
 4. GitHub Actions：`secrets` **不能用于 `if:`**（用 bash 判空）；自动提交需 `permissions: contents: write`；cron 用 UTC。
 5. `gh workflow run` 按**文件名**触发（如 `collect.yml`），不是 display name。
+6. GitHub Actions `schedule` 不保证准时、可能整日漏跑（2026-09-05 实测）→ 已加 `collect-guard.yml` 每 2h 兜底检查；若要严格整点仍需外部 cron 调 `workflow_dispatch`。
 6. /api/intel 远程必须把 policies 投影并入（`mapPolicyRowToIntel`），否则 kind=policy 为空，与本地不等价。
 7. Netlify：API 触发的构建产物可能异常（404）→ 以 Dashboard 部署为准；站名容易搞混（opcmap ≠ opcma）。
 8. 数据诚实原则：不编造 URL/日期/金额/文号；巡检命中≠已核验；未收录≠不存在；新增情报记得把核验日加进 `RECENT_VERIFY_DATES`。
