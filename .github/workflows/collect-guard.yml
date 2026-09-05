@@ -1,0 +1,83 @@
+# OPC 每日巡检「看门狗」——兜底补跑
+#
+# 背景：GitHub Actions 原生 schedule 不保证准时（可能延迟数小时甚至跳过），
+# collect.yml 的 09:50(北京) 定时因此偶尔会漏。本工作流每 2 小时检查一次
+# 「今天(UTC) collect.yml 是否已成功运行」，若未运行则自动触发一次，
+# 保证每日巡检尽量不漏。
+#
+# 触发：schedule 每 2 小时 + workflow_dispatch（手动检查）。
+# 说明：本工作流只「检查 + 触发」，不重复执行巡检；若 collect 已跑则直接结束。
+name: opc-collect-guard
+
+on:
+  schedule:
+    # 每天 02,04,06,...,00 (UTC) 各检查一次；北京时间 = UTC+8
+    - cron: "5 */2 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  actions: write # 需要触发其他 workflow
+  contents: read
+
+concurrency:
+  group: collect-guard
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check if today's collect already ran
+        id: check
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+
+            // 今天 00:00 UTC 的时间戳
+            const now = new Date();
+            const startOfDay = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())).toISOString();
+
+            let ranToday = false;
+            let lastStatus = "无";
+            let page = 1;
+            // 最多翻 3 页（每页 30），覆盖今天可能出现的多次运行
+            while (page <= 3) {
+              const res = await github.rest.actions.listWorkflowRuns({
+                owner,
+                repo,
+                workflow_id: "collect.yml",
+                per_page: 30,
+                page,
+              });
+              const todayRuns = res.data.workflow_runs.filter(
+                (run) => run.created_at >= startOfDay,
+              );
+              if (todayRuns.length > 0) {
+                ranToday = true;
+                lastStatus = todayRuns.map((r) => r.event + "/" + (r.status ?? "?")).join(",");
+                break;
+              }
+              // 若本页最早的 run 早于今日，无需再翻页
+              const oldest = res.data.workflow_runs.at(-1);
+              if (!oldest || oldest.created_at < startOfDay) break;
+              page += 1;
+            }
+
+            console.log(`今天(UTC≥${startOfDay}) collect 已运行: ${ranToday}（${lastStatus}）`);
+            return ranToday;
+
+      - name: Trigger collect if not yet ran today
+        if: steps.check.outputs.result == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const res = await github.rest.actions.createWorkflowDispatch({
+              owner,
+              repo,
+              workflow_id: "collect.yml",
+              ref: "main",
+            });
+            console.log("已触发 collect（看门狗补跑）");
