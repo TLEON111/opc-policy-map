@@ -57,7 +57,6 @@ export default function AdminIntelPage() {
   const [saving, setSaving] = useState(false);
 
   const load = useCallback(async () => {
-    setLoading(true);
     try {
       const response = await fetch("/api/admin/data?kind=intel");
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -71,6 +70,9 @@ export default function AdminIntelPage() {
   }, []);
 
   useEffect(() => {
+    // 进页面拉取远程数据属异步副作用（fetch 回调里 setState，非渲染期同步调用）；
+    // 该行豁免 react-hooks/set-state-in-effect 规则。
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void load();
   }, [load]);
 

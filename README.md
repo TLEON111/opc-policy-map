@@ -19,18 +19,24 @@ npm run check:data
 
 ## 部署（单服务 Node 托管）
 
-本项目是**一套 Next.js 全栈应用**：页面（前端）与 `/api/policies`、`/api/intel`（后端）运行在同一个 Node 服务里，无独立数据库，推荐整体单服务部署。
+本项目是**一套 Next.js 全栈应用**：页面（前端）+ `/api/policies`、`/api/intel`（数据接口）+ `/admin`（后台管理）运行在同一个 Node 服务里，**推荐整体单服务部署**（一个站点承载三部分，无需拆站）。
 
-- **线上站点**：<https://opcmap.netlify.app>（Netlify，已配置 `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY`，`/api` 走 Supabase PostgREST）。
-- **境外 Node PaaS（省运维，推荐给内网小范围用）**：Render/Railway/Fly.io 连接 GitHub 仓库 `TLEON111/opc-policy-map` 自动部署。
-  - Render 蓝本见 `render.yaml`（可用 "New Blueprint" 一键创建）；
-  - push 到 `main` 即自动部署；GitHub Actions 每日 09:50 启动巡检、约 10:00 前完成数据更新，随后自动提交并触发重新部署。
+- **推荐线上站点（Vercel）**：导入 GitHub 仓库 `TLEON111/opc-policy-map` 即自动部署（Next.js 自动识别），每次 push 到 `main` 自动发布。
+  - **环境变量**（Vercel → Project → Settings → Environment Variables，选 All scopes）：
+    - `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_ANON_KEY`：让 `/api` 走 Supabase PostgREST（可选的读取层，不配则用仓库内置数据）；
+    - `ADMIN_PASSWORD`：后台登录密码（必填，否则 `/admin` 禁用）；
+    - `ADMIN_SESSION_SECRET`：后台会话签名密钥（强烈建议）；
+    - `GITHUB_ADMIN_TOKEN`：后台写 GitHub 数据的 PAT（contents 读写；未配则后台只读）；
+    - `GITHUB_REPO`：默认 `TLEON111/opc-policy-map`，通常无需配置。
+- **备用：Netlify**（旧方案，站点 `opcmap`）：`netlify.toml` + `@netlify/plugin-nextjs` 部署。
+- **备用：Render/Railway/Fly.io**（Node PaaS）：连接 GitHub 仓库自动部署，`render.yaml` 见仓库。
 - **Docker 自托管**：见根目录 `Dockerfile`（Next `output: "standalone"` + 运行时 `data/` 打包）。
 
 要点：
-- `/monitor` 与 API 动态读取 `data/pool/*.json`（相对运行目录），部署产物已随镜像/仓库带上该目录；
-- 端口由平台注入：`npm start` 已支持 `${PORT:-3000}`；
-- 生产环境请配 HTTPS（PaaS 默认提供 / Docker 用 nginx 反代）。
+- `/monitor` 与 API 动态读取 `data/pool/*.json`（相对运行目录）；Vercel 侧已通过
+  `outputFileTracingIncludes` 把 `data/pool/**` 打进产物，Docker/Render 侧随目录打包；
+- GitHub Actions 每日 09:50（北京）启动巡检，约 10:00 前完成数据更新并自动提交，
+  推送会触发平台自动部署；`collect-guard.yml` 每 2 小时兜底补跑防漏；
 
 ### Supabase（后端数据，可选启用）
 

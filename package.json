@@ -41,5 +41,9 @@
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3",
     "vitest": "4.1.11"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10"
   }
 }

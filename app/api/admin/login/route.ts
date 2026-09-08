@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
 import {
-  clearSessionCookie,
   isAdminConfigured,
   setSessionCookie,
   verifyPassword,
