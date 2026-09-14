@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T04:13:07.694Z",
+  "updatedAt": "2026-09-14T07:12:42.828Z",
   "entries": [
     {
       "url": "https://scjgj.cq.gov.cn/zfxxgk_225/zcwj/xzgfxwj/202608/t20260820_15956666.html",
@@ -98,6 +98,24 @@
       "keyword": "人工智能OPC",
       "province": "湖北",
       "foundAt": "2026-09-04T09:35:03.876Z",
+      "status": "pending"
+    },
+    {
+      "url": "https://www.dlhitech.gov.cn/news/view_79771.html",
+      "title": "关于开展2026年度大连高新区OPC社区入库申报工作的通...",
+      "sourceId": "dl-hitech-policy",
+      "keyword": "OPC社区",
+      "province": "辽宁",
+      "foundAt": "2026-09-14T07:13:08.694Z",
+      "status": "pending"
+    },
+    {
+      "url": "https://scjg.xa.gov.cn/xwzx/sjdt/2099367780560191490.html",
+      "title": "强化监管服务 赋能OPC电商发展！市市场监...",
+      "sourceId": "xa-amr-home",
+      "keyword": "OPC",
+      "province": "陕西",
+      "foundAt": "2026-09-14T07:13:11.156Z",
       "status": "pending"
     }
   ]
