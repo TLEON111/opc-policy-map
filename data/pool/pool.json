@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T07:45:26.684Z",
+  "updatedAt": "2026-09-29T01:38:17.243Z",
   "entries": [
     {
       "url": "https://scjgj.cq.gov.cn/zfxxgk_225/zcwj/xzgfxwj/202608/t20260820_15956666.html",
@@ -116,6 +116,15 @@
       "keyword": "OPC",
       "province": "陕西",
       "foundAt": "2026-09-14T07:13:11.156Z",
+      "status": "pending"
+    },
+    {
+      "url": "https://www.dlhitech.gov.cn/news/view_79879.html",
+      "title": "关于2026年度大连高新区OPC社区入库审核结果的公示",
+      "sourceId": "dl-hitech-policy",
+      "keyword": "OPC社区",
+      "province": "辽宁",
+      "foundAt": "2026-09-29T01:38:55.514Z",
       "status": "pending"
     }
   ]
