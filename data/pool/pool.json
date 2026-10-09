@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T08:02:38.152Z",
+  "updatedAt": "2026-10-09T00:13:10.376Z",
   "entries": [
     {
       "url": "https://scjgj.cq.gov.cn/zfxxgk_225/zcwj/xzgfxwj/202608/t20260820_15956666.html",
@@ -125,6 +125,15 @@
       "keyword": "OPC社区",
       "province": "辽宁",
       "foundAt": "2026-09-29T01:38:55.514Z",
+      "status": "pending"
+    },
+    {
+      "url": "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202610/t20261008_2857740.shtml",
+      "title": "市科技创新局关于公布第二批武汉市人工智能OPC生态社区认定名单的通知",
+      "sourceId": "wh-kjj-tzgg",
+      "keyword": "人工智能OPC",
+      "province": "湖北",
+      "foundAt": "2026-10-09T00:13:25.883Z",
       "status": "pending"
     }
   ]
