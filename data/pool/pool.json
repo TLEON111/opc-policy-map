@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T08:06:59.149Z",
+  "updatedAt": "2026-10-13T06:13:13.864Z",
   "entries": [
     {
       "url": "https://scjgj.cq.gov.cn/zfxxgk_225/zcwj/xzgfxwj/202608/t20260820_15956666.html",
@@ -134,6 +134,15 @@
       "keyword": "人工智能OPC",
       "province": "湖北",
       "foundAt": "2026-10-09T00:13:25.883Z",
+      "status": "pending"
+    },
+    {
+      "url": "https://www.dlhitech.gov.cn/news/view_79950.html",
+      "title": "关于开展《大连高新区支持OPC发展若干措施 （试行）》第...",
+      "sourceId": "dl-hitech-policy",
+      "keyword": "OPC",
+      "province": "辽宁",
+      "foundAt": "2026-10-13T06:13:48.615Z",
       "status": "pending"
     }
   ]
