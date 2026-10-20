@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T06:58:31.194Z",
+  "updatedAt": "2026-10-20T04:13:21.907Z",
   "entries": [
     {
       "url": "https://scjgj.cq.gov.cn/zfxxgk_225/zcwj/xzgfxwj/202608/t20260820_15956666.html",
@@ -143,6 +143,15 @@
       "keyword": "OPC",
       "province": "辽宁",
       "foundAt": "2026-10-13T06:13:48.615Z",
+      "status": "pending"
+    },
+    {
+      "url": "https://kjj.wuhan.gov.cn/zzzq/zzzq_tzgg/202610/t20261019_2863764.shtml",
+      "title": "关于开展2026年度武汉市人工智能OPC生态社区绩效评价的通知",
+      "sourceId": "wh-kjj-tzgg",
+      "keyword": "人工智能OPC",
+      "province": "湖北",
+      "foundAt": "2026-10-20T04:13:41.116Z",
       "status": "pending"
     }
   ]
