@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T01:03:20.750Z",
+  "updatedAt": "2026-10-28T07:33:13.770Z",
   "entries": [
     {
       "url": "https://scjgj.cq.gov.cn/zfxxgk_225/zcwj/xzgfxwj/202608/t20260820_15956666.html",
@@ -161,6 +161,15 @@
       "keyword": "OPC",
       "province": "陕西",
       "foundAt": "2026-10-21T00:28:41.078Z",
+      "status": "pending"
+    },
+    {
+      "url": "https://jxj.beijing.gov.cn/jxdt/gzdt/202610/t20261028_4921824.html",
+      "title": "OPCπ一月一站·昌平OPC共创派成功举办",
+      "sourceId": "bj-jxj",
+      "keyword": "OPC",
+      "province": "北京",
+      "foundAt": "2026-10-28T07:33:20.230Z",
       "status": "pending"
     }
   ]
