@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T08:28:18.296Z",
+  "updatedAt": "2026-11-12T02:46:10.293Z",
   "entries": [
     {
       "url": "https://scjgj.cq.gov.cn/zfxxgk_225/zcwj/xzgfxwj/202608/t20260820_15956666.html",
@@ -170,6 +170,15 @@
       "keyword": "OPC",
       "province": "北京",
       "foundAt": "2026-10-28T07:33:20.230Z",
+      "status": "pending"
+    },
+    {
+      "url": "https://www.bjsjs.gov.cn/ywdt/sjsdt/202611/t20261111_765690.shtml",
+      "title": "2026 AI OPC生态创新大会暨超级个体挑战赛在石景山举办",
+      "sourceId": "bj-sjs-news",
+      "keyword": "OPC",
+      "province": "北京",
+      "foundAt": "2026-11-12T02:46:13.954Z",
       "status": "pending"
     }
   ]
