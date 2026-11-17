@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T08:39:26.251Z",
+  "updatedAt": "2026-11-17T00:05:23.143Z",
   "entries": [
     {
       "url": "https://scjgj.cq.gov.cn/zfxxgk_225/zcwj/xzgfxwj/202608/t20260820_15956666.html",
@@ -179,6 +179,15 @@
       "keyword": "OPC",
       "province": "北京",
       "foundAt": "2026-11-12T02:46:13.954Z",
+      "status": "pending"
+    },
+    {
+      "url": "https://jxj.beijing.gov.cn/jxdt/tzgg/202611/t20261116_4947213.html",
+      "title": "关于公布2026年度符合条件的OPC成长社区名单的通知",
+      "sourceId": "bj-jxj",
+      "keyword": "OPC",
+      "province": "北京",
+      "foundAt": "2026-11-17T00:05:27.200Z",
       "status": "pending"
     }
   ]
